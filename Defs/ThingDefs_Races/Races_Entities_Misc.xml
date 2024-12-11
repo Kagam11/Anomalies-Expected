@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<ThingDef ParentName="BasePawn">
+		<defName>AEBrokenStatue</defName>
+		<label>broken statue</label>
+		<description>A spindly figure of desiccated skin stretched over an impossibly tall humanoid frame. The revenant's name comes from its pattern of returning to hypnotize new people each night.\n\nOutlander folklore describes an invisible spectre that captures the minds of sinners, placing them in a living hell. In the story, the victims can only be returned to life by hunting the creature as it sleeps and killing it.\n\nA hidden revenant can be revealed with disruptor flares, explosives, EMP, firefoam, or fire.</description>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<statBases>
+			<MoveSpeed>3.2</MoveSpeed>
+			<Flammability>0</Flammability>
+			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
+			<ComfyTemperatureMax>60</ComfyTemperatureMax>
+			<PsychicSensitivity>2</PsychicSensitivity>
+			<MinimumContainmentStrength>80</MinimumContainmentStrength>
+			<StaggerDurationFactor>0</StaggerDurationFactor>
+			<ToxicResistance>1</ToxicResistance>
+		</statBases>
+		<uiIconPath>Things/Pawn/Revenant/Revenant_MenuIcon</uiIconPath>
+		<tradeability>None</tradeability>
+		<hideStats>true</hideStats>
+		<onlyShowInspectString>true</onlyShowInspectString>
+		<hideMainDesc>true</hideMainDesc>
+		<race>
+			<thinkTreeMain>Revenant</thinkTreeMain>
+			<thinkTreeConstant>RevenantConstant</thinkTreeConstant>
+			<body>Human</body>
+			<baseBodySize>1</baseBodySize>
+			<baseHealthScale>10</baseHealthScale>
+			<intelligence>ToolUser</intelligence>
+			<needsRest>false</needsRest>
+			<hasGenders>false</hasGenders>
+			<fleshType>EntityMechanical</fleshType>
+			<foodType>None</foodType>
+			<hasCorpse>false</hasCorpse>
+			<lifeExpectancy>1000</lifeExpectancy>
+			<soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
+			<renderTree>Revenant</renderTree>
+			<startingAnimation>RevenantSpasm</startingAnimation>
+			<soundCallIntervalRange>120~240</soundCallIntervalRange>
+			<disableIgniteVerb>true</disableIgniteVerb>
+			<trainability>None</trainability>
+			<lifeStageAges>
+				<li>
+					<def>EntityFullyFormed</def>
+					<soundCall>Pawn_Revenant_Call</soundCall>
+					<soundWounded>Pawn_Revenant_Wounded</soundWounded>
+					<soundDeath>Pawn_Revenant_Death</soundDeath>
+				</li>
+			</lifeStageAges>
+			<hediffGiverSets>
+				<li>AnomalyEntity</li>
+			</hediffGiverSets>
+		</race>
+		<comps>
+			<li>
+				<compClass>CompRevenant</compClass>
+			</li>
+			<li Class="CompProperties_HoldingPlatformTarget">
+				<baseEscapeIntervalMtbDays>45</baseEscapeIntervalMtbDays>
+				<lookForTargetOnEscape>false</lookForTargetOnEscape>
+			</li>
+			<li Class="CompProperties_AttachPoints">
+				<points>
+					<li>
+						<offset>(-.35, 0, .35)</offset>
+						<type>PlatformRestraint0</type>
+					</li>
+					<li>
+						<offset>(.35, 0, .35)</offset>
+						<type>PlatformRestraint1</type>
+					</li>
+					<li>
+						<offset>(.2, 0, -.71)</offset>
+						<type>PlatformRestraint2</type>
+					</li>
+					<li>
+						<offset>(-.2, 0, -.71)</offset>
+						<type>PlatformRestraint3</type>
+					</li>
+				</points>
+			</li>
+			<li Class="CompProperties_ProducesBioferrite">
+				<bioferriteDensity>4</bioferriteDensity>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<anomalyKnowledge>3</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<requiresHoldingPlatform>true</requiresHoldingPlatform>
+			</li>
+		</comps>
+		<!-- Never actually used - revenant doesn't attack -->
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>3</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+	</ThingDef>
+  
+</Defs>
