@@ -15,7 +15,7 @@
 		<earliestDay>10</earliestDay>
 		<baseChance>0.2</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
-		<minAnomalyThreatLevel>0</minAnomalyThreatLevel>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
 		<minRefireDays>60</minRefireDays>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
@@ -40,8 +40,8 @@
 		<earliestDay>30</earliestDay>
 		<baseChance>0.1</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
-		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
-		<minRefireDays>120</minRefireDays>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>90</minRefireDays>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<DeployableObjectDef>AE_AnomalyHospitalBed</DeployableObjectDef>
@@ -65,8 +65,8 @@
 		<earliestDay>30</earliestDay>
 		<baseChance>0.2</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
-		<minAnomalyThreatLevel>0</minAnomalyThreatLevel>
-		<minRefireDays>120</minRefireDays>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minRefireDays>60</minRefireDays>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<DeployableThingDefs>
@@ -74,7 +74,7 @@
 				</DeployableThingDefs>
 				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
 				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
-				<ChanceFactorPowPerBuilding>0.7</ChanceFactorPowPerBuilding>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -93,13 +93,181 @@
 		<earliestDay>60</earliestDay>
 		<baseChance>0.1</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
-		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
 		<minRefireDays>120</minRefireDays>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<DeployableObjectDef>AE_MeatGrinder</DeployableObjectDef>
 				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
-				<ChanceFactorPowPerBuilding>0.3</ChanceFactorPowPerBuilding>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_BakingPiesSpawn</defName>
+		<label>big pie</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
+		<letterLabel>Found big pie</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a round big pie on a plate. It looks appetizing.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minRefireDays>240</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableThingDefs>
+					<li>AE_BakingPies</li>
+				</DeployableThingDefs>
+				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_BeamTargetSpawn</defName>
+		<label>transmitter</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromOrbit</workerClass>
+		<letterLabel>Found transmitter</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a small device with pneumatic retractable stops. On its body there are indicators with lights, an antenna and a small button. It looks like military grade.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>180</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_BeamTarget</DeployableObjectDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_BloodPuddleSpawn</defName>
+		<label>strange puddle</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromUnderground</workerClass>
+		<letterLabel>Found strange puddle</letterLabel>
+		<letterText>Your colonist noticed some small ground vibration. It seems like a pool of liquid seeping up from beneath the ground.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>5</earliestDay>
+		<baseChance>0.5</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minRefireDays>10</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_BloodPuddle</DeployableObjectDef>
+				<SkyfallerDef>AE_BloodPuddleSpawner</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>1.1</ChanceFactorPowPerBuilding>
+				<ChanceFactorPowPerOtherBuildings>
+					<AE_BloodLake>
+						<chance>1.5</chance>
+					</AE_BloodLake>
+				</ChanceFactorPowPerOtherBuildings>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_BloodLakeSpawn</defName>
+		<label>strange lake</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromUnderground</workerClass>
+		<letterLabel>Found strange lake</letterLabel>
+		<letterText>Your colonist noticed some strong ground vibration. It seems like a giant pool of liquid seeping up from beneath the ground.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<minThreatPoints>500</minThreatPoints>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>180</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_BloodLake</DeployableObjectDef>
+				<SkyfallerDef>AE_BloodLakeSpawner</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<entityCodexEntryDefsRequired>
+					<li>AE_EntityCodexEntry_BloodPuddle</li>
+				</entityCodexEntryDefsRequired>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_StudyNotepadSpawn</defName>
+		<label>yellow notepad</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
+		<letterLabel>Found yellow notepad</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a notepad, its yellow pages filled with handwritten notes.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>30</earliestDay>
+		<baseChance>0.2</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minRefireDays>120</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableThingDefs>
+					<li>AE_StudyNotepad</li>
+				</DeployableThingDefs>
+				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_ProviderScriptureSpawn</defName>
+		<label>ancient scripture</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
+		<letterLabel>Found ancient scripture</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a dark-covered book bearing the marks of time, featuring a prominent symbol.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.2</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>120</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableThingDefs>
+					<li>AE_ProviderScripture</li>
+				</DeployableThingDefs>
+				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
 			</li>
 		</modExtensions>
 	</IncidentDef>

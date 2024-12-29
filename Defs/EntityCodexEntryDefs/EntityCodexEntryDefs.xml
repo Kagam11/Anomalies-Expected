@@ -74,4 +74,117 @@
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_BakingPies</defName>
+		<label>big pie</label>
+		<category>Basic</category>
+		<uiIconPath>UI/CodexEntries/AE_BakingPies</uiIconPath>
+		<useDescriptionFrom>AE_BakingPies</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_BakingPies</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_BakingPiesSpawn</li>
+		</provocationIncidents>
+		<discoveredResearchProjects>
+			<li>AEBingingFoodSerum</li>
+			<li>AEHungerSuppressorSerum</li>
+		</discoveredResearchProjects>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_BeamTarget</defName>
+		<label>transmitter</label>
+		<category>Advanced</category>
+		<uiIconPath>UI/CodexEntries/AE_BeamTarget</uiIconPath>
+		<useDescriptionFrom>AE_BeamTarget</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_BeamTarget</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_BeamTargetSpawn</li>
+		</provocationIncidents>
+		<discoveredResearchProjects>
+			<li>AEOrbitalBeamTargeter</li>
+		</discoveredResearchProjects>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_BloodPuddle</defName>
+		<label>strange puddle</label>
+		<category>Basic</category>
+		<uiIconPath>UI/CodexEntries/AE_BloodPuddle</uiIconPath>
+		<useDescriptionFrom>AE_BloodPuddle</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_BloodPuddle</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_BloodPuddleSpawn</li>
+		</provocationIncidents>
+		<discoveredResearchProjects>
+			<li>AEBloodPump</li>
+		</discoveredResearchProjects>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_BloodLake</defName>
+		<label>strange lake</label>
+		<category>Advanced</category>
+		<uiIconPath>UI/CodexEntries/AE_BloodLake</uiIconPath>
+		<useDescriptionFrom>AE_BloodLake</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_BloodLake</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_BloodLakeSpawn</li>
+		</provocationIncidents>
+		<discoveredResearchProjects>
+			<li>AEBloodInjector</li>
+			<li>AEBloodLakeTerminalA</li>
+			<li>AEBloodLakeTerminalB</li>
+			<li>AEBloodLakeTerminalC</li>
+		</discoveredResearchProjects>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_StudyNotepad</defName>
+		<label>yellow notepad</label>
+		<category>Basic</category>
+		<uiIconPath>UI/CodexEntries/AE_StudyNotepad</uiIconPath>
+		<useDescriptionFrom>AE_StudyNotepad</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_StudyNotepad</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_StudyNotepadSpawn</li>
+		</provocationIncidents>
+		<discoveredResearchProjects>
+			<li>AEStudyNotepad</li>
+		</discoveredResearchProjects>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_ProviderScripture</defName>
+		<label>ancient scripture</label>
+		<category>Advanced</category>
+		<uiIconPath>UI/CodexEntries/AE_ProviderScripture</uiIconPath>
+		<useDescriptionFrom>AE_ProviderScripture</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_ProviderScripture</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_ProviderScriptureSpawn</li>
+		</provocationIncidents>
+		<discoveredResearchProjects>
+			<li>AEProviderScripture</li>
+			<li>AEAskingProvider</li>
+		</discoveredResearchProjects>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
 </Defs>

@@ -36,6 +36,8 @@
 		</generalRules>
 	</ResearchProjectDef>
 	
+	
+	
 	<ResearchProjectDef>
 		<defName>AERegenSerum</defName>
 		<label>regen serum</label>
@@ -46,7 +48,7 @@
 		</prerequisites>
 		<knowledgeCost>45</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
-		<researchViewX>1</researchViewX>
+		<researchViewX>4</researchViewX>
 		<researchViewY>0</researchViewY>
 		<generalRules>
 			<rulesStrings>
@@ -61,6 +63,8 @@
 			</rulesStrings>
 		</generalRules>
 	</ResearchProjectDef>
+	
+	
 	
 	<ResearchProjectDef>
 		<defName>AEFruitInhibitorSerum</defName>
@@ -86,6 +90,25 @@
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
+		<defName>AEForbiddenFruitImplant</defName>
+		<label>implant of forbidden knowledge</label>
+		<description>Learn how to extract seeds from the Giant Apple to create a new implant.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AEFruitInhibitorSerum</li>
+		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesFFA</li>
+		</requiredAnalyzed>
+		<knowledgeCost>35</knowledgeCost>
+		<knowledgeCategory>Basic</knowledgeCategory>
+		<researchViewX>1</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+	
+	
+	
+	<ResearchProjectDef>
 		<defName>AEGrinderStomach</defName>
 		<label>grinder stomach</label>
 		<description>Produce grinder stomach, which replicate Meat Grinder structure.</description>
@@ -95,7 +118,7 @@
 		</prerequisites>
 		<knowledgeCost>10</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
-		<researchViewX>1</researchViewX>
+		<researchViewX>4</researchViewX>
 		<researchViewY>1</researchViewY>
 		<generalRules>
 			<rulesStrings>
@@ -117,9 +140,12 @@
 		<prerequisites>
 			<li>AEGrinderStomach</li>
 		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesMGA</li>
+		</requiredAnalyzed>
 		<knowledgeCost>15</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
-		<researchViewX>2</researchViewX>
+		<researchViewX>5</researchViewX>
 		<researchViewY>1</researchViewY>
 		<generalRules>
 			<rulesStrings>
@@ -132,6 +158,231 @@
 				<li>subject_gerund->creating grinder jaw</li>
 			</rulesStrings>
 		</generalRules>
+	</ResearchProjectDef>
+	
+	
+
+	<ResearchProjectDef>
+		<defName>AEBingingFoodSerum</defName>
+		<label>binging food serum</label>
+		<description>Synthesize a serum that makes person pigging out on food.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>SerumSynthesis</li>
+		</prerequisites>
+		<knowledgeCost>30</knowledgeCost>
+		<knowledgeCategory>Basic</knowledgeCategory>
+		<researchViewX>3</researchViewX>
+		<researchViewY>2</researchViewY>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->binging food serum</li>
+
+				<li>subject_story->ate all food in the facility</li>
+				<li>subject_story->stomach rumbling could be heard for several kilometers</li>
+
+				<li>subject_gerund->synthesizing binging food serums</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AEHungerSuppressorSerum</defName>
+		<label>hunger suppressor serum</label>
+		<description>Synthesize a serum that temporary changes person's metabolism to increase efficiency of nutrient breakdown.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AEBingingFoodSerum</li>
+		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesBPA</li>
+		</requiredAnalyzed>
+		<knowledgeCost>35</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>4</researchViewX>
+		<researchViewY>2</researchViewY>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->hunger suppressor serum</li>
+
+				<li>subject_story->survived on one ration for a month</li>
+				<li>subject_story->wasn't able to fight illness, due to lack of nutrient for immune system</li>
+
+				<li>subject_gerund->synthesizing hunger suppressor serums</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
+	
+	
+	
+	<ResearchProjectDef>
+		<defName>AEOrbitalBeamTargeter</defName>
+		<label>precise orbital beam targeter</label>
+		<description>Produce a targeting unit for a network of power-collection satellites based on understanding of transmitter anomaly.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AdvancedFabrication</li>
+		</prerequisites>
+		<knowledgeCost>100</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>5</researchViewX>
+		<researchViewY>2</researchViewY>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->precise orbital beam targeter</li>
+
+				<li>subject_story->the night was bright as day</li>
+				<li>subject_story->melted every statue in other village</li>
+				<li>subject_story->was able to prevent enemies from going through narrow canyon</li>
+				<li>subject_story->stole all ancient solar power</li>
+
+				<li>subject_gerund->crafting precise orbital beam targeter</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
+	
+	
+
+	<ResearchProjectDef>
+		<defName>AEBloodPump</defName>
+		<label>blood-like liquid pump</label>
+		<description>Acquire fundamental knowledge of the blood-like liquid, including its collection through pumps and the separation of bioferrite from blood. This enables the destruction of new Blood Puddles without full study.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>MicroelectronicsBasics</li>
+		</prerequisites>
+		<knowledgeCost>30</knowledgeCost>
+		<knowledgeCategory>Basic</knowledgeCategory>
+		<researchViewX>3</researchViewX>
+		<researchViewY>3</researchViewY>
+		<!-- <generalRules>
+			<rulesStrings>
+				<li>subject->binging food serum</li>
+
+				<li>subject_story->ate all food in the facility</li>
+				<li>subject_story->stomach rumbling could be heard for several kilometers</li>
+
+				<li>subject_gerund->synthesizing binging food serums</li>
+			</rulesStrings>
+		</generalRules> -->
+	</ResearchProjectDef>
+	
+
+	<ResearchProjectDef>
+		<defName>AEBloodInjector</defName>
+		<label>blood-like liquid injector</label>
+		<description>Learn how create blood-like liquid injectors for on field treatment and how to summon new Blood Lake.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AEBloodPump</li>
+		</prerequisites>
+		<knowledgeCost>60</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>4</researchViewX>
+		<researchViewY>3</researchViewY>
+		<!-- <generalRules>
+			<rulesStrings>
+				<li>subject->binging food serum</li>
+
+				<li>subject_story->ate all food in the facility</li>
+				<li>subject_story->stomach rumbling could be heard for several kilometers</li>
+
+				<li>subject_gerund->synthesizing binging food serums</li>
+			</rulesStrings>
+		</generalRules> -->
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AEBloodLakeTerminalA</defName>
+		<label>study notes #BL01</label>
+		<description>Acquire knowledge of fleshmass cyst creation and new operations for mutating fleshmass organs from cyst.\n\nUnlocks:\n- Recipe to incubate fleshmass cyst;\n- Operation to incubate fleshmass stomach;\n- Operation to incubate fleshmass lung;\n- Operation to incubate fleshmass liver;\n- Operation to incubate fleshmass acid gland;\n- Operation to incubate fleshmass nose.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AEBloodInjector</li>
+		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesBLA</li>
+		</requiredAnalyzed>
+		<knowledgeCost>20</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>5</researchViewX>
+		<researchViewY>3</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AEBloodLakeTerminalB</defName>
+		<label>study notes #BL02</label>
+		<description>Acquire knowledge of fleshmass tumor incubation operation and new operations for mutating fleshmass organs from tumor.\n\nUnlocks:\n- Operation to incubate fleshmass tumor;\n- Operation to incubate fleshmass acid cavity;\n- Operation to incubate fleshmass ear;\n- Operation to incubate fleshmass eye;\n- Operation to incubate fleshmass kidney;\n- Operation to incubate fleshmass heart;\n- Operation to incubate fleshmass brain tumor.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AEBloodLakeTerminalA</li>
+		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesBLB</li>
+		</requiredAnalyzed>
+		<knowledgeCost>40</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>6</researchViewX>
+		<researchViewY>3</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AEBloodLakeTerminalC</defName>
+		<label>study notes #BL03</label>
+		<description>Acquire knowledge of new operation for fleshmass mutation of host's body from tumor.\n\nUnlocks:\n- Operation to incubate fleshmass body mutation;\n- Operation to incubate fleshmass organogenesis core.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AEBloodLakeTerminalB</li>
+		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesBLC</li>
+		</requiredAnalyzed>
+		<knowledgeCost>80</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>7</researchViewX>
+		<researchViewY>3</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AEStudyNotepad</defName>
+		<label>examine notepad</label>
+		<description>Examining research notes in a yellow notepad.</description>
+		<tab>AnomaliesExpected</tab>
+		<knowledgeCost>90</knowledgeCost>
+		<knowledgeCategory>Basic</knowledgeCategory>
+		<researchViewX>0</researchViewX>
+		<researchViewY>4</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AEProviderScripture</defName>
+		<label>provider box</label>
+		<description>Examining blueprint for provider box and learn asking Provider ritual.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>BasicPsychicRituals</li>
+		</prerequisites>
+		<knowledgeCost>60</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>4</researchViewX>
+		<researchViewY>4</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AEAskingProvider</defName>
+		<label>asking provider</label>
+		<description>Collected research progress will be used as additional sacrifice in Asking Provider ritual.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AEProviderScripture</li>
+		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesPSA</li>
+		</requiredAnalyzed>
+		<knowledgeCost>300</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>5</researchViewX>
+		<researchViewY>4</researchViewY>
 	</ResearchProjectDef>
 
 </Defs>

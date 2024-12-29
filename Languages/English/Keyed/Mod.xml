@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.Settings.Title>Anomalies Expected</AnomaliesExpected.Settings.Title>
+	
+	<AnomaliesExpected.Settings.BakingPies.ReplicationLimit>Limit max amount of Pie Pieces per replication to {0} (0 = unlimited)</AnomaliesExpected.Settings.BakingPies.ReplicationLimit>
+	<AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy>All Pie Pieces will despawn, when Big Pie destroyed</AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy>
+	<AnomaliesExpected.Settings.BakingPies.SpawnPiePieceNotification>Will get message during Big Pie replication</AnomaliesExpected.Settings.BakingPies.SpawnPiePieceNotification>
+	
+	<AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>Precise Orbital Beam Targeter require existence Transmitter to call Beam</AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>
+	<AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>Will get letter instead of message, when Transmitter leaving containment</AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>
+	
+	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult>Set multiplier for amount of threat points for fleshbeast generation from nests to {0}</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult>
+	
+	<AnomaliesExpected.Settings.ResearchTab.Unlock>Try Unlock Anomalies Expected Research Tab</AnomaliesExpected.Settings.ResearchTab.Unlock>
+</LanguageData>

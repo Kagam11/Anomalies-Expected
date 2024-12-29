@@ -2,7 +2,7 @@
 <LanguageData>
 
 	<AESleepEnhancerSerum.label>сыворотка для улучшения сна</AESleepEnhancerSerum.label>
-	<AESleepEnhancerSerum.description>Шприц с прозрачной вязкой жидкостью. Введенный в ствол мозга, он воздействует на напряженную часть мозга и распределяет нагрузку между нейронами, делая отдых во время сна более эффективным.\n\nЭффект временный и не суммируется.</AESleepEnhancerSerum.description>
+	<AESleepEnhancerSerum.description>Шприц с прозрачной вязкой жидкостью. Введенный в ствол мозга, он воздействует на напряженную часть мозга и распределяет нагрузку между нейронами, делая отдых во время сна более эффективным.\n\nЭффект временный и не суммируется.\n\nРаспорядок сна в среднем меняется с 16/8 к 20/4.</AESleepEnhancerSerum.description>
 	<AESleepEnhancerSerum.comps.CompUsable.useLabel>Использовать {0_label}</AESleepEnhancerSerum.comps.CompUsable.useLabel>
 	<AESleepEnhancerSerum.ingestible.ingestCommandString>Поглотить {0}</AESleepEnhancerSerum.ingestible.ingestCommandString>
 	<AESleepEnhancerSerum.ingestible.ingestReportString>Поглощает {0}</AESleepEnhancerSerum.ingestible.ingestReportString>
@@ -18,5 +18,33 @@
 	<AEFruitInhibitorSerum.comps.CompUsable.useLabel>Использовать {0_label}</AEFruitInhibitorSerum.comps.CompUsable.useLabel>
 	<AEFruitInhibitorSerum.ingestible.ingestCommandString>Поглотить {0}</AEFruitInhibitorSerum.ingestible.ingestCommandString>
 	<AEFruitInhibitorSerum.ingestible.ingestReportString>Поглощает {0}</AEFruitInhibitorSerum.ingestible.ingestReportString>
+	
+	<AEBingingFoodSerum.label>сыворотка обжорства</AEBingingFoodSerum.label>
+	<AEBingingFoodSerum.description>Шприц с зелёной вязкой жидкостью. Введенный в пищевод, он стимулирует пищеварительную систему и заставляет человека чувствовать сильный голод к хорошей еде. Дополнительно снижает эффект от большого пирога.\n\nЭффект временный и не суммируется.</AEBingingFoodSerum.description>
+	<AEBingingFoodSerum.comps.CompUsable.useLabel>Использовать {0_label}</AEBingingFoodSerum.comps.CompUsable.useLabel>
+	<AEBingingFoodSerum.ingestible.ingestCommandString>Поглотить {0}</AEBingingFoodSerum.ingestible.ingestCommandString>
+	<AEBingingFoodSerum.ingestible.ingestReportString>Поглощает {0}</AEBingingFoodSerum.ingestible.ingestReportString>
+	
+	<AEHungerSuppressorSerum.label>сыворотка подавления голода</AEHungerSuppressorSerum.label>
+	<AEHungerSuppressorSerum.description>Шприц с зелёной вязкой жидкостью. Введенный в пищевод, он содержит питательные вещества и влияет на метаболизм для увеличения эффективности расщепления питательных веществ и стимулирует тело на временное использования своих запасов.\n\nЭффект временный и не суммируется. После активного эффекта телу понадобится некоторое время на восстановление метаболизма к нормальному состоянию.\n\nАктивный эффект длится 1 день. В среднем увеличивает время до голода в 2 раза.</AEHungerSuppressorSerum.description>
+	<AEHungerSuppressorSerum.comps.CompUsable.useLabel>Использовать {0_label}</AEHungerSuppressorSerum.comps.CompUsable.useLabel>
+	<AEHungerSuppressorSerum.ingestible.ingestCommandString>Поглотить {0}</AEHungerSuppressorSerum.ingestible.ingestCommandString>
+	<AEHungerSuppressorSerum.ingestible.ingestReportString>Поглощает {0}</AEHungerSuppressorSerum.ingestible.ingestReportString>
+	
+	
+	
+	<Mote_AEBloodLiquidInjector.label>Mote</Mote_AEBloodLiquidInjector.label>
+	<AE_BloodLiquidInjector.label>инъектор кровиподобной жидкости</AE_BloodLiquidInjector.label>
+	<AE_BloodLiquidInjector.description>Одноразовая доза концентрированной кровиподобной жидкости. При введении, жидкость трансформируется, заменяя часть потерянной крови и увеличивая ее плотность вокруг серьезных ран, чтобы предотвратить дальнейшую кровопотерю. Она приоритезирует 5 самых тяжелых травм, фокусируясь на тех, где кровотечение наиболее сильное. Точная дозировка критически важна для предотвращения избыточного уровня концентрации жидкости в кровотоке.</AE_BloodLiquidInjector.description>
+	<AE_BloodLiquidInjector.comps.CompApplyUsableTo.useLabel>Ввести себе</AE_BloodLiquidInjector.comps.CompApplyUsableTo.useLabel>
+	<AE_BloodLiquidInjector.comps.CompApplyUsableTo.useToLabel>Ввести кому-то</AE_BloodLiquidInjector.comps.CompApplyUsableTo.useToLabel>
+	<AE_BloodLiquidInjector.ingestible.ingestCommandString>Ввести себе {0}</AE_BloodLiquidInjector.ingestible.ingestCommandString>
+	<AE_BloodLiquidInjector.ingestible.ingestReportString>Вводит {0}.</AE_BloodLiquidInjector.ingestible.ingestReportString>
+
+	<AE_FleshmassCyst.label>киста из биомассы</AE_FleshmassCyst.label>
+	<AE_FleshmassCyst.description>Паразитический, пульсирующий небольшой кусок плоти, способный к быстрому росту и трансформации. Способен внедряться в тело хозяина и питаться его энергией.</AE_FleshmassCyst.description>
+
+	<AE_FleshmassTumor.label>опухоль из биомассы</AE_FleshmassTumor.label>
+	<AE_FleshmassTumor.description>Живая, пульсирующая масса плоти со собственной волей, способная к быстрому росту и трансформации. Способна внедряться в тело хозяина и питаться его энергией.</AE_FleshmassTumor.description>
 
 </LanguageData>

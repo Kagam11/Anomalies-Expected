@@ -9,6 +9,8 @@
 	<AESleepEnhancerSerum.generalRules.rulesStrings.3>subject_story->больше не мог оправдываться тем, что проспал</AESleepEnhancerSerum.generalRules.rulesStrings.3>
 	<AESleepEnhancerSerum.generalRules.rulesStrings.4>subject_story->стал жить на 10% больше</AESleepEnhancerSerum.generalRules.rulesStrings.4>
 	<AESleepEnhancerSerum.generalRules.rulesStrings.5>subject_gerund->синтезируется сыворотка для улучшения сна</AESleepEnhancerSerum.generalRules.rulesStrings.5>
+	
+	
 
 	<AERegenSerum.label>сыворотка регенерации</AERegenSerum.label>
 	<AERegenSerum.description>Синтезировать сыворотку, повышающую лечебный фактор организма.</AERegenSerum.description>
@@ -18,6 +20,8 @@
 	<AERegenSerum.generalRules.rulesStrings.3>subject_story->раньше использовался для тренировок мехов</AERegenSerum.generalRules.rulesStrings.3>
 	<AERegenSerum.generalRules.rulesStrings.4>subject_story->смог восстановить мышцы, нервы и кожу всего лишь из оставшейся кости руки</AERegenSerum.generalRules.rulesStrings.4>
 	<AERegenSerum.generalRules.rulesStrings.5>subject_gerund->синтезируется сыворотка регенерации</AERegenSerum.generalRules.rulesStrings.5>
+	
+	
 
 	<AEFruitInhibitorSerum.label>сыворотка-ингибитор огромного яблока</AEFruitInhibitorSerum.label>
 	<AEFruitInhibitorSerum.description>Синтезировать сыворотку, снижающую эффект огромного яблока.</AEFruitInhibitorSerum.description>
@@ -25,21 +29,73 @@
 	<AEFruitInhibitorSerum.generalRules.rulesStrings.1>subject_story->больше не боится огромного яблока</AEFruitInhibitorSerum.generalRules.rulesStrings.1>
 	<AEFruitInhibitorSerum.generalRules.rulesStrings.2>subject_gerund->синтезируется сыворотка-ингибитор огромного яблока</AEFruitInhibitorSerum.generalRules.rulesStrings.2>
 	
+	<AEForbiddenFruitImplant.label>имплант запретного знания</AEForbiddenFruitImplant.label>
+	<AEForbiddenFruitImplant.description>Изучить способо извлечения семян из огромного яблока для создания нового импланта.</AEForbiddenFruitImplant.description>
+	
 	
 	
 	<AEGrinderStomach.label>желудок-измельчитель</AEGrinderStomach.label>
 	<AEGrinderStomach.description>Создать желудок-измельчитель, повторяющий структуру мясорубки</AEGrinderStomach.description>
-	<AEGrinderStomach.generalRules.rulesStrings.0>желудок-измельчитель</AEGrinderStomach.generalRules.rulesStrings.0>
-	<AEGrinderStomach.generalRules.rulesStrings.1>может, наконец, выиграть все соревнования по поеданию</AEGrinderStomach.generalRules.rulesStrings.1>
-	<AEGrinderStomach.generalRules.rulesStrings.2>выиграл каждую награду «Худший гость на званом ужине»</AEGrinderStomach.generalRules.rulesStrings.2>
-	<AEGrinderStomach.generalRules.rulesStrings.3>создание желудка-измельчителя</AEGrinderStomach.generalRules.rulesStrings.3>
+	<AEGrinderStomach.generalRules.rulesStrings.0>subject->желудок-измельчитель</AEGrinderStomach.generalRules.rulesStrings.0>
+	<AEGrinderStomach.generalRules.rulesStrings.1>subject_story->может, наконец, выиграть все соревнования по поеданию</AEGrinderStomach.generalRules.rulesStrings.1>
+	<AEGrinderStomach.generalRules.rulesStrings.2>subject_story->выиграл каждую награду «Худший гость на званом ужине»</AEGrinderStomach.generalRules.rulesStrings.2>
+	<AEGrinderStomach.generalRules.rulesStrings.3>subject_gerund->создание желудка-измельчителя</AEGrinderStomach.generalRules.rulesStrings.3>
 
 	<AEGrinderJaw.label>челюсть-измельчитель</AEGrinderJaw.label>
 	<AEGrinderJaw.description>Создать челюсть-измельчитель, повторяющие структуру мясорубки</AEGrinderJaw.description>
-	<AEGrinderJaw.generalRules.rulesStrings.0>челюсть-измельчитель</AEGrinderJaw.generalRules.rulesStrings.0>
-	<AEGrinderJaw.generalRules.rulesStrings.1>может буквально съесть всё что угодно</AEGrinderJaw.generalRules.rulesStrings.1>
-	<AEGrinderJaw.generalRules.rulesStrings.2>был спасателем в длительных миссиях... пока случайно не съел экипаж космического корабля</AEGrinderJaw.generalRules.rulesStrings.2>
-	<AEGrinderJaw.generalRules.rulesStrings.3>может прожевать целый стейк за секунды</AEGrinderJaw.generalRules.rulesStrings.3>
-	<AEGrinderJaw.generalRules.rulesStrings.4>создание челюсти-измельчителя</AEGrinderJaw.generalRules.rulesStrings.4>
+	<AEGrinderJaw.generalRules.rulesStrings.0>subject->челюсть-измельчитель</AEGrinderJaw.generalRules.rulesStrings.0>
+	<AEGrinderJaw.generalRules.rulesStrings.1>subject_story->может буквально съесть всё что угодно</AEGrinderJaw.generalRules.rulesStrings.1>
+	<AEGrinderJaw.generalRules.rulesStrings.2>subject_story->был спасателем в длительных миссиях... пока случайно не съел экипаж космического корабля</AEGrinderJaw.generalRules.rulesStrings.2>
+	<AEGrinderJaw.generalRules.rulesStrings.3>subject_story->может прожевать целый стейк за секунды</AEGrinderJaw.generalRules.rulesStrings.3>
+	<AEGrinderJaw.generalRules.rulesStrings.4>subject_gerund->создание челюсти-измельчителя</AEGrinderJaw.generalRules.rulesStrings.4>
+	
+	
+	
+	<AEBingingFoodSerum.label>сыворотка обжорства</AEBingingFoodSerum.label>
+	<AEBingingFoodSerum.description>Синтезировать сыворотку, которая заставит человека объедаться едой.</AEBingingFoodSerum.description>
+	<AEBingingFoodSerum.generalRules.rulesStrings.0>subject->сыворотка обжорства</AEBingingFoodSerum.generalRules.rulesStrings.0>
+	<AEBingingFoodSerum.generalRules.rulesStrings.1>subject_story->съелвсю еду в комплексе</AEBingingFoodSerum.generalRules.rulesStrings.1>
+	<AEBingingFoodSerum.generalRules.rulesStrings.2>subject_story->урчание живота было слышно на несколько километров вокруг</AEBingingFoodSerum.generalRules.rulesStrings.2>
+	<AEBingingFoodSerum.generalRules.rulesStrings.3>subject_gerund->синтезируется сыворотка обжорства</AEBingingFoodSerum.generalRules.rulesStrings.3>
+	
+	<AEHungerSuppressorSerum.label>сыворотка подавления голода</AEHungerSuppressorSerum.label>
+	<AEHungerSuppressorSerum.description>Синтезировать сыворотку, которая влияет на метаболизм человека для увеличения эффективности расщепления питательных веществ.</AEHungerSuppressorSerum.description>
+	<AEHungerSuppressorSerum.generalRules.rulesStrings.0>subject->сыворотка подавления голода</AEHungerSuppressorSerum.generalRules.rulesStrings.0>
+	<AEHungerSuppressorSerum.generalRules.rulesStrings.1>subject_story->выжил на одном сухпайке месяц</AEHungerSuppressorSerum.generalRules.rulesStrings.1>
+	<AEHungerSuppressorSerum.generalRules.rulesStrings.2>subject_story->не смог побороть заражение из-за нехватки питательных веществ для имунной системы</AEHungerSuppressorSerum.generalRules.rulesStrings.2>
+	<AEHungerSuppressorSerum.generalRules.rulesStrings.3>subject_gerund->синтезируется сыворотка подавления голода</AEHungerSuppressorSerum.generalRules.rulesStrings.3>
+	
+	
+	
+	<AEOrbitalBeamTargeter.label>целеуказатель для точечного луча</AEOrbitalBeamTargeter.label>
+	<AEOrbitalBeamTargeter.description>Создать устройство целеуказания для спутниковой сети сбора солнечной энергии на основе устройства аномалии передатчика.</AEOrbitalBeamTargeter.description>
+	<AEOrbitalBeamTargeter.generalRules.rulesStrings.0>subject->целеуказатель для точечного луча</AEOrbitalBeamTargeter.generalRules.rulesStrings.0>
+	<AEOrbitalBeamTargeter.generalRules.rulesStrings.1>subject_story->ночь превратилась в день</AEOrbitalBeamTargeter.generalRules.rulesStrings.1>
+	<AEOrbitalBeamTargeter.generalRules.rulesStrings.2>subject_story->расплавил все статуи в другом поселении</AEOrbitalBeamTargeter.generalRules.rulesStrings.2>
+	<AEOrbitalBeamTargeter.generalRules.rulesStrings.3>subject_story->смог остановить проход врагов через узкий каньон</AEOrbitalBeamTargeter.generalRules.rulesStrings.3>
+	<AEOrbitalBeamTargeter.generalRules.rulesStrings.4>subject_story->украл всю древнюю солнечную энергию</AEOrbitalBeamTargeter.generalRules.rulesStrings.4>
+	<AEOrbitalBeamTargeter.generalRules.rulesStrings.5>subject_gerund->создание целеуказатель для точечного луча</AEOrbitalBeamTargeter.generalRules.rulesStrings.5>
+	
+	
+	
+	<AEBloodPump.label>насос кровиподобной жидкости</AEBloodPump.label>
+	<AEBloodPump.description>Получить фундаментальные знания о кровиподобной жидкости, включая ее сбор с помощью насосов и отделение биоферрита от крови. Это позволит уничтожать новые Кровавые Лужи без необходимости полного изучения.</AEBloodPump.description>
+
+	<AEBloodInjector.label>инъектор кровиподобной жидкости</AEBloodInjector.label>
+	<AEBloodInjector.description>Изучить создание инъекторов с кровиподобной жидкостью для полевого лечения и ритуал вызова нового Кровавого Озера.</AEBloodInjector.description>
+
+	<AEBloodLakeTerminalA.label>научные заметки #BL01</AEBloodLakeTerminalA.label>
+	<AEBloodLakeTerminalA.description>Изучить создание кист из биомассы и новые операции по мутации органов из биомассы из кист.\n\nОткрывает:\nРецепт по выращиванию кисты из биомассы;\nОперация по выращиванию желудка из биомассы;\nОперация по выращиванию лёгкого из биомассы;\nОперация по выращиванию печени из биомассы;\nОперация по выращиванию кислотной гланды из биомассы;\nОперация по выращиванию носа из биомассы.</AEBloodLakeTerminalA.description>
+
+	<AEBloodLakeTerminalB.label>научные заметки #BL02</AEBloodLakeTerminalB.label>
+	<AEBloodLakeTerminalB.description>Изучить операцию инкубации опухоли из биомассы и новые операции по мутации органов из биомассы из опухоли.\n\nОткрывает:\nОперация по выращиванию опухоли из биомассы;\nОперация по выращиванию кислотной полости из биомассы;\nОперация по выращиванию уха из биомассы;\nОперация по выращиванию глаза из биомассы;\nОперация по выращиванию почки из биомассы;\nОперация по выращиванию сердца из биомассы;\nОперация по выращиванию опухоли головного мозга из биомассы.</AEBloodLakeTerminalB.description>
+
+	<AEBloodLakeTerminalC.label>научные заметки #BL03</AEBloodLakeTerminalC.label>
+	<AEBloodLakeTerminalC.description>Изучить новую операцию по мутации тела хозяина из биомассы из опухоли.\n\nОткрывает:\nОперация по выращиванию мутации тела из биомассы;\nОперация по выращиванию ядра органогенеза из биомассы.</AEBloodLakeTerminalC.description>
+	
+	
+	
+	<AEStudyNotepad.label>изучение блокнота</AEStudyNotepad.label>
+	<AEStudyNotepad.description>Изучение исследовательских записей в желтом блокноте.</AEStudyNotepad.description>
 
 </LanguageData>

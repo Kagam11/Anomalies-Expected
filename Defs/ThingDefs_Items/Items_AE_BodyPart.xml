@@ -38,26 +38,29 @@
 		</recipeMaker>
 	</ThingDef>
 	
-	<ThingDef ParentName="UnfinishedBase">
-		<defName>UnfinishedHealthItemAnomalyAE</defName>
-		<label>unfinished anomaly part</label>
-		<description>An unfinished anomaly part.</description>
+	
+	
+	<ThingDef ParentName="BodyPartAnomalyAEBase">
+		<defName>AEForbiddenFruitImplant</defName>
+		<label>implant of forbidden knowledge</label>
+		<description>An anomalous brain implant, which maintains connection between the host's consciousness and the entity, facilitating the exchange of knowledge and thoughts, without disturbing the entity.\n\nCreated using seeds from the forbidden fruit of knowledge, utilizing advanced technology derived from the entity's vast wisdom. After seeds extraction, the fruit exhibited a loss of regenerative property.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallAEForbiddenFruitImplant</RecipeDef>
+		</descriptionHyperlinks>
+		<costList>
+			<AE_ForbiddenFruit>1</AE_ForbiddenFruit>
+			<Bioferrite>15</Bioferrite>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
 		<statBases>
-			<Flammability>0.5</Flammability>
+			<Mass>2</Mass>
 		</statBases>
-		<graphicData>
-			<texPath>Things/Item/Unfinished/UnfinishedHealthItem</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<color>(107,56,76)</color>
-		</graphicData>
-		<stuffCategories Inherit="false"/>
+		<recipeMaker>
+			<researchPrerequisite>AEForbiddenFruitImplant</researchPrerequisite>
+		</recipeMaker>
 	</ThingDef>
 	
-	<ThingCategoryDef>
-		<defName>BodyPartsAnomalyAE</defName>
-		<label>anomaly</label>
-		<parent>BodyParts</parent>
-	</ThingCategoryDef>
+	
 	
 	<ThingDef ParentName="BodyPartAnomalyAEBase">
 		<defName>AEGrinderStomach</defName>

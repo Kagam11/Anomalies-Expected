@@ -50,6 +50,9 @@
 					<GlobalLearningFactor>0.05</GlobalLearningFactor>
 					<ReadingSpeed>0.05</ReadingSpeed>
 				</statOffsets>
+				<statFactors>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.05</StudyEfficiency>
+				</statFactors>
 			</li>
 			<li>
 				<label>Awareness</label>
@@ -58,6 +61,9 @@
 					<GlobalLearningFactor>0.15</GlobalLearningFactor>
 					<ReadingSpeed>0.1</ReadingSpeed>
 				</statOffsets>
+				<statFactors>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.15</StudyEfficiency>
+				</statFactors>
 			</li>
 			<li>
 				<label>Enlightenment</label>
@@ -66,6 +72,9 @@
 					<GlobalLearningFactor>0.3</GlobalLearningFactor>
 					<ReadingSpeed>0.15</ReadingSpeed>
 				</statOffsets>
+				<statFactors>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.3</StudyEfficiency>
+				</statFactors>
 			</li>
 			<li>
 				<label>Transcendence</label>
@@ -74,6 +83,9 @@
 					<GlobalLearningFactor>0.5</GlobalLearningFactor>
 					<ReadingSpeed>0.2</ReadingSpeed>
 				</statOffsets>
+				<statFactors>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.5</StudyEfficiency>
+				</statFactors>
 				<capMods>
 					<li>
 						<capacity>Consciousness</capacity>
@@ -88,6 +100,9 @@
 					<GlobalLearningFactor>0.5</GlobalLearningFactor>
 					<ReadingSpeed>0.2</ReadingSpeed>
 				</statOffsets>
+				<statFactors>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.5</StudyEfficiency>
+				</statFactors>
 				<capMods>
 					<li>
 						<capacity>Consciousness</capacity>
@@ -104,6 +119,9 @@
 					<GlobalLearningFactor>0.5</GlobalLearningFactor>
 					<ReadingSpeed>0.2</ReadingSpeed>
 				</statOffsets>
+				<statFactors>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.5</StudyEfficiency>
+				</statFactors>
 				<capMods>
 					<li>
 						<capacity>Consciousness</capacity>
@@ -130,7 +148,7 @@
 		</comps>
 		<stages>
 			<li>
-				<label>Forgiveness </label>
+				<label>Forgiveness</label>
 				<statOffsets>
 					<GlobalLearningFactor>-0.10</GlobalLearningFactor>
 				</statOffsets>
@@ -153,6 +171,126 @@
 						<postFactor>0.75</postFactor>
 					</li>
 				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+
+	<HediffDef>
+		<defName>Hediff_AEDigestingPie</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>digesting pie</label>
+		<description>Feeling heavy in the stomach.</description>
+		<initialSeverity>0</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.05</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<MoveSpeed>-5</MoveSpeed>
+				</statOffsets>
+				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+
+	<HediffDef>
+		<defName>Hediff_AEDogTag</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>dog tag</label>
+		<description>I can psychically feel the imprint of the person who once owned it.</description>
+		<initialSeverity>0</initialSeverity>
+		<maxSeverity>20</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statOffsets>
+					<PsychicSensitivity>0.05</PsychicSensitivity>
+				</statOffsets>
+				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>Hediff_AEBloodLiquidConcentration</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>blood-like liquid concentration</label>
+		<description>A blood-like liquid is introduced into the body. At high concentration it might mutate flesh into something hostile. The body will eventually filter out the substance.</description>
+		<initialSeverity>0</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.35</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+			<li Class="AnomaliesExpected.HediffCompProperties_FleshbeastEmergeOnStage">
+				<initialStage>4</initialStage>
+				<ticksBetweenSpawn>20000~40000</ticksBetweenSpawn>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>minor</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+			<li>
+				<minSeverity>0.20</minSeverity>
+				<label>minor</label>
+			</li>
+			<li>
+				<minSeverity>0.40</minSeverity>
+				<label>moderate</label>
+			</li>
+			<li>
+				<minSeverity>0.60</minSeverity>
+				<label>severe</label>
+			</li>
+			<li>
+				<minSeverity>0.80</minSeverity>
+				<label>extreme</label>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>Hediff_AEDestabilization</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>destabilization mutation</label>
+		<description>Destabilization of biological structure to amplify creature physical performance. The creature's life expectancy will be drastically reduced due to the mutation.</description>
+		<skinShader>Metalblood</skinShader>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<lethalSeverity>1</lethalSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>1</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<painFactor>0.25</painFactor>
+				<totalBleedFactor>0.25</totalBleedFactor>
+				<statOffsets>
+					<ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+					<ArmorRating_Heat>0.5</ArmorRating_Heat>
+				</statOffsets>
+				<statFactors>
+				  <IncomingDamageFactor>0.75</IncomingDamageFactor>
+				</statFactors>
 			</li>
 		</stages>
 	</HediffDef>

@@ -6,5 +6,19 @@
 	<AE_EntityCodexEntry_AnomalyHospitalBed.label>обычная медицинская кровать</AE_EntityCodexEntry_AnomalyHospitalBed.label>
 	
 	<AE_EntityCodexEntry_ForbiddenFruit.label>огромное яблоко</AE_EntityCodexEntry_ForbiddenFruit.label>
+	
+	<AE_EntityCodexEntry_MeatGrinder.label>промышленный металлический ящик</AE_EntityCodexEntry_MeatGrinder.label>
+
+	<AE_EntityCodexEntry_BakingPies.label>большой пирог</AE_EntityCodexEntry_BakingPies.label>
+	
+	<AE_EntityCodexEntry_BeamTarget.label>передатчик</AE_EntityCodexEntry_BeamTarget.label>
+	
+	<AE_EntityCodexEntry_BloodPuddle.label>странная лужа</AE_EntityCodexEntry_BloodPuddle.label>
+	
+	<AE_EntityCodexEntry_BloodLake.label>странное озеро</AE_EntityCodexEntry_BloodLake.label>
+	
+	<AE_EntityCodexEntry_StudyNotepad.label>жёлтый блокнот</AE_EntityCodexEntry_StudyNotepad.label>
+	
+	<AE_EntityCodexEntry_ProviderScripture.label>древнее писание</AE_EntityCodexEntry_ProviderScripture.label>
 
 </LanguageData>

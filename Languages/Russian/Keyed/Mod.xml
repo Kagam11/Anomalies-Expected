@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.Settings.Title>Anomalies Expected</AnomaliesExpected.Settings.Title>
+	
+	<AnomaliesExpected.Settings.BakingPies.ReplicationLimit>Ограничение максимального количество создаваемых кусков пирога за раз до {0} (0 = без ограничений)</AnomaliesExpected.Settings.BakingPies.ReplicationLimit>
+	<AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy>Все куски пирога исчезнут, когда большой пирог будет съеден</AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy>
+	<AnomaliesExpected.Settings.BakingPies.SpawnPiePieceNotification>Уведомление при создании новых кусков</AnomaliesExpected.Settings.BakingPies.SpawnPiePieceNotification>
+	
+	<AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>Целеуказатель для Точечного Луча требует существование Передатчика для активации Луча</AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>
+	<AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>Письмо вместо уведомления, когда Передатчик покидает зону содержания</AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>
+	
+	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult>Установить множитель на количество очков опасности для вычисления количества генерируемых биошматов в гнёздах {0}</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult>
+	
+	<AnomaliesExpected.Settings.ResearchTab.Unlock>Попытаться разблокировать Anomalies Expected исследовательские проекты</AnomaliesExpected.Settings.ResearchTab.Unlock>
+</LanguageData>

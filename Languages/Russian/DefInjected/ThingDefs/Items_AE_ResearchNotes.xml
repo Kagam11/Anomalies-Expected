@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<AE_ResearchNotesFFA.label>исследовательские заметки #FF01</AE_ResearchNotesFFA.label>
+	<AE_ResearchNotesFFA.description>Исследовательские заметки, связанные с аномалией. Их изучение может помочь разблокировать новые исследования аномалий.</AE_ResearchNotesFFA.description>
+	<AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.activateDescString>Анализировать исследовательские заметки.</AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.activateDescString>
+	<AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.activateLabelString>Анализировать...</AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.activateLabelString>
+	<AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.completedLetter>Изучив исследовательские заметки, {PAWN_labelShort} приобрел необходимые знания для исследовательского проекта(ов) {RESEARCH}.\n\nТеперь ваши исследователи могут использовать исследовательские столы, чтобы начать изучение практического применения этой технологии.</AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.completedLetter>
+	<AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Изучены исследовательские заметки о запретном плоде: разблокировано исследование {RESEARCH}</AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+	<AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.guiLabelString>Выберите кто должен анализировать это</AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.guiLabelString>
+	<AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.inspectString>Может быть проанализирован колонистом.</AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.inspectString>
+	<AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.jobString>Анализирует исследовательскую заметку</AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.jobString>
+	
+	
+
+	<AE_ResearchNotesMGA.label>исследовательские заметки #MG01</AE_ResearchNotesMGA.label>
+	<AE_ResearchNotesMGA.description>Исследовательские заметки, связанные с аномалией. Их изучение может помочь разблокировать новые исследования аномалий.</AE_ResearchNotesMGA.description>
+	<AE_ResearchNotesMGA.comps.CompAnalyzableUnlockResearch.activateDescString>Анализировать исследовательские заметки.</AE_ResearchNotesMGA.comps.CompAnalyzableUnlockResearch.activateDescString>
+	<AE_ResearchNotesMGA.comps.CompAnalyzableUnlockResearch.activateLabelString>Анализировать...</AE_ResearchNotesMGA.comps.CompAnalyzableUnlockResearch.activateLabelString>
+	<AE_ResearchNotesMGA.comps.CompAnalyzableUnlockResearch.completedLetter>Изучив исследовательские заметки, {PAWN_labelShort} приобрел необходимые знания для исследовательского проекта(ов) {RESEARCH}.\n\nТеперь ваши исследователи могут использовать исследовательские столы, чтобы начать изучение практического применения этой технологии.</AE_ResearchNotesMGA.comps.CompAnalyzableUnlockResearch.completedLetter>
+	<AE_ResearchNotesMGA.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Изучены исследовательские заметки о симфонии вечной бойни: разблокировано исследование {RESEARCH}</AE_ResearchNotesMGA.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+	<AE_ResearchNotesMGA.comps.CompAnalyzableUnlockResearch.guiLabelString>Выберите кто должен анализировать это</AE_ResearchNotesMGA.comps.CompAnalyzableUnlockResearch.guiLabelString>
+	<AE_ResearchNotesMGA.comps.CompAnalyzableUnlockResearch.inspectString>Может быть проанализирован колонистом.</AE_ResearchNotesMGA.comps.CompAnalyzableUnlockResearch.inspectString>
+	<AE_ResearchNotesMGA.comps.CompAnalyzableUnlockResearch.jobString>Анализирует исследовательскую заметку</AE_ResearchNotesMGA.comps.CompAnalyzableUnlockResearch.jobString>
+	
+	
+
+	<AE_ResearchNotesBPA.label>исследовательские заметки #BP01</AE_ResearchNotesBPA.label>
+	<AE_ResearchNotesBPA.description>Исследовательские заметки, связанные с аномалией. Их изучение может помочь разблокировать новые исследования аномалий.</AE_ResearchNotesBPA.description>
+	<AE_ResearchNotesBPA.comps.CompAnalyzableUnlockResearch.activateDescString>Анализировать исследовательские заметки.</AE_ResearchNotesBPA.comps.CompAnalyzableUnlockResearch.activateDescString>
+	<AE_ResearchNotesBPA.comps.CompAnalyzableUnlockResearch.activateLabelString>Анализировать...</AE_ResearchNotesBPA.comps.CompAnalyzableUnlockResearch.activateLabelString>
+	<AE_ResearchNotesBPA.comps.CompAnalyzableUnlockResearch.completedLetter>Изучив исследовательские заметки, {PAWN_labelShort} приобрел необходимые знания для исследовательского проекта(ов) {RESEARCH}.\n\nТеперь ваши исследователи могут использовать исследовательские столы, чтобы начать изучение практического применения этой технологии.</AE_ResearchNotesBPA.comps.CompAnalyzableUnlockResearch.completedLetter>
+	<AE_ResearchNotesBPA.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Изучены исследовательские заметки о пироги пекутся сами: разблокировано исследование {RESEARCH}</AE_ResearchNotesBPA.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+	<AE_ResearchNotesBPA.comps.CompAnalyzableUnlockResearch.guiLabelString>Выберите кто должен анализировать это</AE_ResearchNotesBPA.comps.CompAnalyzableUnlockResearch.guiLabelString>
+	<AE_ResearchNotesBPA.comps.CompAnalyzableUnlockResearch.inspectString>Может быть проанализирован колонистом.</AE_ResearchNotesBPA.comps.CompAnalyzableUnlockResearch.inspectString>
+	<AE_ResearchNotesBPA.comps.CompAnalyzableUnlockResearch.jobString>Анализирует исследовательскую заметку</AE_ResearchNotesBPA.comps.CompAnalyzableUnlockResearch.jobString>
+	
+	
+
+	<AE_ResearchNotesBLA.label>исследовательские заметки #BL01</AE_ResearchNotesBLA.label>
+	<AE_ResearchNotesBLA.description>Исследовательские заметки, связанные с аномалией. Их изучение может помочь разблокировать новые исследования аномалий.</AE_ResearchNotesBLA.description>
+	<AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.activateDescString>Анализировать исследовательские заметки.</AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.activateDescString>
+	<AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.activateLabelString>Анализировать...</AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.activateLabelString>
+	<AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.completedLetter>Изучив исследовательские заметки, {PAWN_labelShort} приобрел необходимые знания для исследовательского проекта(ов) {RESEARCH}.\n\nТеперь ваши исследователи могут использовать исследовательские столы, чтобы начать изучение практического применения этой технологии.</AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.completedLetter>
+	<AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Изучены исследовательские заметки из комплекса по другую сторону Кровавого Озера: разблокировано исследование {RESEARCH}</AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+	<AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.guiLabelString>Выберите кто должен анализировать это</AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.guiLabelString>
+	<AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.inspectString>Может быть проанализирован колонистом.</AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.inspectString>
+	<AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.jobString>Анализирует исследовательскую заметку</AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.jobString>
+
+	<AE_ResearchNotesBLB.label>исследовательские заметки #BL02</AE_ResearchNotesBLB.label>
+	<AE_ResearchNotesBLB.description>Исследовательские заметки, связанные с аномалией. Их изучение может помочь разблокировать новые исследования аномалий.</AE_ResearchNotesBLB.description>
+	<AE_ResearchNotesBLB.comps.CompAnalyzableUnlockResearch.activateDescString>Анализировать исследовательские заметки.</AE_ResearchNotesBLB.comps.CompAnalyzableUnlockResearch.activateDescString>
+	<AE_ResearchNotesBLB.comps.CompAnalyzableUnlockResearch.activateLabelString>Анализировать...</AE_ResearchNotesBLB.comps.CompAnalyzableUnlockResearch.activateLabelString>
+	<AE_ResearchNotesBLB.comps.CompAnalyzableUnlockResearch.completedLetter>Изучив исследовательские заметки, {PAWN_labelShort} приобрел необходимые знания для исследовательского проекта(ов) {RESEARCH}.\n\nТеперь ваши исследователи могут использовать исследовательские столы, чтобы начать изучение практического применения этой технологии.</AE_ResearchNotesBLB.comps.CompAnalyzableUnlockResearch.completedLetter>
+	<AE_ResearchNotesBLB.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Изучены исследовательские заметки из комплекса по другую сторону Кровавого Озера: разблокировано исследование {RESEARCH}</AE_ResearchNotesBLB.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+	<AE_ResearchNotesBLB.comps.CompAnalyzableUnlockResearch.guiLabelString>Выберите кто должен анализировать это</AE_ResearchNotesBLB.comps.CompAnalyzableUnlockResearch.guiLabelString>
+	<AE_ResearchNotesBLB.comps.CompAnalyzableUnlockResearch.inspectString>Может быть проанализирован колонистом.</AE_ResearchNotesBLB.comps.CompAnalyzableUnlockResearch.inspectString>
+	<AE_ResearchNotesBLB.comps.CompAnalyzableUnlockResearch.jobString>Анализирует исследовательскую заметку</AE_ResearchNotesBLB.comps.CompAnalyzableUnlockResearch.jobString>
+
+	<AE_ResearchNotesBLC.label>исследовательские заметки #BL03</AE_ResearchNotesBLC.label>
+	<AE_ResearchNotesBLC.description>Исследовательские заметки, связанные с аномалией. Их изучение может помочь разблокировать новые исследования аномалий.</AE_ResearchNotesBLC.description>
+	<AE_ResearchNotesBLC.comps.CompAnalyzableUnlockResearch.activateDescString>Анализировать исследовательские заметки.</AE_ResearchNotesBLC.comps.CompAnalyzableUnlockResearch.activateDescString>
+	<AE_ResearchNotesBLC.comps.CompAnalyzableUnlockResearch.activateLabelString>Анализировать...</AE_ResearchNotesBLC.comps.CompAnalyzableUnlockResearch.activateLabelString>
+	<AE_ResearchNotesBLC.comps.CompAnalyzableUnlockResearch.completedLetter>Изучив исследовательские заметки, {PAWN_labelShort} приобрел необходимые знания для исследовательского проекта(ов) {RESEARCH}.\n\nТеперь ваши исследователи могут использовать исследовательские столы, чтобы начать изучение практического применения этой технологии.</AE_ResearchNotesBLC.comps.CompAnalyzableUnlockResearch.completedLetter>
+	<AE_ResearchNotesBLC.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Изучены исследовательские заметки из комплекса по другую сторону Кровавого Озера: разблокировано исследование {RESEARCH}</AE_ResearchNotesBLC.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+	<AE_ResearchNotesBLC.comps.CompAnalyzableUnlockResearch.guiLabelString>Выберите кто должен анализировать это</AE_ResearchNotesBLC.comps.CompAnalyzableUnlockResearch.guiLabelString>
+	<AE_ResearchNotesBLC.comps.CompAnalyzableUnlockResearch.inspectString>Может быть проанализирован колонистом.</AE_ResearchNotesBLC.comps.CompAnalyzableUnlockResearch.inspectString>
+	<AE_ResearchNotesBLC.comps.CompAnalyzableUnlockResearch.jobString>Анализирует исследовательскую заметку</AE_ResearchNotesBLC.comps.CompAnalyzableUnlockResearch.jobString>
+	
+	
+
+	<AE_ResearchNotesPSA.label>исследовательские заметки #PS01</AE_ResearchNotesPSA.label>
+	<AE_ResearchNotesPSA.description>Исследовательские заметки, связанные с аномалией. Их изучение может помочь разблокировать новые исследования аномалий.</AE_ResearchNotesPSA.description>
+	<AE_ResearchNotesPSA.comps.CompAnalyzableUnlockResearch.activateDescString>Анализировать исследовательские заметки.</AE_ResearchNotesPSA.comps.CompAnalyzableUnlockResearch.activateDescString>
+	<AE_ResearchNotesPSA.comps.CompAnalyzableUnlockResearch.activateLabelString>Анализировать...</AE_ResearchNotesPSA.comps.CompAnalyzableUnlockResearch.activateLabelString>
+	<AE_ResearchNotesPSA.comps.CompAnalyzableUnlockResearch.completedLetter>Изучив исследовательские заметки, {PAWN_labelShort} приобрел необходимые знания для исследовательского проекта(ов) {RESEARCH}.\n\nТеперь ваши исследователи могут использовать исследовательские столы, чтобы начать изучение практического применения этой технологии.</AE_ResearchNotesPSA.comps.CompAnalyzableUnlockResearch.completedLetter>
+	<AE_ResearchNotesPSA.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Изучены исследовательские заметки о Тот, Кто Предоставляет: разблокировано исследование {RESEARCH}</AE_ResearchNotesPSA.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+	<AE_ResearchNotesPSA.comps.CompAnalyzableUnlockResearch.guiLabelString>Выберите кто должен анализировать это</AE_ResearchNotesPSA.comps.CompAnalyzableUnlockResearch.guiLabelString>
+	<AE_ResearchNotesPSA.comps.CompAnalyzableUnlockResearch.inspectString>Может быть проанализирован колонистом.</AE_ResearchNotesPSA.comps.CompAnalyzableUnlockResearch.inspectString>
+	<AE_ResearchNotesPSA.comps.CompAnalyzableUnlockResearch.jobString>Анализирует исследовательскую заметку</AE_ResearchNotesPSA.comps.CompAnalyzableUnlockResearch.jobString>
+
+</LanguageData>

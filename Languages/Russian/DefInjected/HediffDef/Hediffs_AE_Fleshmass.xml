@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+	<Hediff_AEFleshmassTumorIncubation.label>выращивать опухоль из биомассы</Hediff_AEFleshmassTumorIncubation.label>
+	<Hediff_AEFleshmassTumorIncubation.description>Все функции организма направлены на выращивание опухоли из биомассы, что является фатальным процессом, поскольку опухоль неразрывно связана со структурой органов. Однако опухоль зависит от выживания хозяина.</Hediff_AEFleshmassTumorIncubation.description>
+	<Hediff_AEFleshmassTumorIncubation.comps.HediffComp_SpawnThingOnDeath.messageText>Опухоль из биомассы выращена из {0}</Hediff_AEFleshmassTumorIncubation.comps.HediffComp_SpawnThingOnDeath.messageText>
+
+	<Hediff_AEFleshmassCystAssimilation.label>киста из биомассы ассимилируется</Hediff_AEFleshmassCystAssimilation.label>
+	<Hediff_AEFleshmassCystAssimilation.description>Киста из биомассы, имплантированная в тело хозяина, проходит процесс ассимиляции, вызывая значительную боль. Киста зависит от выживания хозяина.</Hediff_AEFleshmassCystAssimilation.description>
+	
+	<AE_FleshmassLung.label>лёгкое из биомассы</AE_FleshmassLung.label>
+	<AE_FleshmassLung.description>Злокачественная биомасса с зачатками разума. Её ткани непрерывно регенерируют, вырабатывая иммунитет к трупной чахотке и астме. Насыщает воздух, которым дышит носитель, успокаивающим и улучшающим настроение химическим веществом.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.</AE_FleshmassLung.description>
+	<AE_FleshmassLung.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassLung.comps.HediffComp_FleshbeastEmerge.letterLabel>
+	<AE_FleshmassLung.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить лёгкое из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassLung.comps.HediffComp_FleshbeastEmerge.letterText>
+	<AE_FleshmassLung.labelNoun>лёгкое из биомассы</AE_FleshmassLung.labelNoun>
+  
+	<AE_FleshmassStomach.label>желудок из биомассы</AE_FleshmassStomach.label>
+	<AE_FleshmassStomach.description>Злокачественная биомасса с зачатками разума. Агрессивная кислота внутри неё вызывает боль, но способна предотвратить почти любое пищевое отравление. Может разлагать и повторно поглощать питательные вещества из собственных тканей, что позволяет носителю выживать в течение длительных периодов без внешнего питания.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.</AE_FleshmassStomach.description>
+	<AE_FleshmassStomach.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassStomach.comps.HediffComp_FleshbeastEmerge.letterLabel>
+	<AE_FleshmassStomach.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить желудок из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassStomach.comps.HediffComp_FleshbeastEmerge.letterText>
+	<AE_FleshmassStomach.labelNoun>желудок из биомассы</AE_FleshmassStomach.labelNoun>
+
+	<AE_FleshmassLiver.label>печень из биомассы</AE_FleshmassLiver.label>
+	<AE_FleshmassLiver.description>Злокачественная биомасса с зачатками разума. Стремится продлить жизнь хозяина, улчучшая выработку иммунитета к болезни и снижая кровопотерю.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.</AE_FleshmassLiver.description>
+	<AE_FleshmassLiver.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassLiver.comps.HediffComp_FleshbeastEmerge.letterLabel>
+	<AE_FleshmassLiver.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить печень из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassLiver.comps.HediffComp_FleshbeastEmerge.letterText>
+	<AE_FleshmassLiver.labelNoun>печень из биомассы</AE_FleshmassLiver.labelNoun>
+
+	<AE_FleshmassAcidCavity.label>кислотная полость из биомассы</AE_FleshmassAcidCavity.label>
+	<AE_FleshmassAcidCavity.description>Злокачественная биомасса с зачатками разума. Вырабатывает и накапливает вязкую кислотную субстанцию в новообразованной полости в грудине, вместе с кислотоустойчивыми тканями в горле. Позволяет выплевывать эту кислоту на дальние цели, где она прилипает к врагам и обжигает их.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.</AE_FleshmassAcidCavity.description>
+	<AE_FleshmassAcidCavity.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassAcidCavity.comps.HediffComp_FleshbeastEmerge.letterLabel>
+	<AE_FleshmassAcidCavity.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить кислотную полость из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassAcidCavity.comps.HediffComp_FleshbeastEmerge.letterText>
+	<AE_FleshmassAcidCavity.labelNoun>кислотная полость из биомассы</AE_FleshmassAcidCavity.labelNoun>
+
+	<AE_FleshmassAcidGland.label>кислотная гланда из биомассы</AE_FleshmassAcidGland.label>
+	<AE_FleshmassAcidGland.description>Злокачественная биомасса с зачатками разума. Вырабатывает и накапливает вязкую кислотную субстанцию в новообразованной гланде, вместе с кислотоустойчивыми тканями во рту. Позволяет выплевывать эту кислоту на цели перед собой, где она прилипает к врагам и обжигает их.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.</AE_FleshmassAcidGland.description>
+	<AE_FleshmassAcidGland.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassAcidGland.comps.HediffComp_FleshbeastEmerge.letterLabel>
+	<AE_FleshmassAcidGland.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить кислотную гланду из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassAcidGland.comps.HediffComp_FleshbeastEmerge.letterText>
+	<AE_FleshmassAcidGland.labelNoun>кислотная гланда из биомассы</AE_FleshmassAcidGland.labelNoun>
+  
+	<AE_FleshmassNose.label>нос из биомассы</AE_FleshmassNose.label>
+	<AE_FleshmassNose.description>Злокачественная биомасса с зачатками разума. Его внутренняя структура функционирует подобно примитивному фильтру противогаза, частично блокируя проникновение токсинов в организм носителя.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.</AE_FleshmassNose.description>
+	<AE_FleshmassNose.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassNose.comps.HediffComp_FleshbeastEmerge.letterLabel>
+	<AE_FleshmassNose.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить нос из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassNose.comps.HediffComp_FleshbeastEmerge.letterText>
+	<AE_FleshmassNose.labelNoun>нос из биомассы</AE_FleshmassNose.labelNoun>
+
+	<Hediff_AEFleshmassTumorAssimilation.label>опухоль из биомассы ассимилируется</Hediff_AEFleshmassTumorAssimilation.label>
+	<Hediff_AEFleshmassTumorAssimilation.description>Опухоль из биомассы, имплантированная в тело хозяина, проходит процесс ассимиляции, вызывая значительную боль. Опухоль зависит от выживания хозяина.</Hediff_AEFleshmassTumorAssimilation.description>
+
+	<AE_FleshmassEye.label>глаз из биомассы</AE_FleshmassEye.label>
+	<AE_FleshmassEye.description>Злокачественная биомасса с зачатками разума. Помимо улучшенного зрения, позволяет генерировать сфокусированные всплески психической энергии, чтобы поражать цели перед собой.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.</AE_FleshmassEye.description>
+	<AE_FleshmassEye.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassEye.comps.HediffComp_FleshbeastEmerge.letterLabel>
+	<AE_FleshmassEye.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить глаз из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassEye.comps.HediffComp_FleshbeastEmerge.letterText>
+	<AE_FleshmassEye.labelNoun>глаз из биомассы</AE_FleshmassEye.labelNoun>
+
+	<AE_FleshmassEar.label>ухо из биомассы</AE_FleshmassEar.label>
+	<AE_FleshmassEar.description>Злокачественная биомасса с зачатками разума. Улучшает пси чуствительность и проводимость носителя.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.</AE_FleshmassEar.description>
+	<AE_FleshmassEar.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassEar.comps.HediffComp_FleshbeastEmerge.letterLabel>
+	<AE_FleshmassEar.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить ухо из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassEar.comps.HediffComp_FleshbeastEmerge.letterText>
+	<AE_FleshmassEar.labelNoun>ухо из биомассы</AE_FleshmassEar.labelNoun>
+
+	<AE_FleshmassNose.label>нос из биомассы</AE_FleshmassNose.label>
+	<AE_FleshmassNose.description>Злокачественная биомасса с зачатками разума. Внутренняя структура схожа с простым фильтром противогаза, частично блокирующим попадание токсинов в тело носителя.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.</AE_FleshmassNose.description>
+	<AE_FleshmassNose.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassNose.comps.HediffComp_FleshbeastEmerge.letterLabel>
+	<AE_FleshmassNose.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить нос из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassNose.comps.HediffComp_FleshbeastEmerge.letterText>
+	<AE_FleshmassNose.labelNoun>нос из биомассы</AE_FleshmassNose.labelNoun>
+
+	<AE_FleshmassKidney.label>почка из биомассы</AE_FleshmassKidney.label>
+	<AE_FleshmassKidney.description>Злокачественная биомасса с зачатками разума. Выращивает биомассу, которая может быть мутирована в пальцешип под действием дестабилизирующей мутации.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.</AE_FleshmassKidney.description>
+	<AE_FleshmassKidney.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassKidney.comps.HediffComp_FleshbeastEmerge.letterLabel>
+	<AE_FleshmassKidney.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить почка из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassKidney.comps.HediffComp_FleshbeastEmerge.letterText>
+	<AE_FleshmassKidney.labelNoun>почка из биомассы</AE_FleshmassKidney.labelNoun>
+
+	<AE_FleshmassHeart.label>сердце из биомассы</AE_FleshmassHeart.label>
+	<AE_FleshmassHeart.description>Злокачественная биомасса с зачатками разума. Значительно улучшает решенерацию и свёртываемость крови.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.</AE_FleshmassHeart.description>
+	<AE_FleshmassHeart.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassHeart.comps.HediffComp_FleshbeastEmerge.letterLabel>
+	<AE_FleshmassHeart.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить сердце из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassHeart.comps.HediffComp_FleshbeastEmerge.letterText>
+	<AE_FleshmassHeart.labelNoun>сердце из биомассы</AE_FleshmassHeart.labelNoun>
+
+	<AE_FleshmassBrainTumor.label>опухоль головного мозга из биомассы</AE_FleshmassBrainTumor.label>
+	<AE_FleshmassBrainTumor.description>Злокачественная биомасса с зачатками разума. Опухоль имеет свою нейронную сеть позволяющую контролировать союзных биошматов.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.\n\nЭффект на болевые центры головного мозга и радиус действия зависит от количества ассимилированных опухолей в головном мозге носителя до 5 штук.</AE_FleshmassBrainTumor.description>
+	<AE_FleshmassBrainTumor.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassBrainTumor.comps.HediffComp_FleshbeastEmerge.letterLabel>
+	<AE_FleshmassBrainTumor.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить опухоль головного мозга из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassBrainTumor.comps.HediffComp_FleshbeastEmerge.letterText>
+
+	<AE_FleshmassBodyMutation.label>мутация тела из биомассы</AE_FleshmassBodyMutation.label>
+	<AE_FleshmassBodyMutation.description>Злокачественная биомасса с зачатками разума. Мутирует все тело хозяина, заменяя часть тканей биомассой, значительно усиливая функции организма. Выращивает биомассу, которая может быть мутирована в твёрдошип под действием дестабилизирующей мутации.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.\n\nЭффект зависит от количества мутаций из биомассы в теле носителя до 15.</AE_FleshmassBodyMutation.description>
+	<AE_FleshmassBodyMutation.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassBodyMutation.comps.HediffComp_FleshbeastEmerge.letterLabel>
+	<AE_FleshmassBodyMutation.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить мутацию тела из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassBodyMutation.comps.HediffComp_FleshbeastEmerge.letterText>
+	<AE_FleshmassBodyMutation.stages.full_adaptation.label>полная адаптация</AE_FleshmassBodyMutation.stages.full_adaptation.label>
+
+	<Hediff_AEFleshmassPartRestoration.label>восстановление клеток из биомассы</Hediff_AEFleshmassPartRestoration.label>
+	<Hediff_AEFleshmassPartRestoration.description>Клетки из биомассы, оставленные внутри тела носителя, активно регенерируют в новый орган. Клетки зависит от выживания хозяина.</Hediff_AEFleshmassPartRestoration.description>
+
+	<AE_FleshmassOrganogenesisCore.label>ядро органогенеза из биомассы</AE_FleshmassOrganogenesisCore.label>
+	<AE_FleshmassOrganogenesisCore.description>Злокачественная биомасса с зачатками разума. Бесшовно интегрируется с органами из биомассы, позволяя им регенерировать даже после практически полного разрушения.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.\n\nЗатрагивает:\n- Желудок из биомассы;\n- Лёгкое из биомассы;\n- Печень из биомассы;\n- Нос из биомассы;\n- Глаз из биомассы;\n- Ухо из биомассы;\n- Почка из биомассы;\n- Сердце из биомассы.</AE_FleshmassOrganogenesisCore.description>
+	<AE_FleshmassOrganogenesisCore.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassOrganogenesisCore.comps.HediffComp_FleshbeastEmerge.letterLabel>
+	<AE_FleshmassOrganogenesisCore.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить ядро органогенеза из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassOrganogenesisCore.comps.HediffComp_FleshbeastEmerge.letterText>
+	<AE_FleshmassOrganogenesisCore.labelNoun>ядро органогенеза из биомассы</AE_FleshmassOrganogenesisCore.labelNoun>
+  
+</LanguageData>

@@ -1,7 +1,7 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -15,8 +15,20 @@ namespace AnomaliesExpected
 
         public static readonly CachedTexture CreateCorpseStockpileIcon = new CachedTexture(ModsConfig.AnomalyActive ? "UI/Icons/CorpseStockpileZone" : "UI/Designators/ZoneCreate_Stockpile");
 
-        public List<IntVec3> ConsumtionCells => consumtionCellsCached ?? (consumtionCellsCached = GenRadial.RadialCellsAround(parent.Position, 1.9f, useCenter: false).ToList());
+        public List<IntVec3> ConsumtionCells
+        {
+            get
+            {
+                if (consumtionCellsCached == null || parent.Position != lastPosition)
+                {
+                    consumtionCellsCached = GenRadial.RadialCellsAround(parent.Position, Props.consumptionRadius, useCenter: false).ToList();
+                    lastPosition = parent.Position;
+                }
+                return consumtionCellsCached;
+            }
+        }
         private List<IntVec3> consumtionCellsCached;
+        private IntVec3 lastPosition;
 
         private List<Corpse> Consumables => ConsumtionCells.SelectMany((IntVec3 iv3) => parent.Map.thingGrid.ThingsListAtFast(iv3)).Where((Thing t) => t is Corpse && Settings.AllowedToAccept(t)).Select((Thing t) => t as Corpse).ToList();
 
@@ -127,7 +139,7 @@ namespace AnomaliesExpected
         public void Butcher(Corpse corpse)
         {
             IEnumerable<Thing> products = corpse.ButcherProducts(parent.Map?.mapPawns?.FreeColonists?.RandomElement(), currMood?.butcherEfficiency ?? Props.butcherEfficiency);
-            List<IntVec3> cleanCells = GenRadial.RadialCellsAround(parent.Position, 1, useCenter: true).ToList();
+            List<IntVec3> cleanCells = GenRadial.RadialCellsAround(parent.Position, 2, useCenter: true).ToList();
             foreach (Thing product in products)
             {
                 GenPlace.TryPlaceThing(product, parent.Position, parent.Map, ThingPlaceMode.Near, null, delegate (IntVec3 newLoc)
@@ -152,7 +164,7 @@ namespace AnomaliesExpected
                 bool isConsumed = false;
                 if (mood.isDanger)
                 {
-                    Messages.Message("AnomaliesExpected.MeatGrinder.ConsumedFully".Translate(caster.LabelCap, this.parent.LabelCap).RawText, this.parent, MessageTypeDefOf.NegativeEvent);
+                    Messages.Message("AnomaliesExpected.MeatGrinder.ConsumedFully".Translate(caster.LabelShortCap, this.parent.LabelCap).RawText, this.parent, MessageTypeDefOf.NegativeEvent);
                     caster.Kill(new DamageInfo(DamageDefOf.Cut, 500, instigator: this.parent));
                     caster.Corpse.Destroy();
                     isConsumed = true;
@@ -165,7 +177,7 @@ namespace AnomaliesExpected
                         DamageInfo dm = new DamageInfo(DamageDefOf.Cut, 500, hitPart: bodyParts.RandomElement(), instigator: this.parent);
                         dm.SetAllowDamagePropagation(false);
                         DamageWorker.DamageResult damageResult = caster.TakeDamage(dm);
-                        Messages.Message("AnomaliesExpected.MeatGrinder.Consumed".Translate(caster.LabelCap, damageResult.LastHitPart.Label, this.parent.LabelCap).RawText, this.parent, MessageTypeDefOf.NegativeEvent);
+                        Messages.Message("AnomaliesExpected.MeatGrinder.Consumed".Translate(caster.LabelShortCap, damageResult.LastHitPart.Label, this.parent.LabelCap).RawText, this.parent, MessageTypeDefOf.NegativeEvent);
                         isConsumed = true;
                     }
                 }
@@ -215,6 +227,10 @@ namespace AnomaliesExpected
         {
             foreach (Gizmo gizmo in base.CompGetGizmosExtra())
             {
+                if (gizmo is Command_Action command_Action)
+                {
+                    command_Action.hotKey = KeyBindingDefOf.Misc6;
+                }
                 yield return gizmo;
             }
             if (ConsumtionCells.Any((IntVec3 c) => (parent.Map.zoneManager.ZoneAt(c) == null)))
@@ -224,6 +240,7 @@ namespace AnomaliesExpected
                     defaultLabel = "CreateCorpseStockpile".Translate(),
                     defaultDesc = "CreateCorpseStockpileDesc".Translate(),
                     icon = CreateCorpseStockpileIcon.Texture,
+                    hotKey = KeyBindingDefOf.Misc11,
                     action = CreateCorpseStockpile
                 };
             }
@@ -305,7 +322,7 @@ namespace AnomaliesExpected
                     },
                     defaultLabel = "Dev: Change Call",
                     defaultDesc = $"Change timer till call Pawn to press button: {(TickForced - Find.TickManager.TicksGame).ToStringTicksToDays()}"
-                }; 
+                };
                 yield return new Command_Action
                 {
                     action = delegate
@@ -314,7 +331,7 @@ namespace AnomaliesExpected
                     },
                     defaultLabel = "Dev: Log",
                     defaultDesc = $"Log values: {Find.TickManager.TicksGame}:\nisActive {isActive}\nTickFrom {TickFrom}/{(Find.TickManager.TicksGame - TickFrom).ToStringTicksToDays()}\nTickForced {TickForced}/{(TickForced - Find.TickManager.TicksGame).ToStringTicksToDays()}"
-                }; 
+                };
             }
         }
 
@@ -354,7 +371,7 @@ namespace AnomaliesExpected
             {
                 MeatGrinderMood mood = currMood;
                 inspectStrings.Add("AnomaliesExpected.MeatGrinder.Noise".Translate(mood?.noise ?? 0).RawText);
-                if (study > 2 && (mood?.bodyPartDefs?.Count() ?? 0) > 0 )
+                if (study > 2 && (mood?.bodyPartDefs?.Count() ?? 0) > 0)
                 {
                     inspectStrings.Add("AnomaliesExpected.MeatGrinder.BodyParts".Translate(String.Join(", ", mood.bodyPartDefs.Select(b => b.LabelCap))).RawText);
                 }
