@@ -2,9 +2,9 @@
 <Defs>
 
 	<PawnKindDef Name="RevenantKind">
-		<defName>AEBrokenStatue</defName>
+		<defName>AE_BrokenStatue</defName>
 		<label>broken statue</label>
-		<race>AEBrokenStatue</race>
+		<race>AE_BrokenStatue</race>
 		<defaultFactionType>Entities</defaultFactionType>
 		<overrideDeathOnDownedChance>1</overrideDeathOnDownedChance>
 		<forceDeathOnDowned>true</forceDeathOnDowned>
@@ -15,15 +15,15 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/AEBrokenStatue/AEBrokenStatue</texPath>
+					<texPath>Things/Pawn/BrokenStatue/AE_BrokenStatue</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<allowFlip>false</allowFlip>
-					<drawSize>2</drawSize>
+					<drawSize>2.6</drawSize>
 				</bodyGraphicData>
 				<silhouetteGraphicData>
 					<texPath>Things/Pawn/Revenant/Revenant_MenuIcon</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
-					<drawSize>2</drawSize>
+					<drawSize>2.6</drawSize>
 				</silhouetteGraphicData>
 			</li>
 		</lifeStages>
