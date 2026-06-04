@@ -20,7 +20,7 @@
 			<LeatherAmount>0</LeatherAmount>
 			<MeatAmount>0</MeatAmount>
 		</statBases>
-		<uiIconPath>Things/Pawn/Revenant/Revenant_MenuIcon</uiIconPath>
+		<uiIconPath>Things/Pawn/BrokenStatue/AE_BrokenStatue_MenuIcon</uiIconPath>
 		<tradeability>None</tradeability>
 		<hideStats>true</hideStats>
 		<onlyShowInspectString>true</onlyShowInspectString>
@@ -28,9 +28,9 @@
 		<race>
 			<thinkTreeMain>Revenant</thinkTreeMain>
 			<thinkTreeConstant>RevenantConstant</thinkTreeConstant>
-			<body>Human</body>
-			<baseBodySize>1</baseBodySize>
-			<baseHealthScale>10</baseHealthScale>
+			<body>AE_BrokenStatue</body>
+			<baseBodySize>2</baseBodySize>
+			<baseHealthScale>2</baseHealthScale>
 			<intelligence>ToolUser</intelligence>
 			<needsRest>false</needsRest>
 			<hasGenders>false</hasGenders>
@@ -39,7 +39,7 @@
 			<hasCorpse>false</hasCorpse>
 			<lifeExpectancy>1000</lifeExpectancy>
 			<soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
-			<renderTree>Revenant</renderTree>
+			<renderTree>AE_BrokenStatue</renderTree>
 			<startingAnimation>RevenantSpasm</startingAnimation>
 			<soundCallIntervalRange>120~240</soundCallIntervalRange>
 			<disableIgniteVerb>true</disableIgniteVerb>
@@ -60,53 +60,52 @@
 			<li>
 				<compClass>CompRevenant</compClass>
 			</li>
-			<li Class="CompProperties_HoldingPlatformTarget">
-				<baseEscapeIntervalMtbDays>45</baseEscapeIntervalMtbDays>
-				<lookForTargetOnEscape>false</lookForTargetOnEscape>
-			</li>
-			<li Class="CompProperties_AttachPoints">
-				<points>
-					<li>
-						<offset>(-.35, 0, .35)</offset>
-						<type>PlatformRestraint0</type>
-					</li>
-					<li>
-						<offset>(.35, 0, .35)</offset>
-						<type>PlatformRestraint1</type>
-					</li>
-					<li>
-						<offset>(.2, 0, -.71)</offset>
-						<type>PlatformRestraint2</type>
-					</li>
-					<li>
-						<offset>(-.2, 0, -.71)</offset>
-						<type>PlatformRestraint3</type>
-					</li>
-				</points>
-			</li>
-			<li Class="CompProperties_ProducesBioferrite">
-				<bioferriteDensity>4</bioferriteDensity>
-			</li>
-			<li Class="CompProperties_Studiable">
-				<frequencyTicks>120000</frequencyTicks>
-				<knowledgeCategory>Advanced</knowledgeCategory>
-				<anomalyKnowledge>3</anomalyKnowledge>
-				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
-				<requiresHoldingPlatform>true</requiresHoldingPlatform>
-			</li>
+			<!-- <li Class="CompProperties_HoldingPlatformTarget"> -->
+				<!-- <baseEscapeIntervalMtbDays>45</baseEscapeIntervalMtbDays> -->
+				<!-- <lookForTargetOnEscape>false</lookForTargetOnEscape> -->
+			<!-- </li> -->
+			<!-- <li Class="CompProperties_AttachPoints"> -->
+				<!-- <points> -->
+					<!-- <li> -->
+						<!-- <offset>(-.35, 0, .35)</offset> -->
+						<!-- <type>PlatformRestraint0</type> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <offset>(.35, 0, .35)</offset> -->
+						<!-- <type>PlatformRestraint1</type> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <offset>(.2, 0, -.71)</offset> -->
+						<!-- <type>PlatformRestraint2</type> -->
+					<!-- </li> -->
+					<!-- <li> -->
+						<!-- <offset>(-.2, 0, -.71)</offset> -->
+						<!-- <type>PlatformRestraint3</type> -->
+					<!-- </li> -->
+				<!-- </points> -->
+			<!-- </li> -->
+			<!-- <li Class="CompProperties_ProducesBioferrite"> -->
+				<!-- <bioferriteDensity>4</bioferriteDensity> -->
+			<!-- </li> -->
+			<!-- <li Class="CompProperties_Studiable"> -->
+				<!-- <frequencyTicks>120000</frequencyTicks> -->
+				<!-- <knowledgeCategory>Advanced</knowledgeCategory> -->
+				<!-- <anomalyKnowledge>3</anomalyKnowledge> -->
+				<!-- <minMonolithLevelForStudy>1</minMonolithLevelForStudy> -->
+				<!-- <requiresHoldingPlatform>true</requiresHoldingPlatform> -->
+			<!-- </li> -->
 		</comps>
 		<!-- Never actually used - revenant doesn't attack -->
 		<tools>
 			<li>
-				<label>head</label>
+				<label>bricks</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>3</power>
-				<cooldownTime>2</cooldownTime>
-				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<power>100</power>
+				<cooldownTime>10</cooldownTime>
+				<linkedBodyPartsGroup>Torso</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
-				<chanceFactor>0.2</chanceFactor>
 			</li>
 		</tools>
 	</ThingDef>
