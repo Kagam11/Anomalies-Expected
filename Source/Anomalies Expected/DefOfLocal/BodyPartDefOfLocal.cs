@@ -7,5 +7,6 @@ namespace AnomaliesExpected
     public static class BodyPartDefOfLocal
     {
         public static BodyPartDef Stomach;
+        public static BodyPartDef Spine;
     }
 }

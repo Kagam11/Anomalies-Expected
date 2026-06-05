@@ -4,7 +4,7 @@
 	<BodyPartDef Name="BodyPart_AEBaseSnowBall" Abstract="True">
 		<label>snowball</label>
 		<skinCovered>true</skinCovered>
-		<canScarify>true</canScarify>
+		<canScarify>false</canScarify>
 		<canSuggestAmputation>false</canSuggestAmputation>
 		<executionPartPriority>400</executionPartPriority>
 	</BodyPartDef>

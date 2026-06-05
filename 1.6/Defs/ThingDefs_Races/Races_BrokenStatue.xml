@@ -26,8 +26,8 @@
 		<onlyShowInspectString>true</onlyShowInspectString>
 		<hideMainDesc>true</hideMainDesc>
 		<race>
-			<thinkTreeMain>Revenant</thinkTreeMain>
-			<thinkTreeConstant>RevenantConstant</thinkTreeConstant>
+			<thinkTreeMain>AE_BrokenStatue</thinkTreeMain>
+			<thinkTreeConstant>AE_BrokenStatueConstant</thinkTreeConstant>
 			<body>AE_BrokenStatue</body>
 			<baseBodySize>2</baseBodySize>
 			<baseHealthScale>2</baseHealthScale>
@@ -57,42 +57,42 @@
 			</hediffGiverSets>
 		</race>
 		<comps>
-			<li>
-				<compClass>CompRevenant</compClass>
-			</li>
+			<!-- <li> -->
+				<!-- <compClass>CompRevenant</compClass> -->
+			<!-- </li> -->
 			<!-- <li Class="CompProperties_HoldingPlatformTarget"> -->
-				<!-- <baseEscapeIntervalMtbDays>45</baseEscapeIntervalMtbDays> -->
-				<!-- <lookForTargetOnEscape>false</lookForTargetOnEscape> -->
+			<!-- <baseEscapeIntervalMtbDays>45</baseEscapeIntervalMtbDays> -->
+			<!-- <lookForTargetOnEscape>false</lookForTargetOnEscape> -->
 			<!-- </li> -->
 			<!-- <li Class="CompProperties_AttachPoints"> -->
-				<!-- <points> -->
-					<!-- <li> -->
-						<!-- <offset>(-.35, 0, .35)</offset> -->
-						<!-- <type>PlatformRestraint0</type> -->
-					<!-- </li> -->
-					<!-- <li> -->
-						<!-- <offset>(.35, 0, .35)</offset> -->
-						<!-- <type>PlatformRestraint1</type> -->
-					<!-- </li> -->
-					<!-- <li> -->
-						<!-- <offset>(.2, 0, -.71)</offset> -->
-						<!-- <type>PlatformRestraint2</type> -->
-					<!-- </li> -->
-					<!-- <li> -->
-						<!-- <offset>(-.2, 0, -.71)</offset> -->
-						<!-- <type>PlatformRestraint3</type> -->
-					<!-- </li> -->
-				<!-- </points> -->
+			<!-- <points> -->
+			<!-- <li> -->
+			<!-- <offset>(-.35, 0, .35)</offset> -->
+			<!-- <type>PlatformRestraint0</type> -->
+			<!-- </li> -->
+			<!-- <li> -->
+			<!-- <offset>(.35, 0, .35)</offset> -->
+			<!-- <type>PlatformRestraint1</type> -->
+			<!-- </li> -->
+			<!-- <li> -->
+			<!-- <offset>(.2, 0, -.71)</offset> -->
+			<!-- <type>PlatformRestraint2</type> -->
+			<!-- </li> -->
+			<!-- <li> -->
+			<!-- <offset>(-.2, 0, -.71)</offset> -->
+			<!-- <type>PlatformRestraint3</type> -->
+			<!-- </li> -->
+			<!-- </points> -->
 			<!-- </li> -->
 			<!-- <li Class="CompProperties_ProducesBioferrite"> -->
-				<!-- <bioferriteDensity>4</bioferriteDensity> -->
+			<!-- <bioferriteDensity>4</bioferriteDensity> -->
 			<!-- </li> -->
 			<!-- <li Class="CompProperties_Studiable"> -->
-				<!-- <frequencyTicks>120000</frequencyTicks> -->
-				<!-- <knowledgeCategory>Advanced</knowledgeCategory> -->
-				<!-- <anomalyKnowledge>3</anomalyKnowledge> -->
-				<!-- <minMonolithLevelForStudy>1</minMonolithLevelForStudy> -->
-				<!-- <requiresHoldingPlatform>true</requiresHoldingPlatform> -->
+			<!-- <frequencyTicks>120000</frequencyTicks> -->
+			<!-- <knowledgeCategory>Advanced</knowledgeCategory> -->
+			<!-- <anomalyKnowledge>3</anomalyKnowledge> -->
+			<!-- <minMonolithLevelForStudy>1</minMonolithLevelForStudy> -->
+			<!-- <requiresHoldingPlatform>true</requiresHoldingPlatform> -->
 			<!-- </li> -->
 		</comps>
 		<!-- Never actually used - revenant doesn't attack -->
@@ -103,7 +103,8 @@
 					<li>Blunt</li>
 				</capacities>
 				<power>100</power>
-				<cooldownTime>10</cooldownTime>
+				<armorPenetration>100</armorPenetration>
+				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>Torso</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
 			</li>

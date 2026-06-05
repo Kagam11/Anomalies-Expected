@@ -51,6 +51,10 @@
     <Compile Include="CompProperties\CompProperties_ZoneOfEffect.cs" />
     <Compile Include="Comp\CompInteractable\Comp_TransformAfterStudy.cs" />
     <Compile Include="Comp\Comp_ZoneOfEffect.cs" />
+    <Compile Include="Comp\HediffComp\HediffComp_BrokenStatue.cs" />
+    <Compile Include="DefOfLocal\JobDefOfLocal.cs" />
+    <Compile Include="JobDriver\JobDriver_BrokenStatueAttack.cs" />
+    <Compile Include="ThinkNode_JobGiver_BrokenStatueAttack.cs" />
     <Compile Include="Thing\AEZoneOfEffect.cs" />
     <Compile Include="TopOnBuildings\TopOnBuilding_ClockHandActivity.cs" />
     <Compile Include="TopOnBuildings\TopOnBuilding_ClockHandHour.cs" />

@@ -18,6 +18,7 @@
 			<li>BloodFiltrationSource</li>
 			<li>ConsciousnessSource</li>
 			<li>MovingLimbCore</li>
+			<li>ManipulationLimbCore</li>
 		</tags>
 	</BodyPartDef>
 
@@ -26,6 +27,7 @@
 		<hitPoints>25</hitPoints>
 		<tags>
 			<li>SightSource</li>
+			<li>HearingSource</li>
 		</tags>
 	</BodyPartDef>
 
@@ -39,7 +41,6 @@
 		<defName>AE_MarbleAshlarD</defName>
 		<hitPoints>20</hitPoints>
 		<tags>
-			<li>MovingLimbCore</li>
 			<li>Mirrored</li>
 		</tags>
 	</BodyPartDef>
@@ -48,7 +49,6 @@
 		<defName>AE_MarbleAshlarE</defName>
 		<hitPoints>52</hitPoints>
 		<tags>
-			<li>MovingLimbCore</li>
 			<li>Mirrored</li>
 		</tags>
 	</BodyPartDef>

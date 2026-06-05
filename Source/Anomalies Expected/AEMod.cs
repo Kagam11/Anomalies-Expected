@@ -8,6 +8,9 @@ namespace AnomaliesExpected
     {
         public static AESettings Settings { get; private set; }
 
+        private float prevHeight = float.MaxValue;
+        private Vector2 scrollPos;
+
         public AEMod(ModContentPack content) : base(content)
         {
             Settings = GetSettings<AESettings>();
@@ -16,8 +19,10 @@ namespace AnomaliesExpected
         public override void DoSettingsWindowContents(Rect inRect)
         {
             base.DoSettingsWindowContents(inRect);
+            Rect rect = new Rect(0f, 0f, inRect.width - 20f, prevHeight);
+            Widgets.BeginScrollView(inRect, ref scrollPos, rect);
             Listing_Standard options = new Listing_Standard();
-            options.Begin(inRect);
+            options.Begin(rect);
             options.Label("AnomaliesExpected.Settings.BakingPies.ReplicationLimit".Translate(Settings.ReplicationLimit.ToString()));
             Settings.ReplicationLimit = (int)options.Slider(Settings.ReplicationLimit, 0, 5000);
             options.CheckboxLabeled("AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy".Translate().RawText, ref Settings.DespawnPiecesOnDestroy);
@@ -44,6 +49,8 @@ namespace AnomaliesExpected
             options.CheckboxLabeled("AnomaliesExpected.Settings.ObeliskClockwork.HandDay".Translate().RawText, ref Settings.NotifyClockworkHandDay);
             options.CheckboxLabeled("Disable Clockwork Obelisk [In case enountered issue]", ref Settings.DevDisableClockworkObelisk);
             options.GapLine();
+            options.CheckboxLabeled("Brocken Statue will only use basic melee attacks.", ref Settings.BrokenStatueOnlyMelee);
+            options.GapLine();
             if (Current.Game != null && options.ButtonText("AnomaliesExpected.Settings.ResearchTab.Unlock".Translate().RawText))
             {
                 Find.ResearchManager.Notify_MonolithLevelChanged(Find.Anomaly.Level);
@@ -53,7 +60,9 @@ namespace AnomaliesExpected
                 options.GapLine();
                 options.CheckboxLabeled("AnomaliesExpected.Settings.DevMode.Info".Translate().RawText, ref Settings.DevModeInfo);
             }
+            prevHeight = options.CurHeight;
             options.End();
+            Widgets.EndScrollView();
         }
 
         public override string SettingsCategory()

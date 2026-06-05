@@ -25,5 +25,12 @@
 		<driverClass>JobDriver_InteractThing</driverClass>
 		<reportString>taking gift.</reportString>
 	</JobDef>
+
+	<JobDef>
+		<defName>AE_BrokenStatueAttack</defName>
+		<driverClass>AnomaliesExpected.JobDriver_BrokenStatueAttack</driverClass>
+		<reportString>reaching TargetA.</reportString>
+		<checkOverrideOnDamage>Never</checkOverrideOnDamage>
+	</JobDef>
   
 </Defs>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<PawnKindDef Name="RevenantKind">
+	<PawnKindDef>
 		<defName>AE_BrokenStatue</defName>
 		<label>broken statue</label>
 		<race>AE_BrokenStatue</race>
@@ -27,12 +27,12 @@
 				</silhouetteGraphicData>
 			</li>
 		</lifeStages>
-		<!-- <startingHediffs> -->
-			<!-- <li> -->
-				<!-- <def>Hediff_AEBrokenStatue</def> -->
-				<!-- <severity>1</severity> -->
-			<!-- </li> -->
-		<!-- </startingHediffs> -->
+		<startingHediffs>
+			<li>
+				<def>Hediff_AEBrokenStatue</def>
+				<severity>0.5</severity>
+			</li>
+		</startingHediffs>
 		<combatPower>500</combatPower>
 		<disabledWorkTags>
 			<li>Violent</li>
