@@ -446,4 +446,46 @@
 		</stages>
 	</HediffDef>
 	
+	
+	
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Hediff_AEBrokenStatueImplant</defName>
+		<label>the blind spot vertebrae</label>
+		<labelNoun>the blind spot vertebrae</labelNoun>
+		<description>An installed anomalous implant, replicating the Snow Army's snow core, enabling the host to survive in lower temperatures. Nano-scale frostites induce cellular crystallization upon injury, accelerating regeneration in lower temperatures. However, this crystallization makes the cells vulnerable to high temperatures, destabilizing their structure. The host body also lowers the temperature of the surrounding air.\n\nRecieved damage x2, when on fire.\nMax effect at -100 degrees, including regeneration of missing parts.</description>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>2</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<organicAddedBodypart>true</organicAddedBodypart>
+		<keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+		<descriptionHyperlinks>
+			<ThingDef>AESnowCoreImplant</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>AESnowCoreImplant</spawnThingOnRemoved>
+		<defaultLabelColor>(0.54, 0.55, 0.56)</defaultLabelColor>
+		<comps>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_ObservingStage</compClass>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>observed</label>
+				<statOffsets>
+					<VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">10</VEF_MassCarryCapacity>
+				</statOffsets>
+			</li>
+			<li>
+				<label>out of sight</label>
+				<statOffsets>
+					<MoveSpeed>3</MoveSpeed>
+					<VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">10</VEF_MassCarryCapacity>
+				</statOffsets>
+				<minSeverity>1</minSeverity>
+			</li>
+		</stages>
+	</HediffDef>
+	
 </Defs>

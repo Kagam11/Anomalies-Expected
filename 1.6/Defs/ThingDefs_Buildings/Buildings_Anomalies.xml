@@ -1827,4 +1827,113 @@
 		</inspectorTabs>
 	</ThingDef>
 	
+	
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>AE_BrokenStatuePile</defName>
+		<label>broken statue pile</label>
+		<description>This elegant Christmas gift box is adorned with festive ribbons. It's the perfect container that holds a special surprise.</description>
+		<thingClass>AnomaliesExpected.Building_AE</thingClass>
+		<graphicData>
+			<texPath>Things/Building/AE_BrokenStatuePile</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<drawOffset>(0,0,0.5)</drawOffset>
+			<shadowData>
+				<volume>(0.32, 0.2, 1.06)</volume>
+				<offset>(0,0,0.15)</offset>
+			</shadowData>
+		</graphicData>
+		<size>(1,1)</size>
+		<uiIconScale>0.75</uiIconScale>
+		<canOverlapZones>false</canOverlapZones>
+		<minifiedDef>MinifiedThingAE</minifiedDef>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<altitudeLayer>Building</altitudeLayer>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.75</fillPercent>
+		<useHitPoints>false</useHitPoints>
+		<rotatable>false</rotatable>
+		<statBases>
+			<Mass>20</Mass>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Cleanliness>-30</Cleanliness>
+		</statBases>
+		<building>
+			<deconstructible>false</deconstructible>
+			<uninstallWork>2500</uninstallWork>
+		</building>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<surfaceType>Item</surfaceType>
+		<tickerType>Normal</tickerType>
+		<designationCategory/>
+		<killedLeavings>
+			<ChunkMarble>8</ChunkMarble>
+			<Meat_Twisted>50</Meat_Twisted>
+		</killedLeavings>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_BrokenStatue">
+				<activeTicks>250</activeTicks>
+				<cooldownTicks>10000</cooldownTicks>
+				<ticksToActivate>250</ticksToActivate>
+				<activateTexPath>Things/Building/AE_MeatGrinder</activateTexPath>
+ 
+				<activateLabelString>Press button</activateLabelString>
+				<activateDescString>Press button to activate machine.</activateDescString>
+				<guiLabelString>Choose who should activate this.</guiLabelString>
+				<jobString>press button</jobString>
+				<activatingStringPending>pressing button {0}</activatingStringPending>
+				<activatingString>pressing button {0}: {1}s</activatingString>
+				<onCooldownString>reactivating</onCooldownString>
+
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>4</fleckOnUsedScale>
+				<soundActivate>FlickSwitch</soundActivate>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<kindDef>AE_BrokenStatue</kindDef>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
+				<frequencyTicks>60000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<anomalyKnowledge>1</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>blood lake exit on the other side</AnomalyLabel>
+						<AnomalyDesc>A dark, viscous giant crimson pool, oozing and spreading, a stark contrast to the surrounding environment. This is an exit on the other side from Blood Lake on a territory of our facility. Can be entered to return to our facility.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#6/8 Blood Lake study report</label>
+						<text>Fleshmass response\n\nAbstract:\nAn exploration team encountered a hostile, flesh-infested environment on the other side of the blood lake. The team faced coordinated attacks from fleshbeasts and experienced a sense of déjà vu. Evidence of human infrastructure and a mysterious signal suggest a complex history and potential threat. Further exploration and research are necessary to understand the nature of this world.\n\nObservations:\nThe exploration team encountered a hostile environment dominated by flesh mass.\nThe soil beneath their feet was covered in the fleshmass, and they were subjected to continuous attacks from various directions.\nThe emergence of new fleshbeasts from underground nests suggests a coordinated assault.\nAdditionally, the team experienced long ranged acid spit attacks, further complicating the situation.\nSome team members reported a sense of familiarity with the location, and others discovered dog tags with names resembling their own.\n\nDiscussion:\nThe underground nests, likely of human origin, suggest a pre-existing infrastructure in this location.\nThe coordinated attacks by the fleshbeasts, including the acid spitters, imply a level of intelligence and organization that may be controlled by a hive mind.\nThe detected signal, matching our facility's frequency, but it require more time to find the exact location of transmitter.\n\nRecommendations:\nStudy: We should continue study blood lake exit to learn more about this location and pinpoint the source of detected signal.\nSecurity: The exploration team must maintain a strong defensive perimeter and be prepared for further attacks from fleshbeasts.</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>2</threshold>
+						<label>#7/8 Blood Lake study report</label>
+						<text>Strange Coincidence of Blood Lake Exit Location\n\nAbstract:\nAn exploration team ventured into a flesh-infested reality, discovering a familiar yet distorted landscape. The team encountered hostile environments, including flesh-based creatures and a pervasive flesh mass. Despite these challenges, the team successfully located a distress signal matching the facility's own. Further investigation of the signal source is necessary to understand the nature of this parallel reality and its connection to our own.\n\nObservations:\nSome members of the exploration team climbed a nearby mountain to gain a broader perspective of the surrounding terrain.\nThe team observed that the flesh mass infection extended as far as the eye could see.\nA night sky survey was conducted through clear patches in the cloudy sky.\nThe team successfully located the source of the detected signal, which was identified as an automated distress signal identical to those used in our facility.\n\nDiscussion:\nDespite the unfamiliar terrain, celestial observations and GPS data indicate that the team remains on the same planet and in the same general location as the facility.\nHowever, the presence of familiar names on recovered dog tags and the maintenance of communication with our facility suggest a probability of a parallel reality.\nBut what and why happened here? The reasons of this differences between realities remain a mystery.\nSignal source might be our only hope to figure this out.\n\nRecommendations:\nStudy: Prioritize reaching the signal source to gather information about the nature of differences in this reality. This should be main priority of Exploration Team. Information about it location is located on reciever in Blood Lake Exit.\nSecurity: aintain a strong defensive perimeter around the exploration team and ensure their safety during the investigation.</text>
+					</li>
+				</studyNotes>
+				<isSyncParentDB>true</isSyncParentDB>
+			</li>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
+	</ThingDef>
+	
 </Defs>

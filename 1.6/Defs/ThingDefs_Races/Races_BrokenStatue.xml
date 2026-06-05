@@ -14,6 +14,9 @@
 			<PsychicSensitivity>0</PsychicSensitivity>
 			<MinimumContainmentStrength>130</MinimumContainmentStrength>
 			<StaggerDurationFactor>0</StaggerDurationFactor>
+			<ArmorRating_Heat>0</ArmorRating_Heat>
+			<ArmorRating_Sharp>0.95</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.65</ArmorRating_Blunt>
 			<ToxicResistance>1</ToxicResistance>
 			<EMPResistance>1</EMPResistance>
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
@@ -36,7 +39,7 @@
 			<hasGenders>false</hasGenders>
 			<fleshType>EntityMechanical</fleshType>
 			<foodType>None</foodType>
-			<hasCorpse>false</hasCorpse>
+			<!-- <hasCorpse>false</hasCorpse> -->
 			<lifeExpectancy>1000</lifeExpectancy>
 			<soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
 			<renderTree>AE_BrokenStatue</renderTree>
