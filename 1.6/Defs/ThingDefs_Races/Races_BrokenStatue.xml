@@ -14,9 +14,9 @@
 			<PsychicSensitivity>0</PsychicSensitivity>
 			<MinimumContainmentStrength>130</MinimumContainmentStrength>
 			<StaggerDurationFactor>0</StaggerDurationFactor>
-			<ArmorRating_Heat>0</ArmorRating_Heat>
-			<ArmorRating_Sharp>0.95</ArmorRating_Sharp>
-			<ArmorRating_Blunt>0.65</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.75</ArmorRating_Heat>
+			<ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.75</ArmorRating_Blunt>
 			<ToxicResistance>1</ToxicResistance>
 			<EMPResistance>1</EMPResistance>
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
@@ -33,7 +33,7 @@
 			<thinkTreeConstant>AE_BrokenStatueConstant</thinkTreeConstant>
 			<body>AE_BrokenStatue</body>
 			<baseBodySize>2</baseBodySize>
-			<baseHealthScale>2</baseHealthScale>
+			<baseHealthScale>4</baseHealthScale>
 			<intelligence>ToolUser</intelligence>
 			<needsRest>false</needsRest>
 			<hasGenders>false</hasGenders>

@@ -12,6 +12,7 @@
 		<immuneToTraps>false</immuneToTraps>
 		<collidesWithPawns>true</collidesWithPawns>
 		<overrideDebugActionCategory>Entity</overrideDebugActionCategory>
+		<canOpenAnyDoor>true</canOpenAnyDoor>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>

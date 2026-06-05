@@ -233,7 +233,7 @@ namespace AnomaliesExpected
         {
             if (BrokenStatue.DestroyedOrNull())
             {
-                innerContainer.TryAdd(PawnGenerator.GeneratePawn(Props.kindDef, parent.Faction));
+                innerContainer.TryAdd(PawnGenerator.GeneratePawn(Props.kindDef, Faction.OfEntities));
             }
             IntVec3 intVec3 = parent.PositionHeld;
             Map map = parent.MapHeld;

@@ -49,9 +49,7 @@ namespace AnomaliesExpected
             options.CheckboxLabeled("AnomaliesExpected.Settings.ObeliskClockwork.HandDay".Translate().RawText, ref Settings.NotifyClockworkHandDay);
             options.CheckboxLabeled("Disable Clockwork Obelisk [In case enountered issue]", ref Settings.DevDisableClockworkObelisk);
             options.GapLine();
-            options.CheckboxLabeled("AnomaliesExpected.Settings.BrokenStatueOnlyMelee".Translate(), ref Settings.BrokenStatueOnlyMelee);
-            options.Label("AnomaliesExpected.Settings.BrokenStatueSpineDmgMult".Translate(Settings.BrokenStatueSpineDmgMult.ToString()));
-            Settings.BrokenStatueSpineDmgMult = Mathf.RoundToInt(options.Slider(Settings.BrokenStatueSpineDmgMult, 1, 10));
+            options.CheckboxLabeled("AnomaliesExpected.Settings.BrokenStatueDisableSpineBreaker".Translate(), ref Settings.BrokenStatueDisableSpineBreaker);
             options.GapLine();
             if (Current.Game != null && options.ButtonText("AnomaliesExpected.Settings.ResearchTab.Unlock".Translate().RawText))
             {

@@ -15,6 +15,8 @@ namespace AnomaliesExpected
         public Comp_BrokenStatue BrokenStatueComp => BrokenStatueCompCached ?? (BrokenStatueCompCached = BrokenStatue.TryGetComp<Comp_BrokenStatue>());
         private Comp_BrokenStatue BrokenStatueCompCached;
 
+        public int countWandering;
+
         IThingHolder IThingHolder.ParentHolder => Pawn;
 
         public void GetChildHolders(List<IThingHolder> outChildren)
@@ -37,26 +39,56 @@ namespace AnomaliesExpected
             base.CompPostTick(ref severityAdjustment);
         }
 
+        public DamageWorker.DamageResult BreakSpine(Pawn target)
+        {
+            return target.TakeDamage(new DamageInfo(Props.damageDef, Props.spineDMG, Props.spinePenetration, instigator: Pawn, hitPart: target.health.hediffSet.GetBodyPartRecord(BodyPartDefOfLocal.Spine)));
+        }
+
         public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
         {
             base.Notify_PawnDied(dinfo, culprit);
+            Transform();
+        }
+
+        public void Transform()
+        {
             if (BrokenStatue.DestroyedOrNull())
             {
                 innerContainer.TryAdd(ThingMaker.MakeThing(Props.spawnedThingDef));
             }
             IntVec3 intVec3 = Pawn.PositionHeld;
             Map map = Pawn.MapHeld;
-            ResurrectionUtility.TryResurrect(Pawn);
+            if (Pawn.Dead)
+            {
+                ResurrectionUtility.TryResurrect(Pawn);
+            }
             Pawn.DeSpawn();
             BrokenStatueComp.GetDirectlyHeldThings().TryAdd(Pawn);
             if (!innerContainer.TryDrop(BrokenStatue, intVec3, map, ThingPlaceMode.Near, out var lastResultingThing))
             {
                 if (!RCellFinder.TryFindRandomCellNearWith(intVec3, (IntVec3 c) => c.Standable(map), map, out var result, 1))
                 {
-                    Debug.LogError("Could not drop BrokenStatue!");
+                    Debug.LogError("Could not drop BrokenStatue pile!");
                 }
                 lastResultingThing = GenSpawn.Spawn(innerContainer.Take(BrokenStatue), result, map);
             }
+        }
+
+        public bool Wander(bool isFoundTarget = false)
+        {
+            if (isFoundTarget)
+            {
+                countWandering = 0;
+                return false;
+            }
+            countWandering++;
+            if (countWandering > 10)
+            {
+                countWandering = 0;
+                Transform();
+                return true;
+            }
+            return false;
         }
 
         public override void CompExposeData()
@@ -67,6 +99,7 @@ namespace AnomaliesExpected
             {
                 innerContainer.removeContentsIfDestroyed = false;
             }
+            Scribe_Values.Look(ref countWandering, "countWandering", 0);
         }
     }
 }

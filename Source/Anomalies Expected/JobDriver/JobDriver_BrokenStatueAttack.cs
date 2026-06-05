@@ -1,6 +1,5 @@
-﻿using RimWorld;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Verse;
 using Verse.AI;
 
@@ -9,6 +8,10 @@ namespace AnomaliesExpected
     public class JobDriver_BrokenStatueAttack : JobDriver
     {
         private const TargetIndex VictimInd = TargetIndex.A;
+        private Pawn victim => (Pawn)base.TargetThingA;
+
+        public HediffComp_BrokenStatue BrokenStatueComp => BrokenStatueCompCached ?? (BrokenStatueCompCached = pawn.health.hediffSet.GetHediffComps<HediffComp_BrokenStatue>().FirstOrDefault());
+        private HediffComp_BrokenStatue BrokenStatueCompCached;
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
@@ -27,21 +30,28 @@ namespace AnomaliesExpected
         protected override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedOrNull(VictimInd);
-            Toil stalk = Toils_Combat.FollowAndMeleeAttack(VictimInd, TargetIndex.B, delegate
+            Toil stalk = Toils_Combat.FollowAndMeleeAttack(VictimInd, TargetIndex.A, delegate
             {
+                Log.Message($"1");
                 if (!pawn.stances.FullBodyBusy)
                 {
-                    Pawn pawn4 = (Pawn)job.GetTarget(VictimInd).Thing;
-                    JobDriver curDriver = pawn.jobs.curDriver;
-                    pawn4.TakeDamage(new DamageInfo(DamageDefOf.Blunt, 20 * AEMod.Settings.BrokenStatueSpineDmgMult, 0.1f * AEMod.Settings.BrokenStatueSpineDmgMult, instigator: pawn, hitPart: pawn4.health.hediffSet.GetBodyPartRecord(BodyPartDefOfLocal.Spine)));
-                    curDriver.ReadyForNextToil();
+                    BrokenStatueComp.BreakSpine(victim);
+                    pawn.mindState.enemyTarget = null;
+                    ReadyForNextToil();
                 }
             });
-            Toil toil = stalk;
-            toil.initAction = (Action)Delegate.Combine(toil.initAction, (Action)delegate
+            stalk.tickAction = delegate
             {
-                pawn.Drawer.renderer.SetAnimation(AnimationDefOf.RevenantSpasm);
-            });
+                if (pawn.IsHashIntervalTick(250))
+                {
+                    Pawn target = ThinkNode_JobGiver_BrokenStatueAttack.ScanForTarget(pawn);
+                    if (target != null)
+                    {
+                        pawn.mindState.enemyTarget = target;
+                        job.SetTarget(VictimInd, target);
+                    }
+                }
+            };
             yield return stalk;
         }
     }

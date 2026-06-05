@@ -17,6 +17,9 @@
 		<comps>
 			<li Class="AnomaliesExpected.HediffCompProperties_BrokenStatue">
 				<spawnedThingDef>AE_BrokenStatuePile</spawnedThingDef>
+				<damageDef>Blunt</damageDef>
+				<spineDMG>100</spineDMG>
+				<spinePenetration>1</spinePenetration>
 			</li>
 		</comps>
 		<stages>

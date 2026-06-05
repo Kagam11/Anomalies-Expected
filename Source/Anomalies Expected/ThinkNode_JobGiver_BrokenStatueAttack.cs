@@ -10,13 +10,18 @@ namespace AnomaliesExpected
 {
     public class ThinkNode_JobGiver_BrokenStatueAttack : ThinkNode_JobGiver
     {
-        private static HashSet<Pawn> tmpTargets = new HashSet<Pawn>();
+        private static Faction tmpFaction;
 
         protected override Job TryGiveJob(Pawn pawn)
         {
-            Pawn target = ScanForTarget(pawn);
+            Pawn target = RevenantUtility.ScanForTarget(pawn);
+            HediffComp_BrokenStatue BrokenStatueComp = pawn.health.hediffSet.GetHediffComps<HediffComp_BrokenStatue>().FirstOrDefault();
             if (target == null)
             {
+                if (BrokenStatueComp.Wander())
+                {
+                    return null;
+                }
                 CellFinder.TryFindRandomReachableNearbyCell(pawn.Position, pawn.Map, 30, TraverseParms.For(TraverseMode.PassDoors), (IntVec3 x) => x.Standable(pawn.Map), null, out var result);
                 Job job = JobMaker.MakeJob(JobDefOf.GotoWander, result);
                 job.locomotionUrgency = LocomotionUrgency.Walk;
@@ -24,7 +29,9 @@ namespace AnomaliesExpected
             }
             else
             {
-                if (AEMod.Settings.BrokenStatueOnlyMelee)
+                BrokenStatueComp.Wander(true);
+                pawn.mindState.enemyTarget = target;
+                if (AEMod.Settings.BrokenStatueDisableSpineBreaker)
                 {
                     return JobMaker.MakeJob(JobDefOf.AttackMelee, target);
                 }
@@ -37,7 +44,9 @@ namespace AnomaliesExpected
 
         public static Pawn ScanForTarget(Pawn pawn, bool forced = false)
         {
-            tmpTargets.Clear();
+            Pawn target = null;
+            float dist = float.PositiveInfinity;
+            tmpFaction = pawn.Faction;
             TraverseParms traverseParms = TraverseParms.For(TraverseMode.PassDoors);
             RegionTraverser.BreadthFirstTraverse(pawn.Position, pawn.Map, (Region from, Region to) => to.Allows(traverseParms, isDestination: true), delegate (Region x)
             {
@@ -47,20 +56,22 @@ namespace AnomaliesExpected
                     Pawn pawn2 = (Pawn)list[i];
                     if (ValidTarget(pawn2))
                     {
-                        tmpTargets.Add(pawn2);
+                        float d = pawn.PositionHeld.DistanceTo(pawn2.PositionHeld);
+                        if (d < dist)
+                        {
+                            dist = d;
+                            target = pawn2;
+                        }
                     }
                 }
                 return false;
             });
-            if (tmpTargets.NullOrEmpty())
-            {
-                return null;
-            }
-            return tmpTargets.First();
+            return target;
         }
-        public static bool ValidTarget(Pawn pawn)
+
+        public static bool ValidTarget(Pawn target)
         {
-            return pawn.RaceProps.Humanlike && pawn.Faction != Faction.OfEntities && !pawn.IsSubhuman && !pawn.DeadOrDowned;
+            return target.RaceProps.Humanlike && tmpFaction.HostileTo(target.Faction) && !target.IsSubhuman && !target.DeadOrDowned;
         }
     }
 }
