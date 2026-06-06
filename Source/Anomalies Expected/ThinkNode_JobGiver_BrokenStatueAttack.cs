@@ -18,14 +18,15 @@ namespace AnomaliesExpected
             HediffComp_BrokenStatue BrokenStatueComp = pawn.health.hediffSet.GetHediffComps<HediffComp_BrokenStatue>().FirstOrDefault();
             if (target == null)
             {
-                if (BrokenStatueComp.Wander())
-                {
-                    return null;
-                }
-                CellFinder.TryFindRandomReachableNearbyCell(pawn.Position, pawn.Map, 30, TraverseParms.For(TraverseMode.PassDoors), (IntVec3 x) => x.Standable(pawn.Map), null, out var result);
-                Job job = JobMaker.MakeJob(JobDefOf.GotoWander, result);
-                job.locomotionUrgency = LocomotionUrgency.Walk;
-                return job;
+                BrokenStatueComp.Wander();
+                //if (BrokenStatueComp.Wander())
+                //{
+                //    return null;
+                //}
+                //CellFinder.TryFindRandomReachableNearbyCell(pawn.Position, pawn.Map, 30, TraverseParms.For(TraverseMode.PassDoors), (IntVec3 x) => x.Standable(pawn.Map), null, out var result);
+                //Job job = JobMaker.MakeJob(JobDefOf.GotoWander, result);
+                //job.locomotionUrgency = LocomotionUrgency.Walk;
+                return null;
             }
             else
             {

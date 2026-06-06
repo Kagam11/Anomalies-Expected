@@ -616,5 +616,39 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+	
+	
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_BrokenStatueSpawn</defName>
+		<label>pile of marble ashlars</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromOrbit</workerClass>
+		<letterLabel>Found pile of marble ashlars</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like an industrial-looking metal box as tall as a table. Several small doors interrupt the smooth surface on its sides, while a big hole with hidden inside blades sits atop it. A lone button rests next to the hole, hinting at some unknown function.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>30</earliestDay>
+		<baseChance>1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>60</minRefireDays>
+		<minThreatPoints>300</minThreatPoints>
+		<tags>
+			<li>AEBrokenStatue</li>
+		</tags>
+		<refireCheckTags>
+			<li>AEBrokenStatue</li>
+		</refireCheckTags>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_BrokenStatuePile</DeployableObjectDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0.5</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
 
 </Defs>

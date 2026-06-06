@@ -32,7 +32,6 @@ namespace AnomaliesExpected
             this.FailOnDespawnedOrNull(VictimInd);
             Toil stalk = Toils_Combat.FollowAndMeleeAttack(VictimInd, TargetIndex.A, delegate
             {
-                Log.Message($"1");
                 if (!pawn.stances.FullBodyBusy)
                 {
                     BrokenStatueComp.BreakSpine(victim);

@@ -339,4 +339,30 @@
 		</modExtensions>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_BrokenStatueSpawn</defName>
+		<label>broken statue</label>
+		<category>Advanced</category>
+		<uiIconPath>UI/CodexEntries/AE_BrokenStatue</uiIconPath>
+		<useDescriptionFrom>AE_BrokenStatuePile</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_BrokenStatuePile</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_BrokenStatueSpawn</li>
+		</provocationIncidents>
+		<!-- <discoveredResearchProjects> -->
+			<!-- <li></li> -->
+		<!-- </discoveredResearchProjects> -->
+		<orderInCategory>1300</orderInCategory>
+		<modExtensions>
+			<li Class="AnomaliesExpected.EntityCodexEntryDefExtension">
+				<groupName>Khovala</groupName>
+				<groupMembersThingDefs>
+					<li>AE_BrokenStatue</li>
+				</groupMembersThingDefs>
+			</li>
+		</modExtensions>
+	</EntityCodexEntryDef>
+
 </Defs>

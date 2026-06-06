@@ -34,11 +34,6 @@ namespace AnomaliesExpected
             innerContainer = new ThingOwner<Thing>(this, LookMode.Deep, removeContentsIfDestroyed: false);
         }
 
-        public override void CompPostTick(ref float severityAdjustment)
-        {
-            base.CompPostTick(ref severityAdjustment);
-        }
-
         public DamageWorker.DamageResult BreakSpine(Pawn target)
         {
             return target.TakeDamage(new DamageInfo(Props.damageDef, Props.spineDMG, Props.spinePenetration, instigator: Pawn, hitPart: target.health.hediffSet.GetBodyPartRecord(BodyPartDefOfLocal.Spine)));
@@ -56,6 +51,8 @@ namespace AnomaliesExpected
             {
                 innerContainer.TryAdd(ThingMaker.MakeThing(Props.spawnedThingDef));
             }
+            CompActivity ActivityComp = BrokenStatue.TryGetComp<CompActivity>();
+            ActivityComp.EnterPassiveState();
             IntVec3 intVec3 = Pawn.PositionHeld;
             Map map = Pawn.MapHeld;
             if (Pawn.Dead)

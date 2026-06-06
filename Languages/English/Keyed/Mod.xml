@@ -21,6 +21,9 @@
 	<AnomaliesExpected.Settings.ObeliskClockwork.HandHour>Notify of hour hand of Clockwork obelisk.</AnomaliesExpected.Settings.ObeliskClockwork.HandHour>
 	<AnomaliesExpected.Settings.ObeliskClockwork.HandDay>Notify of day hand of Clockwork obelisk.</AnomaliesExpected.Settings.ObeliskClockwork.HandDay>
 	
+	<AnomaliesExpected.Settings.BrokenStatue.DisableSpineBreaker>Will replace instant spine breaking effect of Broken Statue with normal attacks.</AnomaliesExpected.Settings.BrokenStatue.DisableSpineBreaker>
+	<AnomaliesExpected.Settings.BrokenStatue.Letter>Will get letter instead of message, when Broken Statue leaving containment.</AnomaliesExpected.Settings.BrokenStatue.Letter>
+	
 	<AnomaliesExpected.Settings.ResearchTab.Unlock>Try Unlock Anomalies Expected Research Tab</AnomaliesExpected.Settings.ResearchTab.Unlock>
 	
 	<AnomaliesExpected.Settings.DevMode.Info>Show additional information for debug.</AnomaliesExpected.Settings.DevMode.Info>

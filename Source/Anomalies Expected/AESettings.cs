@@ -20,8 +20,9 @@ namespace AnomaliesExpected
         public bool NotifyClockworkHandDay = true;
         public bool DevDisableClockworkObelisk = false;
         public bool BrokenStatueDisableSpineBreaker = false;
-        public int BrokenStatueSpineDmgMult = 5;
+        public bool BrokenStatueLetter = true;
         public bool DevModeInfo = false;
+        public bool IsIgnoringObserver = false;
 
         public override void ExposeData()
         {
@@ -42,7 +43,9 @@ namespace AnomaliesExpected
             Scribe_Values.Look(ref NotifyClockworkHandDay, "NotifyClockworkHandDay", defaultValue: true);
             Scribe_Values.Look(ref DevDisableClockworkObelisk, "DevDisableClockworkObelisk", defaultValue: false);
             Scribe_Values.Look(ref BrokenStatueDisableSpineBreaker, "BrokenStatueDisableSpineBreaker", defaultValue: false);
+            Scribe_Values.Look(ref BrokenStatueLetter, "BrokenStatueLetter", defaultValue: true);
             Scribe_Values.Look(ref DevModeInfo, "DevModeInfo", defaultValue: false);
+            Scribe_Values.Look(ref IsIgnoringObserver, "IsIgnoringObserver", defaultValue: false);
         }
     }
 }

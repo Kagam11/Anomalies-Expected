@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
+using static UnityEngine.Networking.UnityWebRequest;
+using Verse.AI;
 
 namespace AnomaliesExpected
 {
-    public class Comp_BrokenStatue : CompInteractable, IThingHolder
+    public class Comp_BrokenStatue : CompInteractable, IThingHolder, IActivity
     {
         public new CompProperties_BrokenStatue Props => (CompProperties_BrokenStatue)props;
 
@@ -14,6 +16,8 @@ namespace AnomaliesExpected
         public Pawn BrokenStatue => innerContainer.InnerListForReading.FirstOrDefault() as Pawn;
         public HediffComp_BrokenStatue BrokenStatueComp => BrokenStatueCompCached ?? (BrokenStatueCompCached = BrokenStatue.health.hediffSet.GetHediffComps<HediffComp_BrokenStatue>().FirstOrDefault());
         private HediffComp_BrokenStatue BrokenStatueCompCached;
+
+        private IntVec3 sendLocation = IntVec3.Invalid;
 
         public void GetChildHolders(List<IThingHolder> outChildren)
         {
@@ -36,7 +40,7 @@ namespace AnomaliesExpected
         protected CompStudiable Studiable => studiableCached ?? (studiableCached = parent.TryGetComp<CompStudiable>());
         private CompStudiable studiableCached;
 
-        public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? 4) < 4;
+        //public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? 4) < 4;
 
         //public override void PostPostMake()
         //{
@@ -104,80 +108,6 @@ namespace AnomaliesExpected
         //    TickNextState = Find.TickManager.TicksGame + Props.ticksWhenCarried;
         //}
 
-        //public void SpawnBeams()
-        //{
-        //    SpawnBeam(parent.Position);
-        //    for (int i = 1; i < beamNextCount; i++)
-        //    {
-        //        if (CellFinder.TryFindRandomCellNear(parent.Position, parent.Map, Props.beamSubRadius, delegate (IntVec3 newLoc)
-        //        {
-        //            return true;
-        //        }, out var result))
-        //        {
-        //            SpawnBeam(result);
-        //        }
-        //        else
-        //        {
-        //            SpawnBeam(parent.Position);
-        //        }
-        //    }
-        //    beamNextCount = Rand.RangeInclusive(1, beamMaxCount);
-        //    if (beamNextCount == beamMaxCount && beamNextCount < Props.beamMaxCount)
-        //    {
-        //        beamMaxCount = Mathf.Min(beamMaxCount + 1, Props.beamMaxCount);
-        //    }
-        //    if (studyMustBeEnabled)
-        //    {
-        //        TickUnlockStudy = Find.TickManager.TicksGame + Props.beamDuration;
-        //    }
-        //}
-
-        //public void SpawnBeam(IntVec3 position)
-        //{
-        //    PowerBeam obj = (PowerBeam)GenSpawn.Spawn(ThingDefOf.PowerBeam, position, parent.Map);
-        //    obj.duration = Props.beamDuration;
-        //    obj.instigator = parent;
-        //    obj.weaponDef = parent.def;
-        //    obj.StartStrike();
-        //}
-
-        //public void SkipToRandom()
-        //{
-        //    Map map = parent.Map;
-        //    IntVec3 result = IntVec3.Invalid;
-        //    if (CellFinder.TryFindRandomCell(map, delegate (IntVec3 newLoc)
-        //    {
-        //        return newLoc.Walkable(map) && !newLoc.Fogged(map) && newLoc.GetFirstPawn(map) == null && newLoc.GetRoom(map) != parent.Position.GetRoom(map);
-        //    }, out result) || CellFinder.TryFindRandomCell(map, delegate (IntVec3 newLoc)
-        //    {
-        //        return newLoc.Walkable(map) && !newLoc.Fogged(map) && newLoc.GetFirstPawn(map) == null;
-        //    }, out result))
-        //    {
-        //        TargetInfo targetInfoFrom = new TargetInfo(parent.Position, parent.Map);
-        //        SoundDefOfLocal.Psycast_Skip_Exit.PlayOneShot(targetInfoFrom);
-        //        FleckMaker.Static(targetInfoFrom.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipInnerExit, Props.teleportationFleckRadius);
-        //        TargetInfo targetInfoTo = new TargetInfo(result, parent.Map);
-        //        SoundDefOf.Psycast_Skip_Entry.PlayOneShot(targetInfoTo);
-        //        FleckMaker.Static(targetInfoTo.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipFlashEntry, Props.teleportationFleckRadius);
-        //        Find.TickManager.slower.SignalForceNormalSpeedShort();
-        //        if (AEMod.Settings.BeamTargetLetter)
-        //        {
-        //            Find.LetterStack.ReceiveLetter("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, "AnomaliesExpected.BeamTarget.LeftContainmentText".Translate(parent.LabelCap), LetterDefOf.ThreatSmall, targetInfoFrom);
-        //        }
-        //        else
-        //        {
-        //            Messages.Message("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, targetInfoFrom, MessageTypeDefOf.NegativeEvent);
-        //        }
-        //        parent.Position = result;
-        //    }
-        //    if (Studiable.studyEnabled)
-        //    {
-        //        Studiable.SetStudyEnabled(false);
-        //        studyMustBeEnabled = true;
-        //        TickUnlockStudy = -1;
-        //    }
-        //}
-
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             foreach (Gizmo gizmo in base.CompGetGizmosExtra())
@@ -225,11 +155,37 @@ namespace AnomaliesExpected
         //    });
         //}
 
-        protected override void OnInteracted(Pawn caster)
+        public override void OrderForceTarget(LocalTargetInfo target)
         {
+            if (ValidateTarget(target, showMessages: false))
+            {
+                TargetLocation(target.Pawn);
+            }
         }
 
-        public void Transform()
+        private void TargetLocation(Pawn caster)
+        {
+            TargetingParameters targetingParameters = TargetingParameters.ForCell();
+            targetingParameters.mapBoundsContractedBy = 1;
+            targetingParameters.validator = (TargetInfo c) => c.Cell.InBounds(caster.Map) && !c.Cell.Fogged(caster.Map) && caster.Map.reachability.CanReach(parent.PositionHeld, c.Cell, PathEndMode.OnCell, TraverseMode.PassDoors);
+            Find.Targeter.BeginTargeting(targetingParameters, delegate (LocalTargetInfo target)
+            {
+                sendLocation = target.Cell;
+                base.OrderForceTarget(caster);
+            }, delegate
+            {
+                Widgets.MouseAttachedLabel("AnomaliesExpected.BeamTarget.ChooseDest".Translate(parent.Label));
+            });
+        }
+
+        protected override void OnInteracted(Pawn caster)
+        {
+            Job job = JobMaker.MakeJob(JobDefOfLocal.AE_BrokenStatueGoto, sendLocation);
+            job.locomotionUrgency = LocomotionUrgency.Sprint;
+            Transform()?.jobs.StartJob(job);
+        }
+
+        public Pawn Transform()
         {
             if (BrokenStatue.DestroyedOrNull())
             {
@@ -246,7 +202,48 @@ namespace AnomaliesExpected
                     Debug.LogError("Could not drop BrokenStatue!");
                 }
                 lastResultingThing = GenSpawn.Spawn(innerContainer.Take(BrokenStatue), result, map);
+                return (Pawn)lastResultingThing;
             }
+            return (Pawn)lastResultingThing;
+        }
+
+        public void OnActivityActivated()
+        {
+            TargetInfo targetInfoFrom = new TargetInfo(parent.Position, parent.Map);
+            Find.TickManager.slower.SignalForceNormalSpeedShort();
+            if (AEMod.Settings.BrokenStatueLetter)
+            {
+                Find.LetterStack.ReceiveLetter("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, "AnomaliesExpected.BeamTarget.LeftContainmentText".Translate(parent.LabelCap), LetterDefOf.ThreatSmall, targetInfoFrom);
+            }
+            else
+            {
+                Messages.Message("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, targetInfoFrom, MessageTypeDefOf.NegativeEvent);
+            }
+            Transform();
+        }
+
+        public void OnPassive()
+        {
+        }
+
+        public bool ShouldGoPassive()
+        {
+            return false;
+        }
+
+        public bool CanBeSuppressed()
+        {
+            return true;
+        }
+
+        public bool CanActivate()
+        {
+            return true;
+        }
+
+        public string ActivityTooltipExtra()
+        {
+            return "AnomaliesExpected.BrokenStatue.ActivityTooltipExtra".Translate();
         }
 
         public override void PostExposeData()

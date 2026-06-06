@@ -49,7 +49,8 @@ namespace AnomaliesExpected
             options.CheckboxLabeled("AnomaliesExpected.Settings.ObeliskClockwork.HandDay".Translate().RawText, ref Settings.NotifyClockworkHandDay);
             options.CheckboxLabeled("Disable Clockwork Obelisk [In case enountered issue]", ref Settings.DevDisableClockworkObelisk);
             options.GapLine();
-            options.CheckboxLabeled("AnomaliesExpected.Settings.BrokenStatueDisableSpineBreaker".Translate(), ref Settings.BrokenStatueDisableSpineBreaker);
+            options.CheckboxLabeled("AnomaliesExpected.Settings.BrokenStatue.DisableSpineBreaker".Translate(), ref Settings.BrokenStatueDisableSpineBreaker);
+            options.CheckboxLabeled("AnomaliesExpected.Settings.BrokenStatue.Letter".Translate().RawText, ref Settings.BrokenStatueLetter);
             options.GapLine();
             if (Current.Game != null && options.ButtonText("AnomaliesExpected.Settings.ResearchTab.Unlock".Translate().RawText))
             {
@@ -59,6 +60,11 @@ namespace AnomaliesExpected
             {
                 options.GapLine();
                 options.CheckboxLabeled("AnomaliesExpected.Settings.DevMode.Info".Translate().RawText, ref Settings.DevModeInfo);
+                if (Settings.DevModeInfo)
+                {
+                    options.GapLine();
+                    options.CheckboxLabeled("Disable observer effect for Broken Statue", ref Settings.IsIgnoringObserver);
+                }
             }
             prevHeight = options.CurHeight;
             options.End();

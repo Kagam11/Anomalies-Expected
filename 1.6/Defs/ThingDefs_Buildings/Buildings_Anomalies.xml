@@ -600,6 +600,10 @@
 				
 				<jobDef>AE_RemoveAnomaly</jobDef>
 				
+				<requiredThings>
+					<ComponentSpacer>1</ComponentSpacer>
+				</requiredThings>
+				
 				<DestroyMode>2</DestroyMode>
 			</li>
 		</comps>
@@ -1881,7 +1885,7 @@
 				<activeTicks>250</activeTicks>
 				<cooldownTicks>10000</cooldownTicks>
 				<ticksToActivate>250</ticksToActivate>
-				<activateTexPath>Things/Building/AE_MeatGrinder</activateTexPath>
+				<activateTexPath>UI/Commands/ReleaseAnimals</activateTexPath>
  
 				<activateLabelString>Press button</activateLabelString>
 				<activateDescString>Press button to activate machine.</activateDescString>
@@ -1892,7 +1896,7 @@
 				<onCooldownString>reactivating</onCooldownString>
 
 				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
-				<fleckOnUsedScale>4</fleckOnUsedScale>
+				<fleckOnUsedScale>2</fleckOnUsedScale>
 				<soundActivate>FlickSwitch</soundActivate>
 
 				<targetingParameters>
@@ -1929,6 +1933,52 @@
 					</li>
 				</studyNotes>
 				<isSyncParentDB>true</isSyncParentDB>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
+				<ticksToActivate>20000</ticksToActivate>
+				<maintainProgress>true</maintainProgress>
+				<activateTexPath>UI/Designators/Deconstruct</activateTexPath>
+ 
+				<activateLabelString>Activate Protocol</activateLabelString>
+				<activateDescString>Activate Database Erasure Protocol. [Will destroy it]</activateDescString>
+				<guiLabelString>Choose who should activate protocol for this.</guiLabelString>
+				<jobString>activate protocol</jobString>
+				<activatingStringPending>activating protocol {0}</activatingStringPending>
+				<activatingString>activating protocol {0}: {1}s</activatingString>
+				<interactionProgressString>Activating protocol</interactionProgressString>
+
+				<soundActivate>Building_Deconstructed</soundActivate>
+				<interactionEffecter>ConstructMetal</interactionEffecter>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<jobDef>AE_RemoveAnomaly</jobDef>
+				<minStudy>3</minStudy>
+				
+				<requiredThings>
+					<Shard>1</Shard>
+				</requiredThings>
+				
+				<DestroyMode>2</DestroyMode>
+			</li>
+			<li Class="CompProperties_Activity">
+				<startingRange>0.2~0.4</startingRange>
+				<changePerDayBase>0.4</changePerDayBase>
+				<changePerDamage>0.001</changePerDamage>
+				<warning>0.9</warning>
+				<workerClass>ActivityWorker</workerClass>
+				<activityResearchFactorCurve>
+					<points>
+						<li>0, 0.5</li>
+						<li>0.5, 1</li>
+						<li>0.99, 2</li>
+					</points>
+				</activityResearchFactorCurve>
 			</li>
 		</comps>
 		<inspectorTabs>

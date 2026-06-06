@@ -32,5 +32,13 @@
 		<reportString>reaching TargetA.</reportString>
 		<checkOverrideOnDamage>Never</checkOverrideOnDamage>
 	</JobDef>
+
+	<JobDef>
+		<defName>AE_BrokenStatueGoto</defName>
+		<driverClass>JobDriver_Goto</driverClass>
+		<reportString>moving.</reportString>
+		<forceCompleteBeforeNextJob>true</forceCompleteBeforeNextJob>
+		<checkOverrideOnDamage>Never</checkOverrideOnDamage>
+	</JobDef>
   
 </Defs>
