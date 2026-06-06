@@ -1,8 +1,6 @@
 ﻿using RimWorld;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using Verse;
 using Verse.AI;
 
@@ -16,19 +14,7 @@ namespace AnomaliesExpected
         {
             Pawn target = RevenantUtility.ScanForTarget(pawn);
             HediffComp_BrokenStatue BrokenStatueComp = pawn.health.hediffSet.GetHediffComps<HediffComp_BrokenStatue>().FirstOrDefault();
-            if (target == null)
-            {
-                BrokenStatueComp.Wander();
-                //if (BrokenStatueComp.Wander())
-                //{
-                //    return null;
-                //}
-                //CellFinder.TryFindRandomReachableNearbyCell(pawn.Position, pawn.Map, 30, TraverseParms.For(TraverseMode.PassDoors), (IntVec3 x) => x.Standable(pawn.Map), null, out var result);
-                //Job job = JobMaker.MakeJob(JobDefOf.GotoWander, result);
-                //job.locomotionUrgency = LocomotionUrgency.Walk;
-                return null;
-            }
-            else
+            if (target != null)
             {
                 BrokenStatueComp.Wander(true);
                 pawn.mindState.enemyTarget = target;
@@ -41,6 +27,7 @@ namespace AnomaliesExpected
                     return JobMaker.MakeJob(JobDefOfLocal.AE_BrokenStatueAttack, target);
                 }
             }
+            return null;
         }
 
         public static Pawn ScanForTarget(Pawn pawn, bool forced = false)

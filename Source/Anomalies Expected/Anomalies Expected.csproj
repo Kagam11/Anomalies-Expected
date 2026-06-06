@@ -58,7 +58,8 @@
     <Compile Include="Comp\HediffComp\HediffComp_BrokenStatue.cs" />
     <Compile Include="DefOfLocal\JobDefOfLocal.cs" />
     <Compile Include="JobDriver\JobDriver_BrokenStatueAttack.cs" />
-    <Compile Include="ThinkNode_JobGiver_BrokenStatueAttack.cs" />
+    <Compile Include="ThinkNode\ThinkNode_BrokenStatueIdle.cs" />
+    <Compile Include="ThinkNode\ThinkNode_JobGiver_BrokenStatueAttack.cs" />
     <Compile Include="Thing\AEZoneOfEffect.cs" />
     <Compile Include="TopOnBuildings\TopOnBuilding_ClockHandActivity.cs" />
     <Compile Include="TopOnBuildings\TopOnBuilding_ClockHandHour.cs" />

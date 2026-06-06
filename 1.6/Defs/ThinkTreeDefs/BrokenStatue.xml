@@ -36,6 +36,8 @@
 					<targetAcquireRadius>200</targetAcquireRadius>
 					<targetKeepRadius>220</targetKeepRadius>
 				</li>
+				
+				<li Class="AnomaliesExpected.ThinkNode_BrokenStatueIdle" />
 
 				<!-- Idle -->
 				<li Class="ThinkNode_Tagger">
