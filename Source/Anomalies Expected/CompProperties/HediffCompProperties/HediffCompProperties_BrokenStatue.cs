@@ -8,6 +8,8 @@ namespace AnomaliesExpected
         public DamageDef damageDef;
         public float spineDMG = 100;
         public float spinePenetration = 1;
+        public SoundDef soundTransform;
+        public SoundDef soundSpineBreak;
 
         public HediffCompProperties_BrokenStatue()
         {

@@ -39,20 +39,19 @@
 			<hasGenders>false</hasGenders>
 			<fleshType>EntityMechanical</fleshType>
 			<foodType>None</foodType>
-			<!-- <hasCorpse>false</hasCorpse> -->
 			<lifeExpectancy>1000</lifeExpectancy>
 			<soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
 			<renderTree>AE_BrokenStatue</renderTree>
 			<startingAnimation>RevenantSpasm</startingAnimation>
-			<soundCallIntervalRange>120~240</soundCallIntervalRange>
+			<soundCallIntervalRange>240~480</soundCallIntervalRange>
 			<disableIgniteVerb>true</disableIgniteVerb>
 			<trainability>None</trainability>
 			<lifeStageAges>
 				<li>
 					<def>EntityFullyFormed</def>
-					<soundCall>Pawn_Revenant_Call</soundCall>
-					<soundWounded>Pawn_Revenant_Wounded</soundWounded>
-					<soundDeath>Pawn_Revenant_Death</soundDeath>
+					<soundCall>AE_BrokenStatue_Call</soundCall>
+					<soundWounded>AE_BrokenStatue_Wounded</soundWounded>
+					<soundDeath>AE_BrokenStatue_Death</soundDeath>
 				</li>
 			</lifeStageAges>
 			<hediffGiverSets>
@@ -60,45 +59,30 @@
 			</hediffGiverSets>
 		</race>
 		<comps>
-			<!-- <li> -->
-				<!-- <compClass>CompRevenant</compClass> -->
-			<!-- </li> -->
-			<!-- <li Class="CompProperties_HoldingPlatformTarget"> -->
-			<!-- <baseEscapeIntervalMtbDays>45</baseEscapeIntervalMtbDays> -->
-			<!-- <lookForTargetOnEscape>false</lookForTargetOnEscape> -->
-			<!-- </li> -->
-			<!-- <li Class="CompProperties_AttachPoints"> -->
-			<!-- <points> -->
-			<!-- <li> -->
-			<!-- <offset>(-.35, 0, .35)</offset> -->
-			<!-- <type>PlatformRestraint0</type> -->
-			<!-- </li> -->
-			<!-- <li> -->
-			<!-- <offset>(.35, 0, .35)</offset> -->
-			<!-- <type>PlatformRestraint1</type> -->
-			<!-- </li> -->
-			<!-- <li> -->
-			<!-- <offset>(.2, 0, -.71)</offset> -->
-			<!-- <type>PlatformRestraint2</type> -->
-			<!-- </li> -->
-			<!-- <li> -->
-			<!-- <offset>(-.2, 0, -.71)</offset> -->
-			<!-- <type>PlatformRestraint3</type> -->
-			<!-- </li> -->
-			<!-- </points> -->
-			<!-- </li> -->
-			<!-- <li Class="CompProperties_ProducesBioferrite"> -->
-			<!-- <bioferriteDensity>4</bioferriteDensity> -->
-			<!-- </li> -->
-			<!-- <li Class="CompProperties_Studiable"> -->
-			<!-- <frequencyTicks>120000</frequencyTicks> -->
-			<!-- <knowledgeCategory>Advanced</knowledgeCategory> -->
-			<!-- <anomalyKnowledge>3</anomalyKnowledge> -->
-			<!-- <minMonolithLevelForStudy>1</minMonolithLevelForStudy> -->
-			<!-- <requiresHoldingPlatform>true</requiresHoldingPlatform> -->
-			<!-- </li> -->
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<anomalyKnowledge>3</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<requiresHoldingPlatform>true</requiresHoldingPlatform>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotesManualUnlockable>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyDesc>A dark, viscous giant crimson pool, oozing and spreading, a stark contrast to the surrounding environment. The substance within is a blood-like liquid, composed primarily of blood with a bioferrite admixture. Occasiounally small fleshbeasts will emerge from it. Decrease in liquid density imply the iminent emergence of big group of fleshbeasts.\n\nCan be entered for an expedition to the unknown territory.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
+						<threshold>2.5</threshold>
+						<label>kill study report</label>
+						<text>Expedition\n\nAbstract:\nA daring expedition into the depths of the blood lake has led to the discovery of a strange, fleshmass-infested world. The exploration team encountered hostile environments, including gravitational anomalies and aggressive fleshbeasts. Despite these challenges, the team successfully breached the high-density region and emerged into an unknown landscape. Further exploration and research are necessary to understand the nature of this alien world and the potential threats it poses.\n\nObservations:\nAn exploration team, consisting of [REDACTED], entered an experimental submarine equipped to penetrate the high-density regions of the blood lake.\nThe submarine was successfully deployed and its primary functions tested.\nThe team began their descent, reaching a depth of 150 meters. The reinforced submarine hull proved effective in defending against multiple attacks from small fleshbeasts.\nAt 250 meters, the team experienced a sudden shift in gravity, leading to minor injuries. The submarine's orientation system automatically adjusted to the new gravitational vector.\nAt 425 meters, a large fleshbeast attacked the submarine, puncturing its hull. The crew was able to quickly seal the breach and deter the creature with an electric pulse.\nThe submarine continued its descent, reaching a depth of 500 meters before surfacing.\nAfter double checking the air, temperature and radiation, exploration team leaving the submarine.\nThe team observed a dim, cloudy sky and a landscape heavily infested with flesh mass and numerous dormant or active fleshbeasts.\nSensors detected a weak signal in the vicinity.\n\nOutcome:\nThe exploration team successfully breached the high-density region of the blood lake and emerged into an unknown, flesmass infected environment.\n\nDiscussion:\nThe discovery of a sky and celstial light source, raises significant questions about the nature of the blood lake.\nThe linear descent of 500 meters suggests a tunnel-like structure, yet the emergence into an open area challenges this assumption.\nThe pervasive fleshmass and the presence of active fleshbeasts indicate a hostile environment.\nThe detected signal, potentially originating from a technological device, offers a tantalizing clue about the history and purpose of this location.\n\nRecommendations:\nStudy: A comprehensive study of the newly discovered location is necessary to understand its nature, origins, and potential threats. This also may help with finding the source of this signal.\nSecurity: We must establish a defensive perimeter and prepare from potential attacks by fleshbeasts.</text>
+						<ThreatClass>4</ThreatClass>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+				</studyNotesManualUnlockable>
+				<isSyncWithParent>true</isSyncWithParent>
+				<isCreateEntityEntryWithoutCodexEntry>true</isCreateEntityEntryWithoutCodexEntry>
+				<category>Advanced</category>
+			</li>
 		</comps>
-		<!-- Never actually used - revenant doesn't attack -->
 		<tools>
 			<li>
 				<label>bricks</label>
@@ -112,6 +96,9 @@
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
 			</li>
 		</tools>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
 	</ThingDef>
   
 </Defs>

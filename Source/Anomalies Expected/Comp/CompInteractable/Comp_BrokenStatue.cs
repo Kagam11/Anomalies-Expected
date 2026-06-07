@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
-using static UnityEngine.Networking.UnityWebRequest;
 using Verse.AI;
+using Verse.Sound;
 
 namespace AnomaliesExpected
 {
@@ -17,7 +17,26 @@ namespace AnomaliesExpected
         public HediffComp_BrokenStatue BrokenStatueComp => BrokenStatueCompCached ?? (BrokenStatueCompCached = BrokenStatue.health.hediffSet.GetHediffComps<HediffComp_BrokenStatue>().FirstOrDefault());
         private HediffComp_BrokenStatue BrokenStatueCompCached;
 
+        public CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
+        private CompAEStudyUnlocks studyUnlocksCached;
+
+        protected CompStudiable Studiable => studiableCached ?? (studiableCached = parent.TryGetComp<CompStudiable>());
+        private CompStudiable studiableCached;
+
+        public CompActivity ActivityComp => activityInt ?? (activityInt = parent.TryGetComp<CompActivity>());
+        private CompActivity activityInt;
+
+        public override bool HideInteraction => !Props.researchProjectDef.IsFinished;
+
         private IntVec3 sendLocation = IntVec3.Invalid;
+
+        private Sustainer passiveSustainer;
+
+        private static readonly SimpleCurve SustainerActivityCurve = new SimpleCurve
+        {
+            new CurvePoint(0.4f, 0.1f),
+            new CurvePoint(0.9f, 1f)
+        };
 
         public void GetChildHolders(List<IThingHolder> outChildren)
         {
@@ -33,14 +52,6 @@ namespace AnomaliesExpected
         {
             innerContainer = new ThingOwner<Thing>(this, LookMode.Deep, removeContentsIfDestroyed: false);
         }
-
-        protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
-        private CompAEStudyUnlocks studyUnlocksCached;
-
-        protected CompStudiable Studiable => studiableCached ?? (studiableCached = parent.TryGetComp<CompStudiable>());
-        private CompStudiable studiableCached;
-
-        //public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? 4) < 4;
 
         //public override void PostPostMake()
         //{
@@ -60,36 +71,16 @@ namespace AnomaliesExpected
         //    }
         //}
 
-        //public override void CompTick()
-        //{
-        //    base.CompTick();
-        //    if (Find.TickManager.TicksGame >= TickNextState && parent.Spawned)
-        //    {
-        //        switch (beamTargetState)
-        //        {
-        //            case BeamTargetState.Searching:
-        //                {
-        //                    beamTargetState = BeamTargetState.Activating;
-        //                    SkipToRandom();
-        //                    TickNextState = Find.TickManager.TicksGame + Props.ticksPerBeamActivationPreparation;
-        //                    break;
-        //                }
-        //            case BeamTargetState.Activating:
-        //                {
-        //                    beamTargetState = BeamTargetState.Searching;
-        //                    SpawnBeams();
-        //                    TickNextState = Find.TickManager.TicksGame + Props.beamIntervalRange.RandomInRange;
-        //                    break;
-        //                }
-        //        }
-        //    }
-        //    if (studyMustBeEnabled && !Studiable.studyEnabled && TickUnlockStudy > -1 && Find.TickManager.TicksGame >= TickUnlockStudy)
-        //    {
-        //        Studiable.SetStudyEnabled(studyMustBeEnabled);
-        //        studyMustBeEnabled = false;
-        //        TickUnlockStudy = -1;
-        //    }
-        //}
+        public override void CompTick()
+        {
+            base.CompTick();
+            if (passiveSustainer == null || passiveSustainer.Ended)
+            {
+                passiveSustainer = Props.soundPassive.TrySpawnSustainer(SoundInfo.InMap(parent, MaintenanceType.PerTick));
+            }
+            passiveSustainer.info.volumeFactor = SustainerActivityCurve.Evaluate(ActivityComp.ActivityLevel);
+            passiveSustainer.Maintain();
+        }
 
         //public void ManualActivation()
         //{
@@ -101,7 +92,7 @@ namespace AnomaliesExpected
         //    SoundDefOfLocal.Psycast_Skip_Exit.PlayOneShot(targetInfoFrom);
         //    FleckMaker.Static(targetInfoFrom.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipInnerExit, Props.teleportationFleckRadius);
         //    TargetInfo targetInfoTo = new TargetInfo(sendLocation, parent.Map);
-        //    SoundDefOf.Psycast_Skip_Entry.PlayOneShot(targetInfoTo);
+        
         //    FleckMaker.Static(targetInfoTo.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipFlashEntry, Props.teleportationFleckRadius);
         //    parent.Position = sendLocation;
         //    beamTargetState = BeamTargetState.Activating;
@@ -190,9 +181,14 @@ namespace AnomaliesExpected
             if (BrokenStatue.DestroyedOrNull())
             {
                 innerContainer.TryAdd(PawnGenerator.GeneratePawn(Props.kindDef, Faction.OfEntities));
+                BrokenStatue.TryGetComp<CompAEStudyUnlocks>()?.SetParentThing(parent);
             }
             IntVec3 intVec3 = parent.PositionHeld;
             Map map = parent.MapHeld;
+            if (!Props.soundTransform.NullOrUndefined())
+            {
+                Props.soundTransform.PlayOneShotOnCamera();
+            }
             parent.DeSpawn();
             BrokenStatueComp.GetDirectlyHeldThings().TryAdd(parent);
             if (!innerContainer.TryDrop(BrokenStatue, intVec3, map, ThingPlaceMode.Near, out var lastResultingThing))
@@ -219,6 +215,7 @@ namespace AnomaliesExpected
             {
                 Messages.Message("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, targetInfoFrom, MessageTypeDefOf.NegativeEvent);
             }
+            StudyUnlocks.UnlockStudyNoteManual(0);
             Transform();
         }
 

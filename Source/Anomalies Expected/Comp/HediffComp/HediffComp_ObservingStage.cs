@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -15,8 +16,7 @@ namespace AnomaliesExpected
             {
                 if (!(AEMod.Settings.IsIgnoringObserver || isIgnoringObserver) && Pawn.SpawnedOrAnyParentSpawned)
                 {
-                    Vector2 pos = (Vector2)Find.Camera.WorldToScreenPoint(Pawn.DrawPos) / Prefs.UIScale;
-                    if (pos.x >= 0 && pos.y >= 0 && pos.x <= Screen.width && pos.y <= Screen.height)
+                    if (Find.CameraDriver.CurrentViewRect.Contains(Pawn.PositionHeld))
                     {
                         parent.Severity = 0.5f;
                         return;
@@ -28,7 +28,7 @@ namespace AnomaliesExpected
 
         public override IEnumerable<Gizmo> CompGetGizmos()
         {
-            if (DebugSettings.ShowDevGizmos)
+            if (DebugSettings.ShowDevGizmos && AEMod.Settings.DevModeInfo)
             {
                 yield return new Command_Action
                 {

@@ -526,5 +526,21 @@
 		<researchViewX>6</researchViewX>
 		<researchViewY>4</researchViewY>
 	</ResearchProjectDef>
+	
+	
+
+	<ResearchProjectDef>
+		<defName>AEAnalyzeBrokenStatue</defName>
+		<label>analyze broken statue</label>
+		<description>Examining clockwork obelisk's data to construct a decoy speedometer.</description>
+		<tab>AnomaliesExpected</tab>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesBSA</li>
+		</requiredAnalyzed>
+		<knowledgeCost>35</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>5</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
 
 </Defs>

@@ -15,19 +15,10 @@ namespace AnomaliesExpected
         private CompAEStudyUnlocks studyUnlocksCached;
 
         public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? Props.minStudy) < Props.minStudy && !isCanDestroyEarly && !isCanDestroyForced;
-        protected bool isCanDestroyEarly;
+        protected bool isCanDestroyEarly => Props.DestroyUnlockResearchDef?.IsFinished ?? false;
         public bool isCanDestroyForced;
 
         public ThingDefCountClass requiredThing => Props.requiredThings.FirstOrDefault();
-
-        public override void PostSpawnSetup(bool respawningAfterLoad)
-        {
-            base.PostSpawnSetup(respawningAfterLoad);
-            if (!respawningAfterLoad)
-            {
-                isCanDestroyEarly = Props.DestroyUnlockResearchDef?.IsFinished ?? false;
-            }
-        }
 
         public virtual void DestroyAnomaly(Pawn caster = null)
         {
@@ -121,7 +112,6 @@ namespace AnomaliesExpected
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look(ref isCanDestroyEarly, "isCanDestroyEarly", false);
             Scribe_Values.Look(ref isCanDestroyForced, "isCanDestroyForced", false);
         }
 

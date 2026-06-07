@@ -9,7 +9,7 @@
 		<priorityMode>PrioritizeExisting</priorityMode>
 		<subSounds>
 			<li>
-				<muteWhenPaused>True</muteWhenPaused>   
+				<muteWhenPaused>True</muteWhenPaused>
 				<grains>
 					<li Class="AudioGrain_Clip">
 						<clipPath>Building/Clockwork/AE_ClockworkTickA</clipPath>
@@ -31,7 +31,7 @@
 		<priorityMode>PrioritizeExisting</priorityMode>
 		<subSounds>
 			<li>
-				<muteWhenPaused>True</muteWhenPaused>   
+				<muteWhenPaused>True</muteWhenPaused>
 				<grains>
 					<li Class="AudioGrain_Clip">
 						<clipPath>Building/Clockwork/AE_ClockworkTickB</clipPath>
@@ -53,7 +53,7 @@
 		<priorityMode>PrioritizeExisting</priorityMode>
 		<subSounds>
 			<li>
-				<muteWhenPaused>True</muteWhenPaused>    
+				<muteWhenPaused>True</muteWhenPaused>
 				<grains>
 					<li Class="AudioGrain_Clip">
 						<clipPath>Building/Clockwork/AE_ClockworkTickC</clipPath>
@@ -63,6 +63,31 @@
 				<volumeRange>75</volumeRange>
 				<sustainAttack>2.5</sustainAttack>
 				<sustainRelease>2.5</sustainRelease>
+			</li>
+		</subSounds>
+	</SoundDef>
+	
+	
+
+	<SoundDef>
+		<defName>AE_BrokenStatuePassive</defName>
+		<sustain>True</sustain>
+		<context>MapOnly</context>
+		<maxVoices>1</maxVoices>
+		<priorityMode>PrioritizeNearest</priorityMode>
+		<subSounds>
+			<li>
+				<muteWhenPaused>True</muteWhenPaused>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>Interact/Work/Construct/Stone/Stone_Chunk_Light</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>40~45</volumeRange>
+				<pitchRange>0.9~1.1</pitchRange>
+				<distRange>25~50</distRange>
+				<repeatMode>NeverTwice</repeatMode>
+				<sustainLoop>False</sustainLoop>
 			</li>
 		</subSounds>
 	</SoundDef>

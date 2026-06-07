@@ -16,6 +16,8 @@
 				<damageDef>Blunt</damageDef>
 				<spineDMG>100</spineDMG>
 				<spinePenetration>1</spinePenetration>
+				<soundTransform>AE_BrokenStatue_Scream</soundTransform>
+				<soundSpineBreak>AE_BrokenStatue_BreakSpine</soundSpineBreak>
 			</li>
 		</comps>
 		<stages>

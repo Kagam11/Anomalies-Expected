@@ -351,9 +351,9 @@
 		<provocationIncidents>
 			<li>AE_IncidentDef_BrokenStatueSpawn</li>
 		</provocationIncidents>
-		<!-- <discoveredResearchProjects> -->
-			<!-- <li></li> -->
-		<!-- </discoveredResearchProjects> -->
+		<discoveredResearchProjects>
+			<li>AEAnalyzeBrokenStatue</li>
+		</discoveredResearchProjects>
 		<orderInCategory>1300</orderInCategory>
 		<modExtensions>
 			<li Class="AnomaliesExpected.EntityCodexEntryDefExtension">
