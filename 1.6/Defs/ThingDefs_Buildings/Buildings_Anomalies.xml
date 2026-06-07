@@ -1880,7 +1880,7 @@
 		<designationCategory/>
 		<killedLeavings>
 			<ChunkMarble>8</ChunkMarble>
-			<Meat_Twisted>50</Meat_Twisted>
+			<AEBrokenStatueSpine>1</AEBrokenStatueSpine>
 		</killedLeavings>
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_BrokenStatue">

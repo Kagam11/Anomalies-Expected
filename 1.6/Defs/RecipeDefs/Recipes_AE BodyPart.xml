@@ -196,5 +196,41 @@
 		<jobString>Removing snow core implant.</jobString>
 		<removesHediff>AESnowCoreImplant</removesHediff>
 	</RecipeDef>
+	
+	
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallAEBrokenStatueSpine</defName>
+		<label>install the blind spot vertebrae</label>
+		<description>Install the blind spot vertebrae.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEBrokenStatueSpine</ThingDef>
+			<HediffDef>Hediff_AEBrokenStatueSpine</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing the blind spot vertebrae.</jobString>
+		<surgeryOutcomeEffect IsNull="True"/>
+		<mutantBlacklist>
+			<li>Ghoul</li>
+		</mutantBlacklist>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AEBrokenStatueSpine</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AEBrokenStatueSpine</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Spine</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Hediff_AEBrokenStatueSpine</addsHediff>
+	</RecipeDef>
   
 </Defs>
