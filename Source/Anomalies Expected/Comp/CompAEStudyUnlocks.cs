@@ -70,7 +70,8 @@ namespace AnomaliesExpected
                 for (int i = 0; i < StudyNotesAll.Count(); i++)
                 {
                     StudyNote studyNote = StudyNotesAll[i];
-                    ChoiceLetter choiceLetterSource = entityEntry.letters.FirstOrDefault((ChoiceLetter cl) => cl.Label == studyNote.label);
+                    string studyNoteLabel = studyNote.label.CapitalizeFirst();
+                    ChoiceLetter choiceLetterSource = entityEntry.letters.FirstOrDefault((ChoiceLetter cl) => cl.Label == studyNoteLabel);
                     if (choiceLetterSource != null)
                     {
                         TaggedString label = studyNote.label.Replace("{PAWN_nameDef}", "AnomaliesExpected.Misc.Redacted".Translate());
@@ -121,7 +122,8 @@ namespace AnomaliesExpected
                 for (int i = 0; i < StudyNotesAll.Count(); i++)
                 {
                     StudyNote studyNote = StudyNotesAll[i];
-                    ChoiceLetter choiceLetterSource = compAEStudyUnlocksParent.Letters.FirstOrDefault((ChoiceLetter cl) => cl.Label == studyNote.label);
+                    string studyNoteLabel = studyNote.label.CapitalizeFirst();
+                    ChoiceLetter choiceLetterSource = compAEStudyUnlocksParent.Letters.FirstOrDefault((ChoiceLetter cl) => cl.Label == studyNoteLabel);
                     if ((studyNote is AEStudyNote aeStudyNote) && aeStudyNote.isSyncWithDB && choiceLetterSource != null)
                     {
                         TaggedString label = studyNote.label.Replace("{PAWN_nameDef}", "AnomaliesExpected.Misc.Redacted".Translate());
@@ -156,7 +158,8 @@ namespace AnomaliesExpected
             if (Props is CompProperties_AEStudyUnlocks aeProps)
             {
                 StudyNote studyNote = aeProps.studyNotesManualUnlockable.ElementAtOrDefault(index);
-                if (studyNote != null && !letters.Any((ChoiceLetter cl) => cl.Label == studyNote.label))
+                string studyNoteLabel = studyNote.label.CapitalizeFirst();
+                if (studyNote != null && !letters.Any((ChoiceLetter cl) => cl.Label == studyNoteLabel))
                 {
                     if (studier.NullOrEmpty())
                     {
@@ -173,6 +176,7 @@ namespace AnomaliesExpected
                     {
                         UpdateFromStudyNote(studyNote);
                     }
+                    SyncLetterWithParent(choiceLetter);
                     GameComponent_AnomaliesExpected.instance.SyncEntityEntry(this);
                 }
             }
@@ -188,7 +192,8 @@ namespace AnomaliesExpected
             if (Props is CompProperties_AEStudyUnlocks aeProps)
             {
                 StudyNote studyNote = aeProps.studyNotesManualUnlockable.ElementAtOrDefault(index);
-                if (studyNote != null && letters.Any((ChoiceLetter cl) => cl.Label == studyNote.label))
+                string studyNoteLabel = studyNote.label.CapitalizeFirst();
+                if (studyNote != null && letters.Any((ChoiceLetter cl) => cl.Label == studyNoteLabel))
                 {
                     return true;
                 }
@@ -224,6 +229,11 @@ namespace AnomaliesExpected
         protected override void Notify_StudyLevelChanged(ChoiceLetter keptLetter)
         {
             UpdateFromStudyNotes();
+            SyncLetterWithParent(keptLetter);
+        }
+
+        protected void SyncLetterWithParent(ChoiceLetter keptLetter)
+        {
             if (isHaveParentAnomaly)
             {
                 if (keptLetter.hyperlinkThingDefs == null)
@@ -246,7 +256,8 @@ namespace AnomaliesExpected
             for (int i = 0; i < StudyNotesAll.Count(); i++)
             {
                 StudyNote studyNote = StudyNotesAll[i];
-                if (studyNote.threshold > CurrThreshold && letters.Any((ChoiceLetter cl) => cl.Label == studyNote.label))
+                string studyNoteLabel = studyNote.label.CapitalizeFirst();
+                if (studyNote.threshold > CurrThreshold && letters.Any((ChoiceLetter cl) => cl.Label == studyNoteLabel))
                 {
                     UpdateFromStudyNote(studyNote);
                     isUpdated = true;
