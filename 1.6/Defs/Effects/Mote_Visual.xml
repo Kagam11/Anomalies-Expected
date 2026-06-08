@@ -85,5 +85,60 @@
 			<fadeOutTime>1.0</fadeOutTime>
 		</mote>
 	</ThingDef>
+	
+	
+
+	<ThingDef ParentName="MoteBase">
+		<defName>Mote_AEPetrificationBeam</defName>
+		<thingClass>MoteDualAttached</thingClass>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<fadeInTime>0.1</fadeInTime>
+			<fadeOutTime>0.1</fadeOutTime>
+			<solidTime>0.1</solidTime>
+			<rotateTowardsTarget>True</rotateTowardsTarget>
+			<scaleToConnectTargets>True</scaleToConnectTargets>
+		</mote>
+		<drawOffscreen>true</drawOffscreen>
+		<graphicData>
+			<texPath>Things/Mote/GraserBeam</texPath>
+			<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+			<shaderType>MoteBeam</shaderType>
+			<shaderParameters>
+				<_ExtraTexA>/Things/Mote/BeamSecondaryNoise_A</_ExtraTexA>
+				<_ExtraTexB>/Things/Mote/BeamSecondaryNoise_B</_ExtraTexB>
+				<_ScrollSpeedA>0</_ScrollSpeedA>
+				<_ScrollSpeedB>0</_ScrollSpeedB>
+				<_Intensity>2</_Intensity>
+			</shaderParameters>
+			<color>(0.22, 1, 0.08)</color>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MoteBase">
+		<defName>Mote_AEPetrificationBeam_Charge</defName>
+		<thingClass>MoteAttached</thingClass>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<fadeInTime>0.15</fadeInTime>
+			<fadeOutTime>0.3</fadeOutTime>
+			<solidTime>999999</solidTime>
+			<needsMaintenance>True</needsMaintenance>
+		</mote>
+		<graphicData>
+			<texPath>Things/Mote/BeamRepeater_ChargeGlow</texPath>
+			<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+			<shaderType>MoteHellfireCannon_Charge</shaderType>
+			<shaderParameters>
+				<_RandomTex>/Things/Mote/RandomFlicker</_RandomTex>
+				<_FlickerFrequency>0.25</_FlickerFrequency>
+				<_FlickerAmount>0.6</_FlickerAmount>
+				<_InnerCircleIntensity>0.1</_InnerCircleIntensity>
+				<_InnerCircleSize>0.1</_InnerCircleSize>
+				<_InnerCircleShimmerAmount>0.14</_InnerCircleShimmerAmount>
+			</shaderParameters>
+			<color>(0.22, 1, 0.08)</color>
+		</graphicData>
+	</ThingDef>
   
 </Defs>

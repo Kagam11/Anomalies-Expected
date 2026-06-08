@@ -29,6 +29,8 @@
 		<combatLogRulesMiss>Maneuver_Stab_MeleeMiss</combatLogRulesMiss>
 		<combatLogRulesDodge>Maneuver_Stab_MeleeDodge</combatLogRulesDodge>
 	</ManeuverDef>
+	
+	
 
 	<ManeuverDef>
 		<defName>AEChronoDistortion</defName>
@@ -42,6 +44,22 @@
 		<combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
 		<combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
 		<combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+	
+	
+
+	<ManeuverDef>
+		<defName>AEPetrification</defName>
+		<requiredCapacity>AEPetrification</requiredCapacity>
+		<verb>
+			<verbClass>Verb_MeleeAttackDamage</verbClass>
+			<meleeDamageDef>AEPetrificationBeam</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Smash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Smash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Smash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Smash_MeleeDodge</combatLogRulesDodge>
 	</ManeuverDef>
   
 </Defs>

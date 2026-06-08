@@ -17,5 +17,12 @@
 		<defName>AEChronoDistortion</defName>
 		<label>chrono distortion</label>
 	</ToolCapacityDef>
+	
+	
+
+	<ToolCapacityDef>
+		<defName>AEPetrification</defName>
+		<label>chrono distortion</label>
+	</ToolCapacityDef>
 
 </Defs>

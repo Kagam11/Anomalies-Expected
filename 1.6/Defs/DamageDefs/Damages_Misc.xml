@@ -196,5 +196,14 @@
 			</li>
 		</modExtensions>
 	</DamageDef>
+	
+	
+
+	<DamageDef ParentName="Beam">
+		<defName>AEPetrificationBeam</defName>
+		<hediff>AEPetrification</hediff>
+		<ignoreShields>true</ignoreShields>
+		<deathMessage>{0} has been petrified to death.</deathMessage>
+	</DamageDef>
   
 </Defs>

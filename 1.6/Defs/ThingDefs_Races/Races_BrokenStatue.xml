@@ -87,7 +87,7 @@
 			<li>
 				<label>bricks</label>
 				<capacities>
-					<li>Blunt</li>
+					<li>AEPetrification</li>
 				</capacities>
 				<power>100</power>
 				<armorPenetration>100</armorPenetration>

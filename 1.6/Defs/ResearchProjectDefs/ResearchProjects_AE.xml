@@ -537,7 +537,7 @@
 		<requiredAnalyzed>
 			<li>AE_ResearchNotesBSA</li>
 		</requiredAnalyzed>
-		<knowledgeCost>35</knowledgeCost>
+		<knowledgeCost>55</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>5</researchViewX>
 		<researchViewY>0</researchViewY>

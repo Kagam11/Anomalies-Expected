@@ -12,7 +12,7 @@
 		<comps>
 			<li Class="AnomaliesExpected.HediffCompProperties_BrokenStatue">
 				<spawnedThingDef>AE_BrokenStatuePile</spawnedThingDef>
-				<damageDef>Blunt</damageDef>
+				<damageDef>AEPetrificationBeam</damageDef>
 				<spineDMG>100</spineDMG>
 				<spinePenetration>1</spinePenetration>
 				<soundTransform>AE_BrokenStatue_Scream</soundTransform>
