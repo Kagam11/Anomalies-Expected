@@ -12,7 +12,7 @@ namespace AnomaliesExpected
 
         protected override Job TryGiveJob(Pawn pawn)
         {
-            Pawn target = RevenantUtility.ScanForTarget(pawn);
+            Pawn target = ScanForTarget(pawn);
             HediffComp_BrokenStatue BrokenStatueComp = pawn.health.hediffSet.GetHediffComps<HediffComp_BrokenStatue>().FirstOrDefault();
             if (target != null)
             {
