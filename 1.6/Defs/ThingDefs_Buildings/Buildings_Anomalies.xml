@@ -1890,13 +1890,13 @@
 				<ticksToActivate>1000</ticksToActivate>
 				<activateTexPath>UI/Commands/ReleaseAnimals</activateTexPath>
  
-				<activateLabelString>Press button</activateLabelString>
-				<activateDescString>Press button to activate machine.</activateDescString>
-				<guiLabelString>Choose who should activate this.</guiLabelString>
-				<jobString>press button</jobString>
-				<activatingStringPending>pressing button {0}</activatingStringPending>
-				<activatingString>pressing button {0}: {1}s</activatingString>
-				<onCooldownString>reactivating</onCooldownString>
+				<activateLabelString>Release</activateLabelString>
+				<activateDescString>Influence the cognition to redirect its aggression toward target area.</activateDescString>
+				<guiLabelString>Choose who should release this.</guiLabelString>
+				<jobString>release</jobString>
+				<activatingStringPending>releasing {0}</activatingStringPending>
+				<activatingString>releasing {0}: {1}s</activatingString>
+				<onCooldownString>stabilizing</onCooldownString>
 
 				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
 				<fleckOnUsedScale>2</fleckOnUsedScale>
@@ -1973,13 +1973,13 @@
 				<maintainProgress>true</maintainProgress>
 				<activateTexPath>UI/Designators/Deconstruct</activateTexPath>
  
-				<activateLabelString>Activate Protocol</activateLabelString>
-				<activateDescString>Activate Database Erasure Protocol. [Will destroy it]</activateDescString>
-				<guiLabelString>Choose who should activate protocol for this.</guiLabelString>
-				<jobString>activate protocol</jobString>
-				<activatingStringPending>activating protocol {0}</activatingStringPending>
-				<activatingString>activating protocol {0}: {1}s</activatingString>
-				<interactionProgressString>Activating protocol</interactionProgressString>
+				<activateLabelString>Drill spine</activateLabelString>
+				<activateDescString>Utilize shard to drill in high density regions to interfere with it self-restoration properties. [Will destroy it]</activateDescString>
+				<guiLabelString>Choose who drill this.</guiLabelString>
+				<jobString>drill spine</jobString>
+				<activatingStringPending>drilling {0}</activatingStringPending>
+				<activatingString>drilling {0}: {1}s</activatingString>
+				<interactionProgressString>Drilling spine</interactionProgressString>
 
 				<soundActivate>Building_Deconstructed</soundActivate>
 				<interactionEffecter>ConstructMetal</interactionEffecter>

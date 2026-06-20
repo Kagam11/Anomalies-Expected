@@ -450,9 +450,9 @@
 	
 	<HediffDef ParentName="AddedBodyPartBase">
 		<defName>Hediff_AEBrokenStatueSpine</defName>
-		<label>the blind spot vertebrae</label>
-		<labelNoun>the blind spot vertebrae</labelNoun>
-		<description>An installed anomalous implant, replicating the Snow Army's snow core, enabling the host to survive in lower temperatures. Nano-scale frostites induce cellular crystallization upon injury, accelerating regeneration in lower temperatures. However, this crystallization makes the cells vulnerable to high temperatures, destabilizing their structure. The host body also lowers the temperature of the surrounding air.\n\nRecieved damage x2, when on fire.\nMax effect at -100 degrees, including regeneration of missing parts.</description>
+		<label>broken statue vertebrae</label>
+		<labelNoun>broken statue vertebrae</labelNoun>
+		<description>An installed anomalous spinal cord salvaged from a destroyed broken statue. It is made entirely of white marble, yet it still contains spinal fluid. While it can no longer self-reassemble into BS-01, it appears to partially retain its anomalous effect, granting increased movement speed when not observed.</description>
 		<addedPartProps>
 			<solid>true</solid>
 			<partEfficiency>2</partEfficiency>

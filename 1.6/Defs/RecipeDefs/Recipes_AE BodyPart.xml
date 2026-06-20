@@ -201,13 +201,13 @@
 
 	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
 		<defName>InstallAEBrokenStatueSpine</defName>
-		<label>install the blind spot vertebrae</label>
-		<description>Install the blind spot vertebrae.</description>
+		<label>install broken statue vertebrae</label>
+		<description>Install broken statue vertebrae.</description>
 		<descriptionHyperlinks>
 			<ThingDef>AEBrokenStatueSpine</ThingDef>
 			<HediffDef>Hediff_AEBrokenStatueSpine</HediffDef>
 		</descriptionHyperlinks>
-		<jobString>Installing the blind spot vertebrae.</jobString>
+		<jobString>Installing broken statue vertebrae.</jobString>
 		<surgeryOutcomeEffect IsNull="True"/>
 		<mutantBlacklist>
 			<li>Ghoul</li>

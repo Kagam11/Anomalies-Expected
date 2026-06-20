@@ -4,7 +4,7 @@
 	<ThingDef ParentName="BaseHumanMakeableGun">
 		<defName>Gun_AEPetrificationGun</defName>
 		<label>petrification repeater</label>
-		<description>An ultratech weapon that emits gamma ray laser bursts in a rapid sequence. The tight gamma beams can pierce shields.</description>
+		<description>An anomalous weapon based on broken statue that emits petrification beam bursts in a rapid sequence. Upon impact, the targeted area rapidly turns into white marble.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/WeaponRanged/AEPetrificationGun</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -22,13 +22,14 @@
 		<thingCategories>
 			<li>AEWeaponsAnomalies</li>
 		</thingCategories>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
 		<weaponClasses>
 			<li>RangedHeavy</li>
 			<li>Ultratech</li>
 		</weaponClasses>
 		<statBases>
 			<WorkToMake>75000</WorkToMake>
-			<Mass>14</Mass>
+			<Mass>16</Mass>
 			<AccuracyTouch>0.85</AccuracyTouch>
 			<AccuracyShort>0.72</AccuracyShort>
 			<AccuracyMedium>0.60</AccuracyMedium>

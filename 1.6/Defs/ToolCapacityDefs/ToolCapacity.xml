@@ -22,7 +22,7 @@
 
 	<ToolCapacityDef>
 		<defName>AEPetrification</defName>
-		<label>chrono distortion</label>
+		<label>petrification</label>
 	</ToolCapacityDef>
 
 </Defs>

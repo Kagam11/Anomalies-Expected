@@ -628,7 +628,7 @@
 		</targetTags>
 		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromOrbit</workerClass>
 		<letterLabel>Found pile of marble ashlars</letterLabel>
-		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like an industrial-looking metal box as tall as a table. Several small doors interrupt the smooth surface on its sides, while a big hole with hidden inside blades sits atop it. A lone button rests next to the hole, hinting at some unknown function.</letterText>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a pile of white marble ashlars. Their beautiful design is captivating, yet there is an odd feeling coming from them.</letterText>
 		<letterDef>NeutralEvent</letterDef>
 		<earliestDay>30</earliestDay>
 		<baseChance>1</baseChance>

@@ -532,7 +532,7 @@
 	<ResearchProjectDef>
 		<defName>AEAnalyzeBrokenStatue</defName>
 		<label>analyze broken statue</label>
-		<description>Examining clockwork obelisk's data to construct a decoy speedometer.</description>
+		<description>Analyzing the broken statue's anomalies to find applications for its petrifying effect and to harness its cognitive influence to redirect its aggression toward a target area.</description>
 		<tab>AnomaliesExpected</tab>
 		<requiredAnalyzed>
 			<li>AE_ResearchNotesBSA</li>

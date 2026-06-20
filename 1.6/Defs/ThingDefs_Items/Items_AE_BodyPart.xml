@@ -150,14 +150,14 @@
 
 	<ThingDef ParentName="ResourceBase">
 		<defName>AEBrokenStatueSpine</defName>
-		<label>the blind spot vertebrae</label>
-		<description>An articulated spine-like object from a dead revenant. It is a chaotic mesh of sharpened metal spokes, twisted into a warped cage. The material appears to be rough-cast black iron smeared in a dark, slippery fluid. Anyone who peers too closely inside its jagged form is left with a skull-splitting headache.\n\nYou can destroy the spine to permanently kill the revenant.\n\nAlternatively, you can secure it on a holding platform and wait for the revenant to re-emerge, so you can study the captured entity.</description>
+		<label>broken statue vertebrae</label>
+		<description>An articulated spinal cord salvaged from a destroyed broken statue. It is made entirely of white marble, yet it still contains spinal fluid. While it can no longer self-reassemble into BS-01, it appears to partially retain its anomalous effect, granting increased movement speed when not observed.\n\nIt can be implanted into a humanoid to replace the organic spine, fully surpassing its natural capabilities.</description>
 		<graphicData>
 			<texPath>Things/Item/Special/AE_BrokenStatueSpine</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<descriptionHyperlinks>
-			<RecipeDef>InstallRevenantVertebrae</RecipeDef>
+			<RecipeDef>InstallAEBrokenStatueSpine</RecipeDef>
 		</descriptionHyperlinks>
 		<tickerType>Never</tickerType>
 		<stackLimit>1</stackLimit>
