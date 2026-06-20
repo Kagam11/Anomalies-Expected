@@ -189,6 +189,7 @@ namespace AnomaliesExpected
             {
                 Props.soundTransform.PlayOneShotOnCamera();
             }
+            BrokenStatue.Name = new NameSingle(parent.LabelCap);
             parent.DeSpawn();
             BrokenStatueComp.GetDirectlyHeldThings().TryAdd(parent);
             if (!innerContainer.TryDrop(BrokenStatue, intVec3, map, ThingPlaceMode.Near, out var lastResultingThing))

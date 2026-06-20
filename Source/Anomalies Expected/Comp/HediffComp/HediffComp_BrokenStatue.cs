@@ -16,9 +16,6 @@ namespace AnomaliesExpected
         public Comp_BrokenStatue BrokenStatueComp => BrokenStatueCompCached ?? (BrokenStatueCompCached = BrokenStatue.TryGetComp<Comp_BrokenStatue>());
         private Comp_BrokenStatue BrokenStatueCompCached;
 
-        public CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = Pawn.GetComp<CompAEStudyUnlocks>());
-        private CompAEStudyUnlocks studyUnlocksCached;
-
         public int countWandering;
 
         IThingHolder IThingHolder.ParentHolder => Pawn;
@@ -65,7 +62,7 @@ namespace AnomaliesExpected
             base.Notify_KilledPawn(victim, dinfo);
             if (victim.RaceProps.Humanlike && !victim.IsSubhuman)
             {
-                StudyUnlocks.UnlockStudyNoteManual(0);
+                BrokenStatueComp.StudyUnlocks.UnlockStudyNoteManual(1, victim);
             }
         }
 
@@ -85,7 +82,7 @@ namespace AnomaliesExpected
             }
             Pawn.DeSpawn();
             BrokenStatueComp.GetDirectlyHeldThings().TryAdd(Pawn);
-            BrokenStatueComp.StudyUnlocks.UnlockStudyNoteManual(1);
+            BrokenStatueComp.StudyUnlocks.UnlockStudyNoteManual(2);
             if (!innerContainer.TryDrop(BrokenStatue, intVec3, map, ThingPlaceMode.Near, out var lastResultingThing))
             {
                 if (!RCellFinder.TryFindRandomCellNearWith(intVec3, (IntVec3 c) => c.Standable(map), map, out var result, 1))

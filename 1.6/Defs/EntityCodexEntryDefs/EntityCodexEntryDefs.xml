@@ -358,9 +358,6 @@
 		<modExtensions>
 			<li Class="AnomaliesExpected.EntityCodexEntryDefExtension">
 				<groupName>Khovala</groupName>
-				<groupMembersThingDefs>
-					<li>AE_BrokenStatue</li>
-				</groupMembersThingDefs>
 			</li>
 		</modExtensions>
 	</EntityCodexEntryDef>
