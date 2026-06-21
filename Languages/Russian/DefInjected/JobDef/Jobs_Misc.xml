@@ -3,10 +3,19 @@
 
 	<AE_CalledMeatGrinder.reportString>нажимает кнопку</AE_CalledMeatGrinder.reportString>
 	
+	
+	
 	<AE_RemoveAnomaly.reportString>уничтожает TargetA.</AE_RemoveAnomaly.reportString>
 	
 	<AE_ApplyUsableTo.reportString>применияет TargetA к TargetB.</AE_ApplyUsableTo.reportString>
 	
+	
+	
 	<AE_InteractChristmasStockings.reportString>вытаскивает подарок.</AE_InteractChristmasStockings.reportString>
+	
+	
+	
+	<AE_BrokenStatueAttack.reportString>добирается до TargetA.</AE_BrokenStatueAttack.reportString>
+	<AE_BrokenStatueGoto.reportString>движется.</AE_BrokenStatueGoto.reportString>
 
 </LanguageData>

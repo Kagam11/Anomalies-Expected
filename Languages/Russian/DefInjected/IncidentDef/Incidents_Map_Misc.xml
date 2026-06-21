@@ -100,4 +100,10 @@
 	<AE_IncidentDef_ObeliskClockworkSpawn.letterLabel>Часовой обелиск</AE_IncidentDef_ObeliskClockworkSpawn.letterLabel>
 	<AE_IncidentDef_ObeliskClockworkSpawn.letterText>Ваш поселенец со Спидометром заметил, что поблизости появился какой-то объект. При ближайшем рассмотрении он оказался похож на обелиск с часовым механизмом. Впрочем, он был здесь всегда, так что не совсем понятно, почему поселенец так удивлён его появлению.</AE_IncidentDef_ObeliskClockworkSpawn.letterText>
 
+
+
+	<AE_IncidentDef_BrokenStatueSpawn.label>груда мраморных блоков</AE_IncidentDef_BrokenStatueSpawn.label>
+	<AE_IncidentDef_BrokenStatueSpawn.letterLabel>Обнаружена груда мраморных блоков</AE_IncidentDef_BrokenStatueSpawn.letterLabel>
+	<AE_IncidentDef_BrokenStatueSpawn.letterText>Ваш поселенец заметил, что неподалёку с неба упал какой-то предмет. При ближайшем рассмотрении он оказался похож на груду белых мраморных блоков. Их прекрасный узор завораживает, но от них исходит какое-то странное, гнетущее чувство.</AE_IncidentDef_BrokenStatueSpawn.letterText>
+
 </LanguageData>

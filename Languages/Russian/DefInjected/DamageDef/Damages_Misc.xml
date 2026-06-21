@@ -21,5 +21,9 @@
 
 	<AEAging.label>быстрое старение</AEAging.label>
 	<AEAging.deathMessage>{0} скончался от быстрого старения.</AEAging.deathMessage>
+	
+	
+	<AEPetrificationBeam.label>окаменяющий луч</AEPetrificationBeam.label>
+	<AEPetrificationBeam.deathMessage>{0} окаменел до смерти.</AEPetrificationBeam.deathMessage>
 
 </LanguageData>

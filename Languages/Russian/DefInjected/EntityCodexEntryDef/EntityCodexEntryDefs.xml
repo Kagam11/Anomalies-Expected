@@ -38,4 +38,7 @@
 	<AE_EntityCodexEntry_Obelisk_Clockwork.label>часовой обелиск</AE_EntityCodexEntry_Obelisk_Clockwork.label>
 	<AE_EntityCodexEntry_Obelisk_Clockwork.modExtensions.0.groupName>Время истекает</AE_EntityCodexEntry_Obelisk_Clockwork.modExtensions.0.groupName>
 
+	<AE_EntityCodexEntry_BrokenStatueSpawn.label>сломанная статуя</AE_EntityCodexEntry_BrokenStatueSpawn.label>
+	<AE_EntityCodexEntry_BrokenStatueSpawn.modExtensions.0.groupName>Ховала</AE_EntityCodexEntry_BrokenStatueSpawn.modExtensions.0.groupName>
+
 </LanguageData>

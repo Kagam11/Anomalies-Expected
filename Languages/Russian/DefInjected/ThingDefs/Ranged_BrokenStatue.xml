@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<Gun_AEPetrificationGun.label>окаменяющий повторитель</Gun_AEPetrificationGun.label>
+	<Gun_AEPetrificationGun.description>Аномальное оружие, созданное на основе сломанной статуи, которое выпускает быструю серию лучей окаменения. При попадании поражённая область стремительно превращается в белый мрамор.</Gun_AEPetrificationGun.description>
+	<Gun_AEPetrificationGun.tools.barrels.label>стволы</Gun_AEPetrificationGun.tools.barrels.label>
+	<Gun_AEPetrificationGun.verbs.Verb_Shoot.label>окаменяющий повторитель</Gun_AEPetrificationGun.verbs.Verb_Shoot.label>
+	<Bullet_AEPetrificationBeam.label>окаменяющий луч</Bullet_AEPetrificationBeam.label>
+
+</LanguageData>

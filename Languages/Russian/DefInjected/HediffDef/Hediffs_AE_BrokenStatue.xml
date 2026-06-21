@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<Hediff_AEBrokenStatue.label>под наблюдением</Hediff_AEBrokenStatue.label>
+	<Hediff_AEBrokenStatue.description>Потусторонняя сила позволяет ей игнорировать законы физики и двигаться с высокой скоростью каждый раз, когда никто не смотрит.</Hediff_AEBrokenStatue.description>
+	<Hediff_AEBrokenStatue.labelNoun>под наблюдением</Hediff_AEBrokenStatue.labelNoun>
+	<Hediff_AEBrokenStatue.stages.1.overrideLabel>вне поля зрения</Hediff_AEBrokenStatue.stages.1.overrideLabel>
+
+</LanguageData>

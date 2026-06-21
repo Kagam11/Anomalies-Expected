@@ -46,5 +46,12 @@
 	<AESnowCoreImplantHidden.labelNoun>имплантат с ледяным ядром</AESnowCoreImplantHidden.labelNoun>
 	<AESnowCoreImplantHidden.comps.HediffComp_SurgeryInspectable.surgicalDetectionDesc>Обнаружено образование похожее на имплант с ледяным ядром в теле субъекта.</AESnowCoreImplantHidden.comps.HediffComp_SurgeryInspectable.surgicalDetectionDesc>
 	
+	
+	
+	<Hediff_AEBrokenStatueSpine.label>позвоночник сломанной статуи</Hediff_AEBrokenStatueSpine.label>
+	<Hediff_AEBrokenStatueSpine.description>Имплантированный аномальный спинной мозг, извлеченный из разрушенной сломанной статуи. Он целиком состоит из белого мрамора, но все еще содержит спинномозговую жидкость. Хотя он больше не может самостоятельно собраться в BS-01, он, по-видимому, частично сохраняет свой аномальный эффект, увеличивая скорость передвижения, когда за ним никто не наблюдает.</Hediff_AEBrokenStatueSpine.description>
+	<Hediff_AEBrokenStatueSpine.labelNoun>позвоночник сломанной статуи</Hediff_AEBrokenStatueSpine.labelNoun>
+	<Hediff_AEBrokenStatueSpine.stages.observed.label>под наблюдением</Hediff_AEBrokenStatueSpine.stages.observed.label>
+	<Hediff_AEBrokenStatueSpine.stages.out_of_sight.label>вне поля зрения</Hediff_AEBrokenStatueSpine.stages.out_of_sight.label>
   
 </LanguageData>

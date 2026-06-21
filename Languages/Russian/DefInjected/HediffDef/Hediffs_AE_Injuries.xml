@@ -21,5 +21,14 @@
 	<AEAging.description>Аномальное клеточное ускорение, вызванное хроно-искажением. Это состояние заставляет организм подвергаться десятилетиям биологического разложения в течение мгновений. По мере быстрого истощения теломер кожа теряет эластичность, а органы начинают отказывать из-за глубокой старости, что часто приводит к системному коллапсу.</AEAging.description>
 	<AEAging.injuryProps.destroyedLabel>Распался из-за быстрого старения</AEAging.injuryProps.destroyedLabel>
 	<AEAging.labelNounPretty>{0} в {1}</AEAging.labelNounPretty>
+	
+	
+	
+	<AEPetrification.label>окаменение</AEPetrification.label>
+	<AEPetrification.description>Аномальное минеральное превращение, вызванное воздействием аномалии. Это состояние заставляет органические ткани претерпевать катастрофические изменения молекулярной плотности в считанные мгновения. По мере того как клеточные структуры стремительно кальцифицируются, кожа кристаллизуется в хрупкий белый мрамор, а кровеносные сосуды затвердевают, превращаясь в прочный камень, что приводит к полной остановке кровотока сосудов и локальному системному окаменению.</AEPetrification.description>
+	<AEPetrification.comps.HediffComp_GetsPermanent.instantlyPermanentLabel>полное окаменение</AEPetrification.comps.HediffComp_GetsPermanent.instantlyPermanentLabel>
+	<AEPetrification.comps.HediffComp_GetsPermanent.permanentLabel>полное окаменение</AEPetrification.comps.HediffComp_GetsPermanent.permanentLabel>
+	<AEPetrification.labelNoun>окаменение</AEPetrification.labelNoun>
+	<AEPetrification.labelNounPretty>{0} в {1}</AEPetrification.labelNounPretty>
   
 </LanguageData>

@@ -68,5 +68,14 @@
 	<AE_IceMan.corePart.parts.right_ice_shard_arm.customLabel>правый ледяной осколок руки</AE_IceMan.corePart.parts.right_ice_shard_arm.customLabel>
 	<AE_IceMan.corePart.parts.left_ice_shard_leg.customLabel>левый ледяной осколок ноги</AE_IceMan.corePart.parts.left_ice_shard_leg.customLabel>
 	<AE_IceMan.corePart.parts.right_ice_shard_leg.customLabel>правый ледяной осколок ноги</AE_IceMan.corePart.parts.right_ice_shard_leg.customLabel>
+	
+	
+	
+	<AE_BrokenStatue.label>сломанная статуя</AE_BrokenStatue.label>
+	<AE_BrokenStatue.corePart.customLabel>мраморный блок туловища</AE_BrokenStatue.corePart.customLabel>
+	<AE_BrokenStatue.corePart.parts.marble_ashlar_head.customLabel>мраморный блок головы</AE_BrokenStatue.corePart.parts.marble_ashlar_head.customLabel>
+	<AE_BrokenStatue.corePart.parts.marble_ashlar_tail.customLabel>мраморный блок хвоста</AE_BrokenStatue.corePart.parts.marble_ashlar_tail.customLabel>
+	<AE_BrokenStatue.corePart.parts.left_marble_ashlar_arm.customLabel>левый мраморный блок руки</AE_BrokenStatue.corePart.parts.left_marble_ashlar_arm.customLabel>
+	<AE_BrokenStatue.corePart.parts.right_marble_ashlar_arm.customLabel>праваый мраморный блок руки</AE_BrokenStatue.corePart.parts.right_marble_ashlar_arm.customLabel>
 
 </LanguageData>

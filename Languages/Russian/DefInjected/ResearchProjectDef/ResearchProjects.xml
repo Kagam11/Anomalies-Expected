@@ -138,5 +138,10 @@
 
 	<AEAnalyzeClockworkEmission.label>анализировать хроно-излучение</AEAnalyzeClockworkEmission.label>
 	<AEAnalyzeClockworkEmission.description>Изучение часового обелиска</AEAnalyzeClockworkEmission.description>
-
+	
+	
+	
+	<AEAnalyzeBrokenStatue.label>анализировать сломанную статую</AEAnalyzeBrokenStatue.label>
+	<AEAnalyzeBrokenStatue.description>Исследование аномалий сломанной статуи, чтобы найти применение её эффекту окаменения и использовать методы ментального воздействия на неё для перенаправления её агрессии на выбранную область.</AEAnalyzeBrokenStatue.description>
+	
 </LanguageData>

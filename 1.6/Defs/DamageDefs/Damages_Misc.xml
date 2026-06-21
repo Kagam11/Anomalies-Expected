@@ -201,6 +201,7 @@
 
 	<DamageDef ParentName="Beam">
 		<defName>AEPetrificationBeam</defName>
+		<label>petrification beam</label>
 		<hediff>AEPetrification</hediff>
 		<ignoreShields>true</ignoreShields>
 		<deathMessage>{0} has been petrified to death.</deathMessage>

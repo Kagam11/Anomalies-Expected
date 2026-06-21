@@ -38,5 +38,11 @@
 	<RemoveAESnowCoreImplant.label>извлечь имплант со снежным ядром</RemoveAESnowCoreImplant.label>
 	<RemoveAESnowCoreImplant.description>Извлечёт имплант со снежным ядром.</RemoveAESnowCoreImplant.description>
 	<RemoveAESnowCoreImplant.jobString>Извлекает имплант со снежным ядром.</RemoveAESnowCoreImplant.jobString>
+	
+	
+	
+	<InstallAEBrokenStatueSpine.label>имплантировать позвоночник сломанной статуи</InstallAEBrokenStatueSpine.label>
+	<InstallAEBrokenStatueSpine.description>Имплантировать позвоночник сломанной статуи.</InstallAEBrokenStatueSpine.description>
+	<InstallAEBrokenStatueSpine.jobString>Имплантирует позвоночник сломанной статуи.</InstallAEBrokenStatueSpine.jobString>
   
 </LanguageData>
