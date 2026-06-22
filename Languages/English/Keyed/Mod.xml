@@ -14,12 +14,13 @@
 	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestFrequencyMult>Set multiplier for time between fleshbeast generation from nests to {0}.</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestFrequencyMult>
 	<AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>Set maximum size for Lake sub map generation to {0}x{0} (by default will copy size of colony map).\n(Size affect amount of loot, enemies and required resources from PC)</AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>
 	
-	<AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>Set Void Provaction ritual Cooldown to {0} hours (by default 120h). [Take effect on a game launch]</AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>
+	<AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>Set Void Provaction ritual Cooldown to {0} hours (by default 120h, default value will disable patch). [Take effect on a game launch]</AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>
 	
 	<AnomaliesExpected.Settings.ObeliskClockwork.HandSecond>Notify of second hand of Clockwork obelisk.</AnomaliesExpected.Settings.ObeliskClockwork.HandSecond>
 	<AnomaliesExpected.Settings.ObeliskClockwork.HandMinute>Notify of minute hand of Clockwork obelisk.</AnomaliesExpected.Settings.ObeliskClockwork.HandMinute>
 	<AnomaliesExpected.Settings.ObeliskClockwork.HandHour>Notify of hour hand of Clockwork obelisk.</AnomaliesExpected.Settings.ObeliskClockwork.HandHour>
-	<AnomaliesExpected.Settings.ObeliskClockwork.HandDay>Notify of day hand of Clockwork obelisk.</AnomaliesExpected.Settings.ObeliskClockwork.HandDay>
+	<AnomaliesExpected.Settings.ObeliskClockwork.HandDay>Notify of day hand of Clockwork obelisk.</AnomaliesExpected.Settings.ObeliskClockwork.HandDay>	
+	<AnomaliesExpected.Settings.Patch.DisableNotifyHealedAging>Enable patch to hide healing notifications of rapid aging wounds. [Take effect on a game launch]</AnomaliesExpected.Settings.Patch.DisableNotifyHealedAging>
 	
 	<AnomaliesExpected.Settings.BrokenStatue.DisableSpineBreaker>Will replace instant spine breaking effect of Broken Statue with normal attacks.</AnomaliesExpected.Settings.BrokenStatue.DisableSpineBreaker>
 	<AnomaliesExpected.Settings.BrokenStatue.Letter>Will get letter instead of message, when Broken Statue leaving containment.</AnomaliesExpected.Settings.BrokenStatue.Letter>

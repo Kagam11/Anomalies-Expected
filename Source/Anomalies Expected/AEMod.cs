@@ -47,6 +47,7 @@ namespace AnomaliesExpected
             options.CheckboxLabeled("AnomaliesExpected.Settings.ObeliskClockwork.HandMinute".Translate().RawText, ref Settings.NotifyClockworkHandMinute);
             options.CheckboxLabeled("AnomaliesExpected.Settings.ObeliskClockwork.HandHour".Translate().RawText, ref Settings.NotifyClockworkHandHour);
             options.CheckboxLabeled("AnomaliesExpected.Settings.ObeliskClockwork.HandDay".Translate().RawText, ref Settings.NotifyClockworkHandDay);
+            options.CheckboxLabeled("AnomaliesExpected.Settings.Patch.DisableNotifyHealedAging".Translate().RawText, ref Settings.PatchDisableNotifyHealedAging);
             options.CheckboxLabeled("Disable Clockwork Obelisk [In case enountered issue]", ref Settings.DevDisableClockworkObelisk);
             options.GapLine();
             options.CheckboxLabeled("AnomaliesExpected.Settings.BrokenStatue.DisableSpineBreaker".Translate(), ref Settings.BrokenStatueDisableSpineBreaker);

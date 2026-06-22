@@ -23,5 +23,6 @@ namespace AnomaliesExpected
         public static HediffDef AE_FleshmassBodyMutation;
         [MayRequireAnomaly]
         public static HediffDef AE_FleshmassOrganogenesisCore;
+        public static HediffDef AEAging;
     }
 }

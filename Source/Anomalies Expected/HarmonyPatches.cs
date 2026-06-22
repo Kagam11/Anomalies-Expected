@@ -31,7 +31,7 @@ namespace AnomaliesExpected
             }
 
             PsychicRitualDef_VoidProvocation psychicRitualDef_VoidProvocation = DefDatabase<PsychicRitualDef_VoidProvocation>.GetNamed("VoidProvocation");
-            if (psychicRitualDef_VoidProvocation != null)
+            if (psychicRitualDef_VoidProvocation != null && AEMod.Settings.VoidProvactionCooldown != 120)
             {
                 psychicRitualDef_VoidProvocation.cooldownHours = AEMod.Settings.VoidProvactionCooldown;
             }
@@ -69,6 +69,11 @@ namespace AnomaliesExpected
             val.Patch(AccessTools.Method(typeof(MainTabWindow_Research), "DrawProjectInfo"), transpiler: new HarmonyMethod(patchType, "MTWR_ViewSize_Transpiler"));
             val.Patch(AccessTools.Method(typeof(MainTabWindow_Research), "DrawStartButton"), transpiler: new HarmonyMethod(patchType, "MTWR_ViewSize_Transpiler"));
             val.Patch(AccessTools.Method(typeof(MainTabWindow_Research), "DrawRightRect"), transpiler: new HarmonyMethod(patchType, "MTWR_ViewSize_Transpiler"));
+           
+            if (AEMod.Settings.PatchDisableNotifyHealedAging)
+            {
+                val.Patch(AccessTools.Method(typeof(Pawn_HealthTracker), "HealthTickInterval"), transpiler: new HarmonyMethod(patchType, "PHT_HealthTickInterval_Transpiler"));
+            }
         }
 
         public static bool RPD_IsHidden_Prefix(ref bool __result, ResearchProjectDef __instance)
@@ -463,6 +468,29 @@ namespace AnomaliesExpected
         public static bool CurrentResearchTabAnomaly(ResearchTabDef def)
         {
             return def == ResearchTabDefOf.Anomaly || (def?.minMonolithLevelVisible ?? 0) > 0;
+        }
+
+
+
+        public static IEnumerable<CodeInstruction> PHT_HealthTickInterval_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+            for (int i = 0; i < codes.Count - 1; i++)
+            {
+                if (codes[i].opcode == OpCodes.Callvirt && codes[i].operand.ToString().Contains("Void Heal(Single)"))
+                {
+                    codes[i] = new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(HarmonyPatches), "HealthTickIntervalShouldNotifyHeal"));
+                    codes.RemoveAt(i + 1);
+                    break;
+                }
+            }
+            return codes.AsEnumerable();
+        }
+
+        public static bool HealthTickIntervalShouldNotifyHeal(Hediff hediff_Injury, float amount)
+        {
+            hediff_Injury.Heal(amount);
+            return hediff_Injury.def != HediffDefOfLocal.AEAging;
         }
     }
 }
