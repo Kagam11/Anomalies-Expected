@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -27,6 +28,7 @@ namespace AnomaliesExpected
         private CompActivity activityInt;
 
         public override bool HideInteraction => !Props.researchProjectDef.IsFinished;
+        public bool isSuppressable = false;
 
         private IntVec3 sendLocation = IntVec3.Invalid;
 
@@ -37,6 +39,9 @@ namespace AnomaliesExpected
             new CurvePoint(0.4f, 0.1f),
             new CurvePoint(0.9f, 1f)
         };
+
+        private float TicksTillTransform;
+        private float AssemblyProgress => 1 - TicksTillTransform / Props.ticksPerTransform;
 
         public void GetChildHolders(List<IThingHolder> outChildren)
         {
@@ -53,23 +58,17 @@ namespace AnomaliesExpected
             innerContainer = new ThingOwner<Thing>(this, LookMode.Deep, removeContentsIfDestroyed: false);
         }
 
-        //public override void PostPostMake()
-        //{
-        //    base.PostPostMake();
-        //    TickNextState = Find.TickManager.TicksGame + Props.beamIntervalRange.max;
-        //}
+        public override void PostPostMake()
+        {
+            base.PostPostMake();
+            TicksTillTransform = Props.ticksPerTransform;
+        }
 
-        //public override void PostSpawnSetup(bool respawningAfterLoad)
-        //{
-        //    base.PostSpawnSetup(respawningAfterLoad);
-        //    if (!respawningAfterLoad)
-        //    {
-        //        if (beamTargetState == BeamTargetState.Activating)
-        //        {
-        //            TickNextState = Find.TickManager.TicksGame + Math.Max(TickNextState - Find.TickManager.TicksGame + Props.ticksWhenCarried, Props.ticksWhenCarried);
-        //        }
-        //    }
-        //}
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            isSuppressable = StudyUnlocks?.isStudyNoteManualUnlocked(2) ?? false;
+        }
 
         public override void CompTick()
         {
@@ -80,24 +79,12 @@ namespace AnomaliesExpected
             }
             passiveSustainer.info.volumeFactor = SustainerActivityCurve.Evaluate(ActivityComp.ActivityLevel);
             passiveSustainer.Maintain();
+            TicksTillTransform -= 1 + ActivityComp.ActivityLevel * 3;
+            if (TicksTillTransform <= 0)
+            {
+                Transform();
+            }
         }
-
-        //public void ManualActivation()
-        //{
-        //    if (sendLocation == IntVec3.Invalid || !sendLocation.InBounds(parent.Map) || sendLocation.Fogged(parent.Map))
-        //    {
-        //        sendLocation = parent.Position;
-        //    }
-        //    TargetInfo targetInfoFrom = new TargetInfo(parent.Position, parent.Map);
-        //    SoundDefOfLocal.Psycast_Skip_Exit.PlayOneShot(targetInfoFrom);
-        //    FleckMaker.Static(targetInfoFrom.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipInnerExit, Props.teleportationFleckRadius);
-        //    TargetInfo targetInfoTo = new TargetInfo(sendLocation, parent.Map);
-        
-        //    FleckMaker.Static(targetInfoTo.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipFlashEntry, Props.teleportationFleckRadius);
-        //    parent.Position = sendLocation;
-        //    beamTargetState = BeamTargetState.Activating;
-        //    TickNextState = Find.TickManager.TicksGame + Props.ticksWhenCarried;
-        //}
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
@@ -122,29 +109,6 @@ namespace AnomaliesExpected
                 };
             }
         }
-
-        //public override void OrderForceTarget(LocalTargetInfo target)
-        //{
-        //    if (ValidateTarget(target, showMessages: false))
-        //    {
-        //        TargetLocation(target.Pawn);
-        //    }
-        //}
-
-        //private void TargetLocation(Pawn caster)
-        //{
-        //    TargetingParameters targetingParameters = TargetingParameters.ForCell();
-        //    targetingParameters.mapBoundsContractedBy = 1;
-        //    targetingParameters.validator = (TargetInfo c) => c.Cell.InBounds(caster.Map) && !c.Cell.Fogged(caster.Map);
-        //    Find.Targeter.BeginTargeting(targetingParameters, delegate (LocalTargetInfo target)
-        //    {
-        //        sendLocation = target.Cell;
-        //        base.OrderForceTarget(caster);
-        //    }, delegate
-        //    {
-        //        Widgets.MouseAttachedLabel("AnomaliesExpected.BeamTarget.ChooseDest".Translate(parent.Label));
-        //    });
-        //}
 
         public override void OrderForceTarget(LocalTargetInfo target)
         {
@@ -178,6 +142,17 @@ namespace AnomaliesExpected
 
         public Pawn Transform()
         {
+            TargetInfo targetInfoFrom = new TargetInfo(parent.Position, parent.Map);
+            Find.TickManager.slower.SignalForceNormalSpeedShort();
+            if (AEMod.Settings.BrokenStatueLetter)
+            {
+                Find.LetterStack.ReceiveLetter("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, "AnomaliesExpected.BeamTarget.LeftContainmentText".Translate(parent.LabelCap), LetterDefOf.ThreatSmall, targetInfoFrom);
+            }
+            else
+            {
+                Messages.Message("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, targetInfoFrom, MessageTypeDefOf.NegativeEvent);
+            }
+            StudyUnlocks.UnlockStudyNoteManual(0);
             if (BrokenStatue.DestroyedOrNull())
             {
                 innerContainer.TryAdd(PawnGenerator.GeneratePawn(Props.kindDef, Faction.OfEntities));
@@ -204,19 +179,15 @@ namespace AnomaliesExpected
             return (Pawn)lastResultingThing;
         }
 
+        public void OnTransform()
+        {
+            StudyUnlocks.UnlockStudyNoteManual(2);
+            ActivityComp.EnterPassiveState();
+            TicksTillTransform = Props.ticksPerTransform;
+        }
+
         public void OnActivityActivated()
         {
-            TargetInfo targetInfoFrom = new TargetInfo(parent.Position, parent.Map);
-            Find.TickManager.slower.SignalForceNormalSpeedShort();
-            if (AEMod.Settings.BrokenStatueLetter)
-            {
-                Find.LetterStack.ReceiveLetter("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, "AnomaliesExpected.BeamTarget.LeftContainmentText".Translate(parent.LabelCap), LetterDefOf.ThreatSmall, targetInfoFrom);
-            }
-            else
-            {
-                Messages.Message("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, targetInfoFrom, MessageTypeDefOf.NegativeEvent);
-            }
-            StudyUnlocks.UnlockStudyNoteManual(0);
             Transform();
         }
 
@@ -231,7 +202,7 @@ namespace AnomaliesExpected
 
         public bool CanBeSuppressed()
         {
-            return true;
+            return isSuppressable;
         }
 
         public bool CanActivate()
@@ -252,41 +223,18 @@ namespace AnomaliesExpected
             {
                 innerContainer.removeContentsIfDestroyed = false;
             }
-            //    Scribe_Values.Look(ref beamNextCount, "beamNextCount", 1);
-            //    Scribe_Values.Look(ref beamMaxCount, "beamMaxCount", 1);
-            //    Scribe_Values.Look(ref TickNextState, "TickNextState", Find.TickManager.TicksGame + Props.beamIntervalRange.min);
-            //    Scribe_Values.Look(ref TickUnlockStudy, "TickUnlockStudy");
-            //    Scribe_Values.Look(ref studyMustBeEnabled, "studyMustBeEnabled");
-            //    Scribe_Values.Look(ref beamTargetState, "beamTargetState", BeamTargetState.Searching);
-            //    Scribe_Values.Look(ref sendLocation, "sendLocation", IntVec3.Invalid);
+            Scribe_Values.Look(ref TicksTillTransform, "TicksTillTransform", Find.TickManager.TicksGame);
         }
 
-        //public override string CompInspectStringExtra()
-        //{
-        //    List<string> inspectStrings = new List<string>();
-        //    int study = StudyUnlocks?.NextIndex ?? 4;
-        //    if (study > 0)
-        //    {
-        //        inspectStrings.Add("AnomaliesExpected.BeamTarget.Indicator".Translate(beamNextCount, Props.beamMaxCount).RawText);
-        //        if (study > 1)
-        //        {
-        //            inspectStrings.Add("AnomaliesExpected.BeamTarget.State".Translate(beamTargetState == BeamTargetState.Searching ? "AnomaliesExpected.BeamTarget.StateSearching".Translate() : "AnomaliesExpected.BeamTarget.StateActivating".Translate()).RawText);
-        //        }
-        //        if (beamTargetState == BeamTargetState.Activating)
-        //        {
-        //            if (parent.ParentHolder is MinifiedThing)
-        //            {
-        //                inspectStrings.Add("AnomaliesExpected.BeamTarget.TimeTillBeam".Translate(Math.Max(TickNextState + Props.ticksWhenCarried - Find.TickManager.TicksGame, Props.ticksWhenCarried).ToStringTicksToPeriodVerbose()).RawText);
-        //                inspectStrings.Add("AnomaliesExpected.BeamTarget.ButtonHold".Translate().RawText);
-        //            }
-        //            else
-        //            {
-        //                inspectStrings.Add("AnomaliesExpected.BeamTarget.TimeTillBeam".Translate(Math.Max(TickNextState - Find.TickManager.TicksGame, 0).ToStringTicksToPeriodVerbose()).RawText);
-        //            }
-        //        }
-        //    }
-        //    inspectStrings.Add(base.CompInspectStringExtra());
-        //    return String.Join("\n", inspectStrings);
-        //}
+        public override string CompInspectStringExtra()
+        {
+            List<string> inspectStrings = new List<string>();
+            if (isSuppressable)
+            {
+                inspectStrings.Add("AnomaliesExpected.BrokenStatue.AssemblyProgress".Translate(AssemblyProgress.ToStringPercent()).RawText);
+            }
+            inspectStrings.Add(base.CompInspectStringExtra());
+            return String.Join("\n", inspectStrings);
+        }
     }
 }

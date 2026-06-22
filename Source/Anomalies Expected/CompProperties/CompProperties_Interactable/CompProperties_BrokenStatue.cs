@@ -6,9 +6,10 @@ namespace AnomaliesExpected
     public class CompProperties_BrokenStatue : CompProperties_Interactable
     {
         public PawnKindDef kindDef;
-        public ResearchProjectDef researchProjectDef;        
+        public ResearchProjectDef researchProjectDef;
         public SoundDef soundTransform;
         public SoundDef soundPassive;
+        public int ticksPerTransform = 900000;
 
         public CompProperties_BrokenStatue()
         {

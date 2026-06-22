@@ -2,5 +2,6 @@
 <LanguageData>
 
 	<AnomaliesExpected.BrokenStatue.ActivityTooltipExtra>Observing activity</AnomaliesExpected.BrokenStatue.ActivityTooltipExtra>
+	<AnomaliesExpected.BrokenStatue.AssemblyProgress>Assembled: {0}</AnomaliesExpected.BrokenStatue.AssemblyProgress>
 	
 </LanguageData>

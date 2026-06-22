@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<AnomaliesExpected.BrokenStatue.ActivityTooltipExtra>Наблюдает за активностью</AnomaliesExpected.BrokenStatue.ActivityTooltipExtra>
+	<AnomaliesExpected.BrokenStatue.AssemblyProgress>Сборка: {0}</AnomaliesExpected.BrokenStatue.AssemblyProgress>
+	
+</LanguageData>

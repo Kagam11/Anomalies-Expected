@@ -68,8 +68,6 @@ namespace AnomaliesExpected
 
         public void Transform()
         {
-            CompActivity ActivityComp = BrokenStatue.TryGetComp<CompActivity>();
-            ActivityComp.EnterPassiveState();
             IntVec3 intVec3 = Pawn.PositionHeld;
             Map map = Pawn.MapHeld;
             if (!Props.soundTransform.NullOrUndefined())
@@ -82,7 +80,7 @@ namespace AnomaliesExpected
             }
             Pawn.DeSpawn();
             BrokenStatueComp.GetDirectlyHeldThings().TryAdd(Pawn);
-            BrokenStatueComp.StudyUnlocks.UnlockStudyNoteManual(2);
+            BrokenStatueComp.OnTransform();
             if (!innerContainer.TryDrop(BrokenStatue, intVec3, map, ThingPlaceMode.Near, out var lastResultingThing))
             {
                 if (!RCellFinder.TryFindRandomCellNearWith(intVec3, (IntVec3 c) => c.Standable(map), map, out var result, 1))
